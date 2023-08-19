@@ -1,17 +1,20 @@
 import { FC } from "react";
 import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
+import Header from "../ui/Header";
+import Logo from "../ui/Logo";
 
 const Hero: FC = () => {
   return (
     <section
-      className="w-screen h-screen"
+      className="w-screen h-screen flex flex-col flex-1"
       style={{
         backgroundImage: "url('/images/hero.png')",
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
     >
+      <Header />
       <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between">
         <div className="flex flex-col items-center mt-20">
           <h1 className="uppercase text-5xl tracking-[.2em] font-bold text-center">
@@ -30,7 +33,7 @@ const Hero: FC = () => {
             style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }}
           />
         </div>
-        <div className="max-w-xl flex flex-col items-center mb-60">
+        <div className="max-w-xl flex flex-col items-center mb-20">
           <h2 className="text-center text-lg">
             Stwórz nowoczesną stronę internetową, która przyciągnie uwagę
             klientów i wyraźnie przedstawi{" "}
