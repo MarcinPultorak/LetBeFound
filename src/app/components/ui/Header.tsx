@@ -4,7 +4,7 @@ import Logo from "./Logo";
 const Header: FC = () => {
   const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
   return (
-    <header className="flex max-w-screen-2xl mx-auto h-28 justify-end w-full px-10 relative">
+    <header className="absolute top-0 inset-x-0 mx-auto flex max-w-screen-2xl h-28 justify-end w-full px-10">
       <div className="absolute top-8 left-10">
         <Logo />
       </div>

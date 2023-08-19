@@ -2,7 +2,6 @@
 
 import { FC, useEffect, useState } from "react";
 import cx from "classnames";
-import Button from "./Button";
 
 const SwitchIcon: FC = () => {
   const [moveSwitch, setMoveSwitch] = useState<boolean>(false);
@@ -24,9 +23,7 @@ const SwitchIcon: FC = () => {
         <div
           className={cx(
             "w-6 h-6 bg-orange-600 rounded-full mt-1",
-            moveSwitch
-              ? "transition translate-y-[30px] duration-700 ease-out opacity-0"
-              : ""
+            moveSwitch ? "transition translate-y-[30px] duration-700" : ""
           )}
         />
       </div>

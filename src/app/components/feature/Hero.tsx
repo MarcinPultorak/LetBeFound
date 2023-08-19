@@ -2,12 +2,11 @@ import { FC } from "react";
 import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
 import Header from "../ui/Header";
-import Logo from "../ui/Logo";
 
 const Hero: FC = () => {
   return (
     <section
-      className="w-screen h-screen flex flex-col flex-1"
+      className="w-screen h-screen flex flex-col flex-1 justify-center relative"
       style={{
         backgroundImage: "url('/images/hero.png')",
         backgroundPosition: "center",
@@ -15,8 +14,8 @@ const Hero: FC = () => {
       }}
     >
       <Header />
-      <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between">
-        <div className="flex flex-col items-center mt-20">
+      <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between max-h-[640px] mt-40 mb-60">
+        <div className="flex flex-col items-center">
           <h1 className="uppercase text-5xl tracking-[.2em] font-bold text-center">
             <div style={{ textShadow: "0px 6px 4px rgba(0, 0, 0, 0.25)" }}>
               Zrewolucjonizuj
@@ -33,8 +32,11 @@ const Hero: FC = () => {
             style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }}
           />
         </div>
-        <div className="max-w-xl flex flex-col items-center mb-20">
-          <h2 className="text-center text-lg">
+        <div className="max-w-xl flex flex-col items-center">
+          <h2
+            className="text-center text-lg"
+            style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.75)" }}
+          >
             Stwórz nowoczesną stronę internetową, która przyciągnie uwagę
             klientów i wyraźnie przedstawi{" "}
             <span className="text-orange-600">Twoją ofertę</span>.
@@ -47,7 +49,7 @@ const Hero: FC = () => {
               Sprawdź
             </Button>
           </div>
-          <div className="mt-10">
+          <div className="absolute bottom-10">
             <SwitchButton />
           </div>
         </div>
