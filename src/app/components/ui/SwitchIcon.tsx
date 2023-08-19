@@ -30,7 +30,6 @@ const SwitchIcon: FC = () => {
           )}
         />
       </div>
-      <Button onClick={() => setMoveSwitch((prev) => !prev)}>Test</Button>
     </>
   );
 };
