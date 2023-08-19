@@ -47,8 +47,9 @@ const Hero: FC = () => {
               Sprawdź
             </Button>
           </div>
-
-          <SwitchButton />
+          <div className="mt-10">
+            <SwitchButton />
+          </div>
         </div>
       </div>
     </section>
