@@ -1,0 +1,55 @@
+import { FC } from "react";
+import Button from "../ui/Button";
+import SwitchButton from "../ui/SwitchIcon";
+
+const Hero: FC = () => {
+  return (
+    <section
+      className="w-screen h-screen"
+      style={{
+        backgroundImage: "url('/images/hero.png')",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between">
+        <div className="flex flex-col items-center mt-20">
+          <h1 className="uppercase text-5xl tracking-[.2em] font-bold text-center">
+            <div style={{ textShadow: "0px 6px 4px rgba(0, 0, 0, 0.25)" }}>
+              Zrewolucjonizuj
+            </div>
+            <div
+              className="mt-6"
+              style={{ textShadow: "0px 6px 4px rgba(0, 0, 0, 0.25)" }}
+            >
+              swój biznes
+            </div>
+          </h1>
+          <div
+            className="h-0.5 w-[330px] bg-slate-300 mt-6"
+            style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }}
+          />
+        </div>
+        <div className="max-w-xl flex flex-col items-center mb-60">
+          <h2 className="text-center text-lg">
+            Stwórz nowoczesną stronę internetową, która przyciągnie uwagę
+            klientów i wyraźnie przedstawi{" "}
+            <span className="text-orange-600">Twoją ofertę</span>.
+          </h2>
+          <div className="w-48 mt-10">
+            <Button
+              className="uppercase"
+              style={{ boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)" }}
+            >
+              Sprawdź
+            </Button>
+          </div>
+
+          <SwitchButton />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
