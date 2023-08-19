@@ -1,6 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from "react";
+import cx from "classnames";
 
 const Offer: FC = () => {
   const data = [
@@ -32,21 +33,27 @@ const Offer: FC = () => {
 
   return (
     <section
-      className=""
+      className="px-10 py-20"
       style={{
         backgroundImage: "url('/images/offer-background.png')",
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
     >
-      <div className="space-y-5">
-        {data.map((item) => (
-          <_OfferTile
-            title={item.title}
-            description={item.description}
-            icon={item.icon}
-          />
-        ))}
+      <h2 className="uppercase text-2xl text-center font-bold tracking-[.15em]">
+        Pozwól klientom odnaleźć cię w internecie!
+      </h2>
+      <div className="max-w-screen-2xl mx-auto mt-20">
+        <div className="space-y-5">
+          {data.map((item, index) => (
+            <_OfferTile
+              index={index}
+              title={item.title}
+              description={item.description}
+              icon={item.icon}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -55,6 +62,7 @@ const Offer: FC = () => {
 export default Offer;
 
 type _OfferTileProps = {
+  index: number;
   title: string;
   description: string;
   icon: ReactNode;
@@ -63,18 +71,30 @@ type _OfferTileProps = {
 const _OfferTile: FC<_OfferTileProps> = (props) => {
   return (
     <div
-      className="max-w-xl flex  justify-between border border-zinc-600 rounded-2xl p-8"
+      className={cx(
+        "max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-8 space-x-16",
+        {
+          "ml-32 space-x-reverse": props.index % 2 == 1,
+        }
+      )}
       style={{
         boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
       }}
     >
-      <div className="max-w-sm flex flex-col items-center">
-        <h2 className="text-lg text-orange-600 tracking-[.15em] underline uppercase">
+      <div className="flex flex-col items-center">
+        <h3 className="text-lg text-orange-600 tracking-[.15em] underline uppercase">
           {props.title}
-        </h2>
+        </h3>
         <p className="mt-4 text-justify">{props.description}</p>
       </div>
-      <div className="flex items-center">{props.icon}</div>
+      <div
+        className={cx(
+          "flex items-center shrink-0",
+          props.index % 2 == 1 ? "order-first" : "order-last"
+        )}
+      >
+        {props.icon}
+      </div>
     </div>
   );
 };
