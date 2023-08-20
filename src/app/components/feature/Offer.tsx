@@ -33,12 +33,12 @@ const Offer: FC = () => {
 
   return (
     <section
-      className="px-10 py-20"
+      className="px-10 py-20 z-40 relative"
       style={{
         backgroundImage: "url('/images/offer-background.png')",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
+        boxShadow: "0px 4px 30px 0px #075985",
       }}
     >
       <h2 className="uppercase text-2xl text-center font-bold tracking-[.15em]">
@@ -48,6 +48,7 @@ const Offer: FC = () => {
         <div className="space-y-5">
           {data.map((item, index) => (
             <_OfferTile
+              key={item.title}
               index={index}
               title={item.title}
               description={item.description}

@@ -42,10 +42,10 @@ const OurProcess: FC = () => {
                 <img src="/images/number-three.svg"></img>
               </div>
               <h3 className="text-lg text-orange-600 tracking-[.15em] underline uppercase">
-                testowanie i wsparcie
+                Testowanie i wsparcie
               </h3>
-              <p className="mt-6">
-                Dla nas praca nie kończy się po wdrożeniu strony:
+              <div className="mt-6">
+                <p>Dla nas praca nie kończy się po wdrożeniu strony:</p>
                 <ul className="list-disc my-4 list-inside space-y-1">
                   <li>
                     Regularnie przeprowadzamy testy, by zapewnić najwyższą
@@ -64,9 +64,11 @@ const OurProcess: FC = () => {
                     rozwiązania.
                   </li>
                 </ul>
-                Daj nam szansę, abyśmy mogli przekształcić Twoje wizje w
-                rezultaty online, które przynoszą wartość Twojemu biznesowi.
-              </p>
+                <p>
+                  Daj nam szansę, abyśmy mogli przekształcić Twoje wizje w
+                  rezultaty online, które przynoszą wartość Twojemu biznesowi.
+                </p>
+              </div>
             </div>
           </div>
           <div />
@@ -75,7 +77,7 @@ const OurProcess: FC = () => {
               <img src="/images/number-two.svg"></img>
             </div>
             <h3 className="text-lg text-orange-600 tracking-[.15em] underline uppercase">
-              projektowanie i wdrażanie
+              Projektowanie i wdrażanie
             </h3>
             <p className="mt-6">
               Nasz zespół projektowy, pełen kreatywności i pasji, przekształca
