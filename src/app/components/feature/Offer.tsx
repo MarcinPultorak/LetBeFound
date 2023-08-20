@@ -38,6 +38,7 @@ const Offer: FC = () => {
         backgroundImage: "url('/images/offer-background.png')",
         backgroundPosition: "center",
         backgroundSize: "cover",
+        boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
     >
       <h2 className="uppercase text-2xl text-center font-bold tracking-[.15em]">

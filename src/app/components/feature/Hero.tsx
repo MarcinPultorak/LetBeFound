@@ -11,6 +11,7 @@ const Hero: FC = () => {
         backgroundImage: "url('/images/hero.png')",
         backgroundPosition: "center",
         backgroundSize: "cover",
+        boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
     >
       <Header />
