@@ -72,13 +72,14 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
   return (
     <div
       className={cx(
-        "max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-8 space-x-16",
+        "max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-8 space-x-16 opacity-90",
         {
           "ml-32 space-x-reverse": props.index % 2 == 1,
         }
       )}
       style={{
         boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
+        backgroundColor: "#050915",
       }}
     >
       <div className="flex flex-col items-center">
