@@ -76,14 +76,16 @@ const AboutUs: FC = () => {
           boxShadow: "0px -1px 15px 0px #52525B",
         }}
       >
-        <div className="grid grid-cols-5 gap-10 max-w-screen-2xl m-auto">
-          <_AboutUsTile icon={data[0].icon} paragraph={data[0].paragraph} />
-          <_AboutUsTile icon={data[1].icon} paragraph={data[1].paragraph} />
-          <div className="">
-            <img className="mx-auto" src="/images/logo-aboutus-mirror.svg" />
+        <div className="px-10">
+          <div className="grid grid-cols-5 gap-10 max-w-screen-2xl mx-auto">
+            <_AboutUsTile icon={data[0].icon} paragraph={data[0].paragraph} />
+            <_AboutUsTile icon={data[1].icon} paragraph={data[1].paragraph} />
+            <div className="">
+              <img className="mx-auto" src="/images/logo-aboutus-mirror.svg" />
+            </div>
+            <_AboutUsTile icon={data[2].icon} paragraph={data[2].paragraph} />
+            <_AboutUsTile icon={data[3].icon} paragraph={data[3].paragraph} />
           </div>
-          <_AboutUsTile icon={data[2].icon} paragraph={data[2].paragraph} />
-          <_AboutUsTile icon={data[3].icon} paragraph={data[3].paragraph} />
         </div>
       </div>
     </section>
