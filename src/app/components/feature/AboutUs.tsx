@@ -40,7 +40,7 @@ const AboutUs: FC = () => {
         </h2>
         <div className="flex mt-20 justify-between px-32">
           <p
-            className="max-w-sm text-justify mr-20"
+            className="max-w-sm text-justify"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
@@ -67,7 +67,7 @@ const AboutUs: FC = () => {
         </div>
       </div>
       <div className="mt-16">
-        <img className="mx-auto" src="/images/logo-aboutus.svg"></img>
+        <img className="mx-auto" src="/images/logo-aboutus.svg" />
       </div>
       <div
         className="pb-32"
@@ -76,14 +76,11 @@ const AboutUs: FC = () => {
           boxShadow: "0px -1px 15px 0px #52525B",
         }}
       >
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-5 gap-10 max-w-screen-2xl m-auto">
           <_AboutUsTile icon={data[0].icon} paragraph={data[0].paragraph} />
           <_AboutUsTile icon={data[1].icon} paragraph={data[1].paragraph} />
           <div className="">
-            <img
-              className="mx-auto"
-              src="/images/logo-aboutus-mirror.svg"
-            ></img>
+            <img className="mx-auto" src="/images/logo-aboutus-mirror.svg" />
           </div>
           <_AboutUsTile icon={data[2].icon} paragraph={data[2].paragraph} />
           <_AboutUsTile icon={data[3].icon} paragraph={data[3].paragraph} />
@@ -102,15 +99,15 @@ type _AboutUsTileProps = {
 
 const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
   return (
-    <div className="flex flex-col items-center px-10 -mt-20">
+    <div className="flex flex-col items-center -mt-20">
       <div
-        className="w-36 h-36 rounded-full flex justify-center"
+        className="w-36 h-36 rounded-full flex justify-center items-center"
         style={{
           backgroundColor: "#182132",
           boxShadow: "0px 0px 10px 10px #090D19",
         }}
       >
-        <div className="self-center">{props.icon}</div>
+        {props.icon}
       </div>
       <p className="mt-10 text-center">{props.paragraph}</p>
     </div>
