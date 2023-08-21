@@ -42,7 +42,7 @@ const Textarea: ForwardRefRenderFunction<
             {...props}
             ref={ref}
             className={cx(
-              "w-full appearance-none rounded-md border bg-black px-3 pt-3 text-sm focus:outline-none focus:ring-2",
+              "w-full appearance-none rounded-md border bg-black px-3 pt-3 text-sm focus:outline-none focus:ring-2 resize-none",
               errorMessage
                 ? "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500"
                 : "border-zinc-700 focus:ring-teal-800"

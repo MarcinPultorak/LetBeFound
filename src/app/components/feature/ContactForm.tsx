@@ -22,7 +22,7 @@ const ContactForm: FC = () => {
       onSubmit={handleSubmit(_submit)}
       className="max-w-screen-md mx-auto"
     >
-      <fieldset>
+      <fieldset className="grid grid-cols-2 gap-5">
         <div>
           <FormInput
             {...register("name", {
@@ -41,20 +41,46 @@ const ContactForm: FC = () => {
               ...validateEmail(),
             })}
             label="Email"
+            maxLength={50}
+            required
             errorMessage={errors.email?.message}
           />
         </div>
       </fieldset>
       <fieldset>
-        <div>
-          <FormInput {...register("topic")} label="Temat" />
+        <div className="mt-8">
+          <FormInput
+            {...register("topic", {
+              ...validateRequired(),
+            })}
+            label="Temat"
+            maxLength={50}
+            required
+            errorMessage={errors.topic?.message}
+          />
         </div>
-        <div>
-          <FormTextarea {...register("message")} label="Wiadomość" rows={6} />
+        <div className="mt-8">
+          <FormTextarea
+            {...register("message", {
+              ...validateRequired(),
+            })}
+            label="Wiadomość"
+            maxLength={500}
+            required
+            rows={8}
+            //errorMessage={errors.message?.message}// walidacja działa ale sypie błędem
+          />
         </div>
       </fieldset>
-      <div>
-        <Button type={"submit"}>Wyślij wiadomość</Button>
+      <div className="mt-8 max-w-xs mx-auto">
+        <Button
+          style={{
+            boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)",
+          }}
+          type={"submit"}
+        >
+          Wyślij wiadomość
+        </Button>
       </div>
     </form>
   );
