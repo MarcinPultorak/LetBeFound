@@ -3,9 +3,10 @@ import { FC } from "react";
 const OurProcess: FC = () => {
   return (
     <section
-      className="px-10 py-20"
+      className="px-10 py-20 relative z-30"
       style={{
         backgroundColor: "#182132",
+        boxShadow: "0px 4px 40px 0px #090D19",
       }}
     >
       <h2 className="uppercase text-2xl text-center font-bold tracking-[.15em]">

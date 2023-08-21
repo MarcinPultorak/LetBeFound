@@ -26,7 +26,7 @@ const AboutUs: FC = () => {
 
   return (
     <section
-      className="pt-20 z-30 relative"
+      className="pt-20 z-20 relative"
       style={{
         backgroundImage: "url('/images/about-us.png')",
         backgroundPosition: "center",
