@@ -19,11 +19,13 @@ const SwitchIcon: FC = () => {
 
   return (
     <>
-      <div className="flex justify-center w-9 h-16 border border-orange-600 rounded-full">
+      <div className="flex justify-center w-6 h-12 sm:w-9 sm:h-16 border border-orange-600 rounded-full">
         <div
           className={cx(
-            "w-6 h-6 bg-orange-600 rounded-full mt-1",
-            moveSwitch ? "transition translate-y-[30px] duration-700" : ""
+            "w-4 h-4 sm:w-6 sm:h-6 bg-orange-600 rounded-full mt-1",
+            moveSwitch
+              ? "transition translate-y-[24px] sm:translate-y-[30px] duration-700"
+              : ""
           )}
         />
       </div>

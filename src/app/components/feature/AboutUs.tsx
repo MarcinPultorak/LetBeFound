@@ -3,22 +3,26 @@ import { FC, ReactNode } from "react";
 const AboutUs: FC = () => {
   const data = [
     {
-      icon: <img src="/images/icon-bulb.svg" />,
+      icon: <img className="w-8 md:w-12 lg:w-16" src="/images/icon-bulb.svg" />,
       paragraph:
         "Wierzymy w twórczość i nowatorskie podejście. Nasze projekty są pełne świeżości i kreatywności, aby wyróżnić Cię na tle konkurencji.",
     },
     {
-      icon: <img src="/images/icon-bolt.svg" />,
+      icon: <img className="w-8 md:w-12 lg:w-16" src="/images/icon-bolt.svg" />,
       paragraph:
         "Każdy członek zespołu LetBeFound ma w sobie ogromną pasję do tego, co robi. Ta energia jest wkomponowana w każdy projekt, który tworzymy.",
     },
     {
-      icon: <img src="/images/icon-users.svg" />,
+      icon: (
+        <img className="w-8 md:w-12 lg:w-16" src="/images/icon-users.svg" />
+      ),
       paragraph:
         "Tworzymy relacje oparte na zaufaniu i partnerstwie. Twoje cele stają się naszymi celami, a wspólnie pracujemy nad osiągnięciem sukcesu.",
     },
     {
-      icon: <img src="/images/icon-arrows-au.svg" />,
+      icon: (
+        <img className="w-8 md:w-12 lg:w-16" src="/images/icon-arrows-au.svg" />
+      ),
       paragraph:
         "Jako zespół tworzący strony internetowe, wiemy, że to nie tylko kwestia estetyki. Nasze strony są responsywne, zoptymalizowane pod kątem SEO i skupione na konwersjach.",
     },
@@ -34,13 +38,14 @@ const AboutUs: FC = () => {
         backgroundColor: "#090D19",
       }}
     >
-      <div className="max-w-screen-2xl mx-auto">
-        <h2 className="uppercase text-2xl text-center font-bold tracking-[.15em]">
+      <div className="max-w-screen-2xl mx-auto sm:px-0 px-5">
+        <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           LetBefound - kilka słów o nas
         </h2>
-        <div className="flex mt-20 justify-between px-32">
+        {/* <div className="flex mt-20 justify-between px-32"> */}
+        <div className="grid lg:grid-cols-2 lg:grid-flow-col justify-items-center mt-20 grid-flow-row lg:gap-0 gap-10">
           <p
-            className="max-w-sm text-justify"
+            className="max-w-sm text-justify text-xs sm:text-sm md:text-base"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
@@ -52,7 +57,7 @@ const AboutUs: FC = () => {
             osiągnęła najwyższe cele w przestrzeni internetowej.
           </p>
           <p
-            className="max-w-sm text-justify"
+            className="max-w-sm text-justify text-xs sm:text-sm md:text-base lg:mt-0"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
@@ -67,7 +72,7 @@ const AboutUs: FC = () => {
         </div>
       </div>
       <div className="mt-16">
-        <img className="mx-auto" src="/images/logo-aboutus.svg" />
+        <img className="w-28 md:w-36 mx-auto" src="/images/logo-aboutus.svg" />
       </div>
       <div
         className="pb-32"
@@ -76,12 +81,21 @@ const AboutUs: FC = () => {
           boxShadow: "0px -1px 15px 0px #52525B",
         }}
       >
-        <div className="px-10">
-          <div className="grid grid-cols-5 gap-10 max-w-screen-2xl mx-auto">
+        <div className="px-5 sm:px-10">
+          <div className="lg:grid grid-cols-5 gap-10 max-w-screen-2xl mx-auto">
+            <div className="block lg:hidden ">
+              <img
+                className="mx-auto w-28 md:w-36"
+                src="/images/logo-aboutus-mirror.svg"
+              />
+            </div>
             <_AboutUsTile icon={data[0].icon} paragraph={data[0].paragraph} />
             <_AboutUsTile icon={data[1].icon} paragraph={data[1].paragraph} />
-            <div className="">
-              <img className="mx-auto" src="/images/logo-aboutus-mirror.svg" />
+            <div className="hidden lg:block">
+              <img
+                className="mx-auto w-28 md:w-36"
+                src="/images/logo-aboutus-mirror.svg"
+              />
             </div>
             <_AboutUsTile icon={data[2].icon} paragraph={data[2].paragraph} />
             <_AboutUsTile icon={data[3].icon} paragraph={data[3].paragraph} />
@@ -101,9 +115,9 @@ type _AboutUsTileProps = {
 
 const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
   return (
-    <div className="flex flex-col items-center -mt-20">
+    <div className="flex flex-row lg:flex-col items-center lg:-mt-20 justify-center lg:justify-normal mt-16">
       <div
-        className="w-36 h-36 rounded-full flex justify-center items-center"
+        className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-full flex justify-center items-center shrink-0"
         style={{
           backgroundColor: "#182132",
           boxShadow: "0px 0px 10px 10px #090D19",
@@ -111,7 +125,9 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
       >
         {props.icon}
       </div>
-      <p className="mt-10 text-center">{props.paragraph}</p>
+      <p className="lg:mt-10 text-center max-w-xs sm:max-w-md text-xs sm:text-sm md:text-base px-4 lg:px-0">
+        {props.paragraph}
+      </p>
     </div>
   );
 };
