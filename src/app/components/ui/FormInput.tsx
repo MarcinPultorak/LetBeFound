@@ -34,7 +34,7 @@ const FormInput: ForwardRefRenderFunction<
               "h-12 w-full appearance-none rounded-md border bg-black px-3 text-sm text-zinc-300 focus:outline-none focus:ring-2 disabled:border-gray-200 disabled:bg-gray-50",
               errorMessage
                 ? "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500"
-                : "border-zinc-700 focus:ring-teal-800",
+                : "border-zinc-600 focus:ring-sky-800",
               {
                 "opacity-50": props.disabled,
               }
