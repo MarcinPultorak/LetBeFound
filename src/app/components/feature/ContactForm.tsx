@@ -20,7 +20,10 @@ const ContactForm: FC = () => {
     <form
       noValidate
       onSubmit={handleSubmit(_submit)}
-      className="max-w-screen-md mx-auto"
+      className=" mx-auto rounded-xl py-20 px-10 mt-16 border border-zinc-600"
+      style={{
+        backgroundColor: "rgba(7, 11, 22, 0.80)",
+      }}
     >
       <fieldset className="grid grid-cols-2 gap-5">
         <div>
@@ -47,8 +50,8 @@ const ContactForm: FC = () => {
           />
         </div>
       </fieldset>
-      <fieldset>
-        <div className="mt-8">
+      <fieldset className="mt-8 space-y-8">
+        <div>
           <FormInput
             {...register("topic", {
               ...validateRequired(),
@@ -59,7 +62,7 @@ const ContactForm: FC = () => {
             errorMessage={errors.topic?.message}
           />
         </div>
-        <div className="mt-8">
+        <div>
           <FormTextarea
             {...register("message", {
               ...validateRequired(),
@@ -72,7 +75,7 @@ const ContactForm: FC = () => {
           />
         </div>
       </fieldset>
-      <div className="mt-8 max-w-xs mx-auto">
+      <div className="mt-10 max-w-xs mx-auto">
         <Button
           style={{
             boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)",

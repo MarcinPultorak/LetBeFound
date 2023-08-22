@@ -16,14 +16,8 @@ const Contact: FC = () => {
         Skontaktuj się z nami!
       </h2>
       <div className="max-w-4xl mx-auto">
-        <div
-          className="rounded-xl py-20 px-10 mt-16 border border-zinc-600"
-          style={{
-            backgroundColor: "rgba(7, 11, 22, 0.80)",
-          }}
-        >
-          <ContactForm />
-        </div>
+        <ContactForm />
+
         <div className="grid grid-cols-2 gap-4 mt-6">
           <div
             className="rounded-xl p-10 border border-zinc-600"

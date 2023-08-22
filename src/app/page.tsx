@@ -4,6 +4,7 @@ import Offer from "./components/feature/Offer";
 import OurProcess from "./components/feature/OurProcess";
 import AboutUs from "./components/feature/AboutUs";
 import Contact from "./components/feature/Contact";
+import Footer from "./components/ui/Footer";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <OurProcess />
       <AboutUs />
       <Contact />
+      <Footer />
     </main>
   );
 }
