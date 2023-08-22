@@ -42,10 +42,9 @@ const AboutUs: FC = () => {
         <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           LetBefound - kilka słów o nas
         </h2>
-        {/* <div className="flex mt-20 justify-between px-32"> */}
         <div className="grid lg:grid-cols-2 lg:grid-flow-col justify-items-center mt-20 grid-flow-row lg:gap-0 gap-10">
           <p
-            className="max-w-sm text-justify text-xs sm:text-sm md:text-base"
+            className="max-w-xl lg:max-w-sm text-justify text-xs sm:text-sm md:text-base"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
@@ -57,7 +56,7 @@ const AboutUs: FC = () => {
             osiągnęła najwyższe cele w przestrzeni internetowej.
           </p>
           <p
-            className="max-w-sm text-justify text-xs sm:text-sm md:text-base lg:mt-0"
+            className="max-w-xl lg:max-w-sm text-justify text-xs sm:text-sm md:text-base lg:mt-0"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}

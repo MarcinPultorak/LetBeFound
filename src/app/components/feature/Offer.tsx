@@ -41,7 +41,7 @@ const Offer: FC = () => {
         boxShadow: "0px 4px 30px 0px #075985",
       }}
     >
-      <h2 className="uppercase text-base sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
+      <h2 className="uppercase text-base sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
         Pozwól klientom odnaleźć cię w internecie!
       </h2>
       <div className="max-w-screen-2xl mx-auto sm:mt-20 mt-10">
@@ -77,7 +77,7 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
         "md:max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-4 sm:p-8 space-x-8 opacity-90",
         {
           "md:ml-32 space-x-reverse": props.index % 2 == 1,
-        }
+        },
       )}
       style={{
         boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
@@ -95,7 +95,7 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
       <div
         className={cx(
           "flex items-center shrink-0 w-[40px] sm:w-auto",
-          props.index % 2 == 1 ? "order-first" : "order-last"
+          props.index % 2 == 1 ? "order-first" : "order-last",
         )}
       >
         {props.icon}

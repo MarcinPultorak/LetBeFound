@@ -22,7 +22,7 @@ const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
       className={cx(
         "relative flex h-14 w-full items-center justify-center whitespace-nowrap rounded-md text-base font-bold uppercase transition ",
         props.className,
-        variants[props.variant ?? "primary"]
+        variants[props.variant ?? "primary"],
       )}
       type={props.type}
       disabled={props.disabled || isSubmitting}
@@ -31,7 +31,7 @@ const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
         <Spinner
           className={cx(
             "absolute h-3 fill-current",
-            isSubmitting ? "visible" : "invisible"
+            isSubmitting ? "visible" : "invisible",
           )}
         />
         <span
