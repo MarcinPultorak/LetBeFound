@@ -33,7 +33,7 @@ const Offer: FC = () => {
 
   return (
     <section
-      className="px-10 py-20 z-40 relative"
+      className="px-5 sm:px-10 py-10 sm:py-20 z-40 relative"
       style={{
         backgroundImage: "url('/images/offer-background.png')",
         backgroundPosition: "center",
@@ -41,10 +41,10 @@ const Offer: FC = () => {
         boxShadow: "0px 4px 30px 0px #075985",
       }}
     >
-      <h2 className="uppercase text-2xl text-center font-bold tracking-[.15em]">
+      <h2 className="uppercase text-base sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
         Pozwól klientom odnaleźć cię w internecie!
       </h2>
-      <div className="max-w-screen-2xl mx-auto mt-20">
+      <div className="max-w-screen-2xl mx-auto sm:mt-20 mt-10">
         <div className="space-y-5">
           {data.map((item, index) => (
             <_OfferTile
@@ -74,9 +74,9 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
   return (
     <div
       className={cx(
-        "max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-8 space-x-16 opacity-90",
+        "md:max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-4 sm:p-8 space-x-8 opacity-90",
         {
-          "ml-32 space-x-reverse": props.index % 2 == 1,
+          "md:ml-32 space-x-reverse": props.index % 2 == 1,
         }
       )}
       style={{
@@ -85,14 +85,16 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
       }}
     >
       <div className="flex flex-col items-center">
-        <h3 className="text-lg text-orange-600 tracking-[.15em] underline uppercase">
+        <h3 className="text-sm md:text-base lg:text-lg text-orange-600 tracking-[.15em] underline uppercase">
           {props.title}
         </h3>
-        <p className="mt-4 text-justify">{props.description}</p>
+        <p className="mt-4 text-justify text-xs sm:text-sm lg:text-base">
+          {props.description}
+        </p>
       </div>
       <div
         className={cx(
-          "flex items-center shrink-0",
+          "flex items-center shrink-0 w-[40px] sm:w-auto",
           props.index % 2 == 1 ? "order-first" : "order-last"
         )}
       >
