@@ -10,10 +10,15 @@ import React, {
 } from "react";
 
 import Label from "./Label";
+import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 
 type TextareaProps = {
   label?: string;
-  errorMessage?: string;
+  errorMessage?:
+    | string
+    | FieldError
+    | Merge<FieldError, FieldErrorsImpl>
+    | undefined;
   maxLength?: number;
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 };
@@ -55,7 +60,9 @@ const Textarea: ForwardRefRenderFunction<
           />
         </span>
       </label>
-      <div className="my-2 text-xs text-red-500">{errorMessage}</div>
+      {errorMessage && (
+        <div className="my-2 text-xs text-red-500">{`${errorMessage}`}</div>
+      )}
     </>
   );
 };

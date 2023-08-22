@@ -68,7 +68,7 @@ const ContactForm: FC = () => {
             maxLength={500}
             required
             rows={8}
-            //errorMessage={errors.message?.message}// walidacja działa ale sypie błędem
+            errorMessage={errors.message?.message}
           />
         </div>
       </fieldset>
