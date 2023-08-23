@@ -10,7 +10,7 @@ const OurProcess: FC = () => {
 
   return (
     <section
-      className="px-5 sm:px-10 py-20 relative z-30"
+      className="px-5 sm:px-10 py-10 lg:py-20 relative z-30"
       style={{
         backgroundColor: "#182132",
         boxShadow: "0px 4px 40px 0px #090D19",

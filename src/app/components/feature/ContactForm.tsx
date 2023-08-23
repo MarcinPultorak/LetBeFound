@@ -1,20 +1,26 @@
 "use client";
-import { FC } from "react";
+
+import { FC, useState } from "react";
 import FormInput from "../ui/FormInput";
 import Button from "../ui/Button";
 import { useForm } from "react-hook-form";
 import FormTextarea from "../ui/FormTextarea";
 import { validateEmail, validateRequired } from "@/app/utils/validators";
+import { ContactFormDto } from "@/app/interfaces/types";
 
 const ContactForm: FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm<ContactFormDto>();
 
-  const _submit = (payload: any) => {};
+  const _submit = (payload: ContactFormDto) => {
+    setIsLoading(true);
+  };
 
   return (
     <form
@@ -77,6 +83,7 @@ const ContactForm: FC = () => {
       </fieldset>
       <div className="mt-10 max-w-xs mx-auto">
         <Button
+          isSubmitting={isLoading}
           style={{
             boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)",
           }}
