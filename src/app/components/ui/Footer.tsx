@@ -5,7 +5,7 @@ import LogoText from "./LogoText";
 const Footer: FC = () => {
   return (
     <section
-      className="border-t border-zinc-600 px-5 sm:px-10"
+      className="border-t border-zinc-600 px-5 sm:px-10 py-5"
       style={{
         backgroundColor: "#070B16",
       }}

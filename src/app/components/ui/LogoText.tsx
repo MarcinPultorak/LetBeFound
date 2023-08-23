@@ -4,12 +4,13 @@ import { FC } from "react";
 const LogoText: FC = () => {
   return (
     <Link href={"/"}>
-      <div className="flex items-center gap-2 uppercase font-medium text-xs h-28 w-full">
+      <div className="flex items-center gap-2 uppercase font-medium text-xs h-24 w-24">
         <img className="f-full w-full" src="/images/logo-about-us.svg" />
         <div>
           <p
             style={{
               color: "#f5793b",
+              textShadow: "0px 1px 2px #050915",
             }}
           >
             let
@@ -17,6 +18,7 @@ const LogoText: FC = () => {
           <p
             style={{
               color: "#aa3982",
+              textShadow: "0px 1px 2px #050915",
             }}
           >
             be
@@ -24,6 +26,7 @@ const LogoText: FC = () => {
           <p
             style={{
               color: "#20acbd",
+              textShadow: "0px 1px 2px #050915",
             }}
           >
             found

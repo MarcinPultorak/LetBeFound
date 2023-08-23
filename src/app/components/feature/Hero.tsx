@@ -14,7 +14,7 @@ const Hero: FC = () => {
         boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
     >
-      {/* <Header /> */}
+      <Header />
       <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between max-h-[640px] mb-40 mt-40 sm:mb-60">
         <div className="flex flex-col items-center">
           <h1 className="uppercase text-xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[.2em] font-bold text-center">

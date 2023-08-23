@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Logo from "./Logo";
+import LogoText from "./LogoText";
 
 const Header: FC = () => {
   const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
@@ -7,7 +7,7 @@ const Header: FC = () => {
     <header className="absolute top-0 inset-x-0 h-28 w-full px-10">
       <div className="relative flex max-w-screen-2xl w-full h-full justify-end mx-auto">
         <div className="absolute top-8 left-0">
-          <Logo />
+          <LogoText />
         </div>
         <ul className="flex space-x-10 items-center">
           {ids.map((id) => (
