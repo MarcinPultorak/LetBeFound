@@ -26,12 +26,12 @@ const ContactForm: FC = () => {
     <form
       noValidate
       onSubmit={handleSubmit(_submit)}
-      className=" mx-auto rounded-xl py-20 px-10 mt-16 border border-zinc-600"
+      className=" mx-auto rounded-xl py-10 sm:py-20 px-5 sm:px-10 mt-16 border border-zinc-600"
       style={{
         backgroundColor: "rgba(7, 11, 22, 0.80)",
       }}
     >
-      <fieldset className="grid grid-cols-2 gap-5">
+      <fieldset className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-5">
         <div>
           <FormInput
             {...register("name", {
@@ -81,7 +81,7 @@ const ContactForm: FC = () => {
           />
         </div>
       </fieldset>
-      <div className="mt-10 max-w-xs mx-auto">
+      <div className="mt-10 md:max-w-xs mx-auto">
         <Button
           isSubmitting={isLoading}
           style={{
