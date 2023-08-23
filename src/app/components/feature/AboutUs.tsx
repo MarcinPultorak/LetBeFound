@@ -34,7 +34,7 @@ const AboutUs: FC = () => {
 
   return (
     <section
-      className="pt-10 lg:pt-20 z-20 relative"
+      className="pt-10 md:pt-20 z-20 relative"
       style={{
         backgroundImage: "url('/images/about-us.png')",
         backgroundPosition: "center",
@@ -46,7 +46,7 @@ const AboutUs: FC = () => {
         <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           LetBefound - kilka słów o nas
         </h2>
-        <div className="grid lg:grid-cols-2 lg:grid-flow-col justify-items-center mt-20 grid-flow-row lg:gap-0 gap-10">
+        <div className="grid lg:grid-cols-2 lg:grid-flow-col justify-items-center mt-16 md:mt-20 grid-flow-row lg:gap-0 gap-10">
           <p
             className="max-w-xl lg:max-w-sm text-justify text-xs sm:text-sm md:text-base"
             style={{

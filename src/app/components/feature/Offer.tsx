@@ -33,7 +33,7 @@ const Offer: FC = () => {
 
   return (
     <section
-      className="px-5 sm:px-10 py-10 sm:py-20 z-40 relative"
+      className="px-5 sm:px-10 py-10 md:py-20 z-40 relative"
       style={{
         backgroundImage: "url('/images/offer-background.png')",
         backgroundPosition: "center",
@@ -77,7 +77,7 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
         "md:max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-4 sm:p-8 space-x-8 opacity-90",
         {
           "md:ml-32 space-x-reverse": props.index % 2 == 1,
-        },
+        }
       )}
       style={{
         boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
@@ -95,7 +95,7 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
       <div
         className={cx(
           "flex items-center shrink-0 w-[40px] sm:w-auto",
-          props.index % 2 == 1 ? "order-first" : "order-last",
+          props.index % 2 == 1 ? "order-first" : "order-last"
         )}
       >
         {props.icon}

@@ -26,7 +26,7 @@ const ContactForm: FC = () => {
     <form
       noValidate
       onSubmit={handleSubmit(_submit)}
-      className=" mx-auto rounded-xl py-10 sm:py-20 px-5 sm:px-10 mt-16 border border-zinc-600"
+      className=" mx-auto rounded-xl py-10 md:py-20 px-5 sm:px-10 mt-16 border border-zinc-600"
       style={{
         backgroundColor: "rgba(7, 11, 22, 0.80)",
       }}
