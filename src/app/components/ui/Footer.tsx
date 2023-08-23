@@ -4,8 +4,8 @@ import LogoText from "./LogoText";
 
 const Footer: FC = () => {
   return (
-    <section
-      className="border-t border-zinc-600 px-5 sm:px-10 py-5"
+    <footer
+      className="border-t border-zinc-600 px-5 sm:px-10"
       style={{
         backgroundColor: "#070B16",
       }}
@@ -18,7 +18,7 @@ const Footer: FC = () => {
           Copyright © 2023 LetBeFound
         </p>
       </div>
-    </section>
+    </footer>
   );
 };
 
