@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
-import Header from "../ui/Header";
+import Header from "./Header/Header";
 
 const Hero: FC = () => {
   return (

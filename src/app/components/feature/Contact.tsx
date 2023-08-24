@@ -19,15 +19,14 @@ const Contact: FC = () => {
         Skontaktuj się z nami!
       </h2>
       <motion.div
-        whileInView={{ scale: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        whileInView={{ x: [-300, 0], opacity: [0, 1] }}
+        transition={{ duration: 1 }}
         className="max-w-4xl mx-auto"
       >
         <ContactForm />
 
         <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 mt-6">
           <motion.div
-            whileHover={{ scale: 1.05 }}
             className="rounded-xl space-y-6 md:space-y-10 p-6 md:p-10 border border-zinc-600"
             style={{
               backgroundColor: "rgba(7, 11, 22, 0.80)",
@@ -42,7 +41,6 @@ const Contact: FC = () => {
             </p>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.05 }}
             className="rounded-xl space-y-6 md:space-y-10 p-6 md:p-10 border border-zinc-600"
             style={{
               backgroundColor: "rgba(7, 11, 22, 0.80)",

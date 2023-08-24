@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { FC } from "react";
 
-const LogoText: FC = () => {
+const LogoTextMobile: FC = () => {
   return (
     <Link href={"/"}>
-      <div className="flex items-center gap-2 uppercase font-medium text-xs h-24 w-24">
+      <div className="flex items-center gap-2 uppercase font-medium text-xs h-16 w-16">
         <img className="h-full w-full" src="/images/logo-about-us.svg" />
-        <div>
+        <div className="text-[8px] leading-snug">
           <p
             style={{
               color: "#f5793b",
@@ -37,4 +37,4 @@ const LogoText: FC = () => {
   );
 };
 
-export default LogoText;
+export default LogoTextMobile;
