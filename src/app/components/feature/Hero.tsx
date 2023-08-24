@@ -6,7 +6,8 @@ import Header from "./Header/Header";
 const Hero: FC = () => {
   return (
     <section
-      className="w-full h-screen flex flex-col flex-1 justify-center relative px-4 sm:px-10 z-50"
+      id={"Home"}
+      className="w-full h-screen flex flex-col flex-1 md:justify-center relative px-4 sm:px-10 z-50"
       style={{
         backgroundImage: "url('/images/hero.png')",
         backgroundPosition: "center",

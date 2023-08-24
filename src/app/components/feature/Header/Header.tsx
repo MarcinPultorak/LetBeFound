@@ -1,40 +1,70 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import LogoText from "../../ui/LogoText";
 import HeaderMobile from "./HeaderMobile";
 import LogoTextMobile from "../../ui/LogoTextMobile";
+import { Bars3Icon } from "@heroicons/react/24/solid";
+import { useScroll } from "framer-motion";
+import cx from "classnames";
 
 const Header: FC = () => {
+  const [isOpened, setIsOpened] = useState<boolean>(false);
+  const [isFollowing, setIsFollowing] = useState<boolean>(false);
+
+  const { scrollY } = useScroll();
+
   const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
 
-  const [isOpened, setIsOpened] = useState<boolean>(false);
+  useEffect(() => {
+    const updateHeader = () => {
+      scrollY.get() > 0 ? setIsFollowing(true) : setIsFollowing(false);
+    };
 
-  const closeMenu = () => {
-    setIsOpened(false);
-  };
+    const unsubscribeY = scrollY.on("change", updateHeader);
+
+    return () => {
+      unsubscribeY();
+    };
+  }, [scrollY]);
 
   return (
-    <header className="relative md:absolute top-0 inset-x-0 h-28 w-full md:px-10">
-      {isOpened && <HeaderMobile closeMenu={closeMenu} />}
-      <div className="md:hidden">
-        <div className="absolute top-8 left-0">
-          <LogoTextMobile />
-        </div>
-        <img
-          className="absolute right-4 top-8 sm:right-0 sm:top-10 cursor-pointer"
-          onClick={() => setIsOpened(!isOpened)}
-          src="/images/icon-hamburger.svg"
-        />
+    <header
+      className={cx(
+        "md:inset-x-0 w-full flex-shrink-0",
+        isFollowing
+          ? "fixed top-0 left-0 px-5 md:px-10 bg-grayBlue h-20 shadow-black shadow-md z-50"
+          : "md:absolute md:top-0 md:px-10 h-28"
+      )}
+    >
+      {isOpened && <HeaderMobile closeMenu={() => setIsOpened(false)} />}
+      <div className="flex justify-between items-center h-full md:hidden">
+        <LogoTextMobile />
+
+        <button onClick={() => setIsOpened(!isOpened)}>
+          <Bars3Icon className="w-8 h-8" />
+        </button>
       </div>
-      <div className="relative hidden md:flex md:max-w-screen-2xl md:w-full md:h-full md:justify-end md:mx-auto">
-        <div className="absolute top-8 left-0">
-          <LogoText />
+      <div
+        className={cx(
+          "relative hidden md:flex md:max-w-screen-2xl md:w-full md:h-full  md:mx-auto",
+          isFollowing ? "md:justify-between items-center" : "md:justify-end"
+        )}
+      >
+        <div
+          className={cx("", {
+            "absolute top-8 left-0": !isFollowing,
+          })}
+        >
+          {isFollowing ? <LogoTextMobile /> : <LogoText />}
         </div>
         <ul className="flex space-x-10 items-center">
           {ids.map((id) => (
-            <li className="cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8">
-              <a>{id}</a>
+            <li
+              key={id}
+              className="cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8"
+            >
+              <a href={`#${id}`}>{id}</a>
             </li>
           ))}
         </ul>

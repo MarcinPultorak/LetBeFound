@@ -35,6 +35,7 @@ const AboutUs: FC = () => {
 
   return (
     <section
+      id={"O nas"}
       className="pt-10 md:pt-20 z-20 relative"
       style={{
         backgroundImage: "url('/images/about-us.png')",
@@ -155,12 +156,7 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
               }
             )}
           >
-            <div
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full flex justify-center items-center shrink-0"
-              style={{
-                backgroundColor: "#182132",
-              }}
-            >
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full flex justify-center items-center shrink-0 bg-grayBlue">
               {props.icon}
             </div>
             <p
@@ -184,9 +180,8 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
           className="flex flex-row lg:flex-col items-center -mt-20 justify-normal"
         >
           <div
-            className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-full flex justify-center items-center shrink-0"
+            className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-full flex justify-center items-center shrink-0 bg-grayBlue"
             style={{
-              backgroundColor: "#182132",
               boxShadow: "0px 0px 10px 10px #090D19",
             }}
           >

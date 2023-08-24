@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 const Contact: FC = () => {
   return (
     <section
+      id={"Kontakt"}
       className="px-5 py-10 sm:px-10 md:py-20"
       style={{
         backgroundColor: "#010101",
