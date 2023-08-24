@@ -3,6 +3,7 @@
 import useIsMobile from "@/app/hooks/useIsMobile";
 import { FC, ReactNode } from "react";
 import cx from "classnames";
+import { motion } from "framer-motion";
 
 const AboutUs: FC = () => {
   const data = [
@@ -34,6 +35,7 @@ const AboutUs: FC = () => {
 
   return (
     <section
+      id={"O nas"}
       className="pt-10 md:pt-20 z-20 relative"
       style={{
         backgroundImage: "url('/images/about-us.png')",
@@ -154,12 +156,7 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
               }
             )}
           >
-            <div
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full flex justify-center items-center shrink-0"
-              style={{
-                backgroundColor: "#182132",
-              }}
-            >
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full flex justify-center items-center shrink-0 bg-grayBlue">
               {props.icon}
             </div>
             <p
@@ -173,11 +170,18 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-row lg:flex-col items-center -mt-20 justify-normal">
+        <motion.div
+          whileInView={{
+            scale: [0, 1],
+            opacity: [0, 1],
+            transition: { type: "spring", duration: 1.5, bounce: 0.3 },
+          }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-row lg:flex-col items-center -mt-20 justify-normal"
+        >
           <div
-            className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-full flex justify-center items-center shrink-0"
+            className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-full flex justify-center items-center shrink-0 bg-grayBlue"
             style={{
-              backgroundColor: "#182132",
               boxShadow: "0px 0px 10px 10px #090D19",
             }}
           >
@@ -186,7 +190,7 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
           <p className="lg:mt-10 text-center max-w-xs sm:max-w-md text-xs sm:text-sm md:text-base px-4 lg:px-0">
             {props.paragraph}
           </p>
-        </div>
+        </motion.div>
       )}
     </>
   );

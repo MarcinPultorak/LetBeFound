@@ -1,9 +1,13 @@
+"use client";
+
 import { FC } from "react";
 import ContactForm from "./ContactForm";
+import { motion } from "framer-motion";
 
 const Contact: FC = () => {
   return (
     <section
+      id={"Kontakt"}
       className="px-5 py-10 sm:px-10 md:py-20"
       style={{
         backgroundColor: "#010101",
@@ -15,11 +19,15 @@ const Contact: FC = () => {
       <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
         Skontaktuj się z nami!
       </h2>
-      <div className="max-w-4xl mx-auto">
+      <motion.div
+        whileInView={{ x: [-300, 0], opacity: [0, 1] }}
+        transition={{ duration: 1 }}
+        className="max-w-4xl mx-auto"
+      >
         <ContactForm />
 
         <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 mt-6">
-          <div
+          <motion.div
             className="rounded-xl space-y-6 md:space-y-10 p-6 md:p-10 border border-zinc-600"
             style={{
               backgroundColor: "rgba(7, 11, 22, 0.80)",
@@ -32,8 +40,8 @@ const Contact: FC = () => {
             <p className="text-center text-sm md:text-base lg:text-lg">
               kontakt@letbefound.pl
             </p>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
             className="rounded-xl space-y-6 md:space-y-10 p-6 md:p-10 border border-zinc-600"
             style={{
               backgroundColor: "rgba(7, 11, 22, 0.80)",
@@ -51,9 +59,9 @@ const Contact: FC = () => {
                 Dawid: +48 000 000 000
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

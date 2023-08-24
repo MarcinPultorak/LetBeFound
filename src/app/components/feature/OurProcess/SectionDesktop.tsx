@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { motion } from "framer-motion";
 
 const SectionDesktop: FC = () => {
   return (
@@ -13,7 +14,11 @@ const SectionDesktop: FC = () => {
         <div className="py-10 sm:py-20">
           <div className="relative max-w-[400px] sm:max-w-[550px] md:max-w-full mx-auto sm:-mt-20 md:-mt-0">
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-16 left-8 -top-20 md:left-28 lg:-top-48 lg:-left-12">
-              <img src="/images/number-one.svg"></img>
+              <motion.img
+                whileInView={{ scale: [0, 1] }}
+                transition={{ duration: 1 }}
+                src="/images/number-one.svg"
+              />
             </div>
             <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
               Konsultacje i analiza
@@ -29,7 +34,11 @@ const SectionDesktop: FC = () => {
           </div>
           <div className="mt-[500px] sm:mt-[350px] md:mt-48 relative max-w-[400px] sm:max-w-[550px] md:max-w-full mx-auto">
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] left-36 top-20 sm:top-0 sm:left-96 md:top-52 md:left-36 lg:top-20 lg:left-28">
-              <img src="/images/number-three.svg"></img>
+              <motion.img
+                whileInView={{ scale: [0, 1] }}
+                transition={{ duration: 1 }}
+                src="/images/number-three.svg"
+              />
             </div>
             <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
               Testowanie i wsparcie
@@ -64,7 +73,11 @@ const SectionDesktop: FC = () => {
         <div />
         <div className="self-center relative max-w-[400px] sm:max-w-[550px] md:max-w-full mx-auto mt-20 sm:mt-0">
           <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-12 sm:left-36 md:-top-20 md:left-16 lg:-top-28 lg:left-36">
-            <img src="/images/number-two.svg"></img>
+            <motion.img
+              whileInView={{ scale: [0, 1] }}
+              transition={{ duration: 1 }}
+              src="/images/number-two.svg"
+            />
           </div>
           <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
             Projektowanie i wdrażanie

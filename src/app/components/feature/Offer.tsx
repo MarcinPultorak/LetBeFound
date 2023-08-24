@@ -2,6 +2,7 @@
 
 import { FC, ReactNode } from "react";
 import cx from "classnames";
+import { motion } from "framer-motion";
 
 const Offer: FC = () => {
   const data = [
@@ -33,6 +34,7 @@ const Offer: FC = () => {
 
   return (
     <section
+      id={"Oferta"}
       className="px-5 sm:px-10 py-10 md:py-20 z-40 relative"
       style={{
         backgroundImage: "url('/images/offer-background.png')",
@@ -71,8 +73,23 @@ type _OfferTileProps = {
 };
 
 const _OfferTile: FC<_OfferTileProps> = (props) => {
+  const even = () => {
+    if (props.index % 2 == 1) {
+      return [-300, 0];
+    } else {
+      return [300, 0];
+    }
+  };
+
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileInView={{
+        x: even(),
+        opacity: [0, 1],
+        transition: { duration: [0.8] },
+      }}
+      transition={{ duration: 0.5 }}
       className={cx(
         "md:max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-4 sm:p-8 space-x-8 opacity-90",
         {
@@ -100,6 +117,6 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
       >
         {props.icon}
       </div>
-    </div>
+    </motion.div>
   );
 };
