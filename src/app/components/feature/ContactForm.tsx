@@ -8,7 +8,11 @@ import FormTextarea from "../ui/FormTextarea";
 import { validateEmail, validateRequired } from "@/app/utils/validators";
 import { ContactFormDto } from "@/app/interfaces/types";
 
-const ContactForm: FC = () => {
+type Props = {
+  callback: (payload: ContactFormDto) => Promise<void>;
+};
+
+const ContactForm: FC<Props> = (props) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const {
@@ -20,6 +24,15 @@ const ContactForm: FC = () => {
 
   const _submit = (payload: ContactFormDto) => {
     setIsLoading(true);
+    props
+      .callback(payload)
+      .then(() => {
+        reset();
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+      });
   };
 
   return (

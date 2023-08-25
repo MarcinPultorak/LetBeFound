@@ -3,8 +3,32 @@
 import { FC } from "react";
 import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
+import { ContactFormDto } from "@/app/interfaces/types";
 
 const Contact: FC = () => {
+  const handleContactForm = async (payload: ContactFormDto): Promise<void> => {
+    await fetch("/api", {
+      body: JSON.stringify({
+        email: payload.email,
+        fullname: payload.name,
+        subject: payload.topic,
+        message: payload.message,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then(() => {
+        console.log("SUCCESS");
+        return Promise.resolve;
+      })
+      .catch((err) => {
+        console.log("ERROR");
+        return Promise.reject();
+      });
+  };
+
   return (
     <section
       id={"Kontakt"}
@@ -24,7 +48,7 @@ const Contact: FC = () => {
         transition={{ duration: 1 }}
         className="max-w-4xl mx-auto"
       >
-        <ContactForm />
+        <ContactForm callback={handleContactForm} />
 
         <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 mt-6">
           <motion.div

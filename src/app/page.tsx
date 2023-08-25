@@ -5,6 +5,7 @@ import OurProcess from "./components/feature/OurProcess/OurProcess";
 import AboutUs from "./components/feature/AboutUs";
 import Contact from "./components/feature/Contact";
 import Footer from "./components/ui/Footer";
+import PrivacyPolicy from "./components/feature/PrivacyPolicy";
 
 export default function Home() {
   return (
