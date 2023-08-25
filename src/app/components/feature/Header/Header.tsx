@@ -7,14 +7,16 @@ import LogoTextMobile from "../../ui/LogoTextMobile";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { useScroll } from "framer-motion";
 import cx from "classnames";
+import { useScrollSpy } from "@/app/hooks/useScrollSpy";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isFollowing, setIsFollowing] = useState<boolean>(false);
 
-  const { scrollY } = useScroll();
-
   const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
+
+  const { scrollY } = useScroll();
+  const activeId = useScrollSpy(ids, 0);
 
   useEffect(() => {
     const updateHeader = () => {
@@ -62,9 +64,10 @@ const Header: FC = () => {
           {ids.map((id) => (
             <li
               key={id}
-              className={
-                "cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8"
-              }
+              className={cx(
+                "cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8",
+                id == activeId && "underline underline-offset-8 text-orange-600"
+              )}
             >
               <a href={`#${id}`}>{id}</a>
             </li>
