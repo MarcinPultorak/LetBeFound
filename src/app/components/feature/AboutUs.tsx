@@ -98,11 +98,14 @@ const AboutUs: FC = () => {
               icon={data[0].icon}
               paragraph={data[0].paragraph}
               even={false}
+              tileIndex={0}
             />
+
             <_AboutUsTile
               icon={data[1].icon}
               paragraph={data[1].paragraph}
               even={true}
+              tileIndex={1}
             />
             <div className="hidden lg:block">
               <img
@@ -114,11 +117,13 @@ const AboutUs: FC = () => {
               icon={data[2].icon}
               paragraph={data[2].paragraph}
               even={false}
+              tileIndex={2}
             />
             <_AboutUsTile
               icon={data[3].icon}
               paragraph={data[3].paragraph}
               even={true}
+              tileIndex={3}
             />
           </div>
         </div>
@@ -133,6 +138,7 @@ type _AboutUsTileProps = {
   icon: ReactNode;
   paragraph: string;
   even: boolean;
+  tileIndex: number;
 };
 
 const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
@@ -174,9 +180,13 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
           whileInView={{
             scale: [0, 1],
             opacity: [0, 1],
-            transition: { type: "spring", duration: 1.5, bounce: 0.3 },
+            transition: {
+              type: "spring",
+              duration: 1.5,
+              bounce: 0.4,
+              delay: props.tileIndex * 0.3,
+            },
           }}
-          transition={{ duration: 0.5 }}
           className="flex flex-row lg:flex-col items-center -mt-20 justify-normal"
         >
           <div

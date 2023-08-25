@@ -87,9 +87,9 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
       whileInView={{
         x: even(),
         opacity: [0, 1],
-        transition: { duration: [0.8] },
+        transition: { type: "spring" },
       }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className={cx(
         "md:max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-4 sm:p-8 space-x-8 opacity-90",
         {

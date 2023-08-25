@@ -62,7 +62,9 @@ const Header: FC = () => {
           {ids.map((id) => (
             <li
               key={id}
-              className="cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8"
+              className={
+                "cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8"
+              }
             >
               <a href={`#${id}`}>{id}</a>
             </li>
