@@ -12,7 +12,7 @@ const SectionDesktop: FC = () => {
         }}
       >
         <div className="py-10 sm:py-20">
-          <div className="relative max-w-[400px] sm:max-w-[550px] md:max-w-full mx-auto sm:-mt-20 md:-mt-0">
+          <div className="relative mx-auto sm:-mt-20 md:-mt-0 border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-16 left-8 -top-20 md:left-28 lg:-top-48 lg:-left-12">
               <motion.img
                 whileInView={{ scale: [0, 1] }}
@@ -32,7 +32,7 @@ const SectionDesktop: FC = () => {
               projektu.
             </p>
           </div>
-          <div className="mt-[500px] sm:mt-[350px] md:mt-48 relative max-w-[400px] sm:max-w-[550px] md:max-w-full mx-auto">
+          <div className=" md:mt-48 relative mx-auto border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] left-36 top-20 sm:top-0 sm:left-96 md:top-52 md:left-36 lg:top-20 lg:left-28">
               <motion.img
                 whileInView={{ scale: [0, 1] }}
@@ -71,7 +71,7 @@ const SectionDesktop: FC = () => {
           </div>
         </div>
         <div />
-        <div className="self-center relative max-w-[400px] sm:max-w-[550px] md:max-w-full mx-auto mt-20 sm:mt-0">
+        <div className="self-center relative border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
           <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-12 sm:left-36 md:-top-20 md:left-16 lg:-top-28 lg:left-36">
             <motion.img
               whileInView={{ scale: [0, 1] }}
