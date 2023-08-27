@@ -33,10 +33,10 @@ const Header: FC = () => {
   return (
     <header
       className={cx(
-        "md:inset-x-0 w-full flex-shrink-0",
+        "md:inset-x-0 w-full flex-shrink-0 fixed top-0 left-0 px-5 md:px-10",
         isFollowing
-          ? "fixed top-0 left-0 px-5 md:px-10 bg-grayBlue h-20 shadow-black shadow-md z-50"
-          : "md:absolute md:top-0 md:px-10 h-28"
+          ? "bg-grayBlue h-20 shadow-black shadow-md z-50"
+          : "md:absolute md:top-0 h-28"
       )}
     >
       {isOpened && <HeaderMobile closeMenu={() => setIsOpened(false)} />}
