@@ -87,13 +87,14 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       whileInView={{
         x: even(),
         opacity: [0, 1],
-        transition: { type: "spring" },
+        transition: { type: "spring", delay: 0.3 },
       }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.2 }}
+      viewport={{ once: true }}
       className={cx(
         "md:max-w-xl flex justify-between border border-zinc-600 rounded-2xl p-4 sm:p-8 space-x-8 opacity-90",
         {

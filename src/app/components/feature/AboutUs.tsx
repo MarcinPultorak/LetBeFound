@@ -198,6 +198,7 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
         </div>
       ) : (
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             scale: [0, 1],
             opacity: [0, 1],

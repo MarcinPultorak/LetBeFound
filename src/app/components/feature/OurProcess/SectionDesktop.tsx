@@ -19,7 +19,8 @@ const SectionDesktop: FC = () => {
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-16 left-8 -top-20 md:left-28 lg:-top-48 lg:-left-12">
               <motion.img
                 whileInView={{ scale: [0, 1] }}
-                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.1 }}
                 src="/images/number-one.svg"
               />
             </div>
@@ -39,7 +40,8 @@ const SectionDesktop: FC = () => {
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] left-36 top-20 sm:top-0 sm:left-96 md:top-52 md:left-36 lg:top-20 lg:left-28">
               <motion.img
                 whileInView={{ scale: [0, 1] }}
-                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.8 }}
                 src="/images/number-three.svg"
               />
             </div>
@@ -78,7 +80,8 @@ const SectionDesktop: FC = () => {
           <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-12 sm:left-36 md:-top-20 md:left-16 lg:-top-28 lg:left-36">
             <motion.img
               whileInView={{ scale: [0, 1] }}
-              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4 }}
               src="/images/number-two.svg"
             />
           </div>

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Logo from "./Logo";
 import LogoText from "./LogoText";
+import LogoTextMobile from "./LogoTextMobile";
 
 const Footer: FC = () => {
   return (
@@ -11,8 +12,11 @@ const Footer: FC = () => {
       }}
     >
       <div className="max-w-screen-2xl mx-auto flex">
-        <div className="w-12 md:w-20">
+        <div className="hidden md:block">
           <LogoText />
+        </div>
+        <div className="block md:hidden">
+          <LogoTextMobile />
         </div>
         <p className="self-center ml-auto sm:mx-auto text-xs sm:text-sm md:text-base">
           Copyright © 2023 LetBeFound

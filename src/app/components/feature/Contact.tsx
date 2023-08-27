@@ -46,6 +46,7 @@ const Contact: FC = () => {
         Skontaktuj się z nami!
       </h2>
       <motion.div
+        viewport={{ once: true }}
         whileInView={{ x: [-300, 0], opacity: [0, 1] }}
         transition={{ duration: 1 }}
         className="max-w-4xl mx-auto"
