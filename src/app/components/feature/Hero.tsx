@@ -2,6 +2,7 @@ import { FC } from "react";
 import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
 import Header from "./Header/Header";
+import Image from "next/image";
 
 const Hero: FC = () => {
   return (
@@ -9,12 +10,15 @@ const Hero: FC = () => {
       id={"Home"}
       className="w-full h-screen flex flex-col flex-1 md:justify-center relative px-4 sm:px-10 z-50"
       style={{
-        backgroundImage: "url('/images/hero.png')",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
         boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
     >
+      <Image
+        src={"/images/hero.png"}
+        alt="hero-image"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+        fill
+      />
       <Header />
       <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between max-h-[640px] mb-40 mt-40 sm:mb-60">
         <div className="flex flex-col items-center">

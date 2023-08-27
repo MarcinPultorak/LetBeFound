@@ -4,29 +4,51 @@ import useIsMobile from "@/app/hooks/useIsMobile";
 import { FC, ReactNode } from "react";
 import cx from "classnames";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { ArrowUpIcon } from "@heroicons/react/20/solid";
 
 const AboutUs: FC = () => {
   const data = [
     {
-      icon: <img className="w-8 md:w-12 lg:w-16" src="/images/icon-bulb.svg" />,
+      icon: (
+        <img
+          className="w-8 md:w-12 lg:w-16"
+          src="/images/icon-bulb.svg"
+          alt="Icon-bulb"
+        />
+      ),
       paragraph:
         "Wierzymy w twórczość i nowatorskie podejście. Nasze projekty są pełne świeżości i kreatywności, aby wyróżnić Cię na tle konkurencji.",
     },
     {
-      icon: <img className="w-8 md:w-12 lg:w-16" src="/images/icon-bolt.svg" />,
+      icon: (
+        <img
+          className="w-8 md:w-12 lg:w-16"
+          src="/images/icon-bolt.svg"
+          alt="icon-bolt"
+        />
+      ),
       paragraph:
         "Każdy członek zespołu LetBeFound ma w sobie ogromną pasję do tego, co robi. Ta energia jest wkomponowana w każdy projekt, który tworzymy.",
     },
     {
       icon: (
-        <img className="w-8 md:w-12 lg:w-16" src="/images/icon-users.svg" />
+        <img
+          className="w-8 md:w-12 lg:w-16"
+          src="/images/icon-users.svg"
+          alt="icon-users"
+        />
       ),
       paragraph:
         "Tworzymy relacje oparte na zaufaniu i partnerstwie. Twoje cele stają się naszymi celami, a wspólnie pracujemy nad osiągnięciem sukcesu.",
     },
     {
       icon: (
-        <img className="w-8 md:w-12 lg:w-16" src="/images/icon-arrows-au.svg" />
+        <img
+          className="w-8 md:w-12 lg:w-16"
+          src="/images/icon-arrows-au.svg"
+          alt="icon-arrows"
+        />
       ),
       paragraph:
         "Jako zespół tworzący strony internetowe, wiemy, że to nie tylko kwestia estetyki. Nasze strony są responsywne, zoptymalizowane pod kątem SEO i skupione na konwersjach.",
@@ -36,14 +58,14 @@ const AboutUs: FC = () => {
   return (
     <section
       id={"O nas"}
-      className="pt-10 md:pt-20 z-20 relative"
-      style={{
-        backgroundImage: "url('/images/about-us.png')",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundColor: "#090D19",
-      }}
+      className="pt-10 md:pt-20 z-20 relative bg-darkPurple"
     >
+      <Image
+        src={"/images/about-us.png"}
+        alt="about-us-image"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+        fill
+      />
       <div className="max-w-screen-2xl mx-auto sm:px-0 px-5">
         <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           LetBefound - kilka słów o nas
@@ -149,10 +171,9 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
       {isMobile ? (
         <div
           style={{
-            backgroundColor: "#080D18",
             boxShadow: "1px 0px 4px 0px #52525B",
           }}
-          className="max-w-max rounded-full p-3 mt-10"
+          className="max-w-max rounded-full p-3 mt-10 bg-neutral-950"
         >
           <div
             className={cx(

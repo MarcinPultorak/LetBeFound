@@ -1,16 +1,19 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const SectionDesktop: FC = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto">
-      <div
-        className="mt-20 md:mt-10 md:grid md:grid-cols-3 bg-center sm:bg-contain md:bg-center"
-        style={{
-          backgroundImage: "url('/images/process-background.png')",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+    <div className="max-w-screen-2xl mx-auto relative">
+      <div className="mt-20 md:mt-10 md:grid md:grid-cols-3">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex justify-center items-center">
+          <Image
+            src={"/images/process-background.png"}
+            alt="process-background-image"
+            width={964}
+            height={964}
+          />
+        </div>
         <div className="py-10 sm:py-20">
           <div className="relative mx-auto sm:-mt-20 md:-mt-0 border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-16 left-8 -top-20 md:left-28 lg:-top-48 lg:-left-12">

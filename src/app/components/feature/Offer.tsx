@@ -3,6 +3,7 @@
 import { FC, ReactNode } from "react";
 import cx from "classnames";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Offer: FC = () => {
   const data = [
@@ -37,12 +38,15 @@ const Offer: FC = () => {
       id={"Oferta"}
       className="px-5 sm:px-10 py-10 md:py-20 z-40 relative"
       style={{
-        backgroundImage: "url('/images/offer-background.png')",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
         boxShadow: "0px 4px 30px 0px #075985",
       }}
     >
+      <Image
+        src={"/images/offer-background.png"}
+        alt="offer-background-image"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+        fill
+      />
       <h2 className="uppercase text-base sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
         Pozwól klientom odnaleźć cię w internecie!
       </h2>

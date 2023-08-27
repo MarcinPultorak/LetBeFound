@@ -4,6 +4,7 @@ import { FC } from "react";
 import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import { ContactFormDto } from "@/app/interfaces/types";
+import Image from "next/image";
 
 const Contact: FC = () => {
   const handleContactForm = async (payload: ContactFormDto): Promise<void> => {
@@ -32,14 +33,15 @@ const Contact: FC = () => {
   return (
     <section
       id={"Kontakt"}
-      className="px-5 py-10 sm:px-10 md:py-20"
-      style={{
-        backgroundColor: "#010101",
-        backgroundImage: "url(/images/contact-background.png)",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+      className="px-5 py-10 sm:px-10 md:py-20 z-10 bg-neutral-950 relative"
     >
+      <Image
+        src={"/images/contact-background.png"}
+        alt="contact-background-image"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+        fill
+      />
+
       <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
         Skontaktuj się z nami!
       </h2>

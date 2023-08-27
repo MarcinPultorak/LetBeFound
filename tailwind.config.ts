@@ -18,8 +18,12 @@ const config: Config = {
       orange: colors.orange,
       red: colors.red,
       teal: colors.teal,
+      neutral: colors.neutral,
       grayBlue: {
         DEFAULT: '#182132'
+      },
+      darkPurple: {
+        DEFAULT: '#090D19'
       }
     },
     extend: {

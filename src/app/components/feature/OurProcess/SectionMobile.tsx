@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 const SectionMobile: FC = () => {
   return (
@@ -19,8 +20,14 @@ const SectionMobile: FC = () => {
         </p>
       </div>
 
-      <div className="-mt-20">
-        <img src="/images/process-background.png" className="bg-cover" />
+      <div className="-mt-20 flex items-center justify-center">
+        <Image
+          src="/images/process-background.png"
+          className="bg-cover"
+          alt="process-background-image"
+          width={640}
+          height={640}
+        />
       </div>
 
       <div className="self-center relative mx-auto -mt-24">
