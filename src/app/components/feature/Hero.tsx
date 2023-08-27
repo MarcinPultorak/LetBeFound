@@ -8,7 +8,7 @@ const Hero: FC = () => {
   return (
     <section
       id={"Home"}
-      className="w-full h-screen flex flex-col flex-1 md:justify-center relative px-4 sm:px-10 z-50"
+      className="w-full min-h-[800px] h-screen flex flex-col flex-1 md:justify-center relative px-4 sm:px-10 z-50"
       style={{
         boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
