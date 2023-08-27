@@ -177,29 +177,30 @@ const PrivacyPolicy: FC = () => {
             następujących celach: utrzymanie sesji użytkownika Serwisu (po
             zalogowaniu), dzięki której użytkownik nie musi na każdej podstronie
             Serwisu ponownie wpisywać loginu i hasła; realizacji celów
-            określonych powyżej w części "Istotne techniki marketingowe"; W
-            ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies:
-            „sesyjne” (session cookies) oraz „stałe” (persistent cookies).
-            Cookies „sesyjne” są plikami tymczasowymi, które przechowywane są w
-            urządzeniu końcowym Użytkownika do czasu wylogowania, opuszczenia
-            strony internetowej lub wyłączenia oprogramowania (przeglądarki
-            internetowej). „Stałe” pliki cookies przechowywane są w urządzeniu
-            końcowym Użytkownika przez czas określony w parametrach plików
-            cookies lub do czasu ich usunięcia przez Użytkownika. Oprogramowanie
-            do przeglądania stron internetowych (przeglądarka internetowa)
-            zazwyczaj domyślnie dopuszcza przechowywanie plików cookies w
-            urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą dokonać
-            zmiany ustawień w tym zakresie. Przeglądarka internetowa umożliwia
-            usunięcie plików cookies. Możliwe jest także automatyczne blokowanie
-            plików cookies Szczegółowe informacje na ten temat zawiera pomoc lub
-            dokumentacja przeglądarki internetowej. Ograniczenia stosowania
-            plików cookies mogą wpłynąć na niektóre funkcjonalności dostępne na
-            stronach internetowych Serwisu. Pliki cookies zamieszczane w
-            urządzeniu końcowym Użytkownika Serwisu wykorzystywane mogą być
-            również przez współpracujące z operatorem Serwisu podmioty, w
-            szczególności dotyczy to firm: Google (Google Inc. z siedzibą w
-            USA), Facebook (Facebook Inc. z siedzibą w USA), Twitter (Twitter
-            Inc. z siedzibą w USA).
+            określonych powyżej w części &quot;Istotne techniki
+            marketingowe&quot;; W ramach Serwisu stosowane są dwa zasadnicze
+            rodzaje plików cookies: „sesyjne” (session cookies) oraz „stałe”
+            (persistent cookies). Cookies „sesyjne” są plikami tymczasowymi,
+            które przechowywane są w urządzeniu końcowym Użytkownika do czasu
+            wylogowania, opuszczenia strony internetowej lub wyłączenia
+            oprogramowania (przeglądarki internetowej). „Stałe” pliki cookies
+            przechowywane są w urządzeniu końcowym Użytkownika przez czas
+            określony w parametrach plików cookies lub do czasu ich usunięcia
+            przez Użytkownika. Oprogramowanie do przeglądania stron
+            internetowych (przeglądarka internetowa) zazwyczaj domyślnie
+            dopuszcza przechowywanie plików cookies w urządzeniu końcowym
+            Użytkownika. Użytkownicy Serwisu mogą dokonać zmiany ustawień w tym
+            zakresie. Przeglądarka internetowa umożliwia usunięcie plików
+            cookies. Możliwe jest także automatyczne blokowanie plików cookies
+            Szczegółowe informacje na ten temat zawiera pomoc lub dokumentacja
+            przeglądarki internetowej. Ograniczenia stosowania plików cookies
+            mogą wpłynąć na niektóre funkcjonalności dostępne na stronach
+            internetowych Serwisu. Pliki cookies zamieszczane w urządzeniu
+            końcowym Użytkownika Serwisu wykorzystywane mogą być również przez
+            współpracujące z operatorem Serwisu podmioty, w szczególności
+            dotyczy to firm: Google (Google Inc. z siedzibą w USA), Facebook
+            (Facebook Inc. z siedzibą w USA), Twitter (Twitter Inc. z siedzibą w
+            USA).
           </p>
           <h2 className={h2Classes}>
             9. Zarządzanie plikami cookies – jak w praktyce wyrażać i cofać
