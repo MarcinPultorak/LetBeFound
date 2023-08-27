@@ -7,7 +7,7 @@ const HeaderMobile: FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
 
   return (
     <div className="fixed top-0 left-0 h-screen w-full px-10 py-20 z-50 bg-grayBlue">
-      <div className="absolute right-10 top-10">
+      <div className="absolute right-5 top-10">
         <button onClick={() => closeMenu()}>
           <XMarkIcon className="w-8 h-8" />
         </button>
