@@ -33,9 +33,9 @@ const Header: FC = () => {
   return (
     <header
       className={cx(
-        "md:inset-x-0 w-full flex-shrink-0 fixed top-0 left-0 px-5 md:px-10",
+        "md:inset-x-0 w-full flex-shrink-0 fixed top-0 left-0 px-5 md:px-1 z-50",
         isFollowing
-          ? "bg-grayBlue h-20 shadow-black shadow-md z-50"
+          ? "bg-grayBlue h-20 shadow-black shadow-md"
           : "md:absolute md:top-0 h-28"
       )}
     >
