@@ -9,21 +9,18 @@ const Contact: FC = () => {
   const { successReceived, errorReceived } = useAppContext();
 
   const handleContactForm = async (payload: ContactFormDto): Promise<void> => {
-    const promise = Promise.resolve();
-
-    // await fetch("/api", {
-    //   body: JSON.stringify({
-    //     email: payload.email,
-    //     fullname: payload.name,
-    //     subject: payload.topic,
-    //     message: payload.message,
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   method: "POST",
-    // })
-    promise
+    await fetch("/api", {
+      body: JSON.stringify({
+        email: payload.email,
+        fullname: payload.name,
+        subject: payload.topic,
+        message: payload.message,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
       .then(() => {
         successReceived("Formularz został wysłany!");
         return Promise.resolve();

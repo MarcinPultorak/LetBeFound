@@ -6,7 +6,6 @@ import { Toast } from "../../interfaces/toast";
 import { useAppContext } from "../../providers/AppContextProvider";
 
 const ToastBar: FC<Toast> = ({ type, message }) => {
-  console.log("RENDERED");
   const { toastCleared } = useAppContext();
   const [timer, setTimer] = useState<number | undefined>(5000);
 
