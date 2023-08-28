@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Logo from "./Logo";
 import LogoText from "./LogoText";
 import LogoTextMobile from "./LogoTextMobile";
 

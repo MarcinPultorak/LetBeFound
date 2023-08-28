@@ -1,9 +1,7 @@
-"use client";
-
-import useIsMobile from "@/app/hooks/useIsMobile";
 import { FC } from "react";
 import SectionDesktop from "./SectionDesktop";
 import SectionMobile from "./SectionMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const OurProcess: FC = () => {
   const isMobile = useIsMobile(768);

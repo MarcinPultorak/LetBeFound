@@ -1,4 +1,4 @@
-import { Component, FC } from "react";
+import { FC } from "react";
 import Header from "./Header/Header";
 import Footer from "../ui/Footer";
 import Link from "next/link";

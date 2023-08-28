@@ -1,12 +1,10 @@
-"use client";
-
 import { FC, useState } from "react";
 import FormInput from "../ui/FormInput";
 import Button from "../ui/Button";
 import { useForm } from "react-hook-form";
 import FormTextarea from "../ui/FormTextarea";
-import { validateEmail, validateRequired } from "@/app/utils/validators";
-import { ContactFormDto } from "@/app/interfaces/types";
+import { ContactFormDto } from "@/interfaces/types";
+import { validateEmail, validateRequired } from "@/utils/validators";
 
 type Props = {
   callback: (payload: ContactFormDto) => Promise<void>;

@@ -1,5 +1,3 @@
-"use client";
-
 import { FC, ReactNode } from "react";
 import cx from "classnames";
 import { motion } from "framer-motion";

@@ -1,5 +1,3 @@
-"use client";
-
 import { FC, useState, useEffect } from "react";
 import LogoText from "../../ui/LogoText";
 import HeaderMobile from "./HeaderMobile";
@@ -7,8 +5,9 @@ import LogoTextMobile from "../../ui/LogoTextMobile";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { useScroll } from "framer-motion";
 import cx from "classnames";
-import { useScrollSpy } from "@/app/hooks/useScrollSpy";
+
 import Link from "next/link";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);

@@ -1,10 +1,9 @@
-"use client";
 import { FC } from "react";
 import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
 import Header from "./Header/Header";
 import Image from "next/image";
-import { useAppContext } from "@/app/providers/AppContextProvider";
+import { useAppContext } from "@/providers/AppContextProvider";
 
 const Hero: FC = () => {
   const { successReceived } = useAppContext();
@@ -12,7 +11,7 @@ const Hero: FC = () => {
   return (
     <section
       id={"Home"}
-      className="w-full min-h-[800px] h-screen flex flex-col flex-1 md:justify-center relative px-4 sm:px-10 z-50"
+      className="w-full min-h-[800px] h-screen flex flex-col md:justify-center relative px-4 sm:px-10 z-50"
       style={{
         boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
@@ -24,7 +23,7 @@ const Hero: FC = () => {
         fill
       />
       <Header />
-      <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between max-h-[640px] mb-40 mt-40 sm:mb-60">
+      <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between max-h-[640px] mb-40 mt-40 sm:mb-60 grow">
         <div className="flex flex-col items-center">
           <h1 className="uppercase text-xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[.2em] font-bold text-center">
             <div style={{ textShadow: "0px 6px 4px rgba(0, 0, 0, 0.25)" }}>
