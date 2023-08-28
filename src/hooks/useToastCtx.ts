@@ -1,4 +1,4 @@
-'use client'
+
 
 import { useCallback, useState } from 'react'
 import { Toast } from '../interfaces/toast'

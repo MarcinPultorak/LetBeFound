@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { FC, useCallback, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";

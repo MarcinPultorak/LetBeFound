@@ -1,5 +1,3 @@
-"use client";
-
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import cx from "classnames";
 import { motion } from "framer-motion";

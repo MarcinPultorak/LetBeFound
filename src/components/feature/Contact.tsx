@@ -1,11 +1,9 @@
-"use client";
-
 import { FC } from "react";
 import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
-import { ContactFormDto } from "@/app/interfaces/types";
 import Image from "next/image";
-import { useAppContext } from "@/app/providers/AppContextProvider";
+import { ContactFormDto } from "@/interfaces/types";
+import { useAppContext } from "@/providers/AppContextProvider";
 
 const Contact: FC = () => {
   const { successReceived, errorReceived } = useAppContext();

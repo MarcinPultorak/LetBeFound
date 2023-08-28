@@ -1,4 +1,3 @@
-"use client";
 import cx from "classnames";
 import {
   forwardRef,
@@ -37,7 +36,7 @@ const FormInput: ForwardRefRenderFunction<
                 : "border-zinc-600 focus:ring-sky-800",
               {
                 "opacity-50": props.disabled,
-              },
+              }
             )}
           />
         </span>

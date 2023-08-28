@@ -1,5 +1,3 @@
-"use client";
-
 import { createContext, FC, ReactNode, useContext } from "react";
 import useToastCtx, { ToastContext } from "../hooks/useToastCtx";
 

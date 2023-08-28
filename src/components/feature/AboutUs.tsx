@@ -1,11 +1,8 @@
-"use client";
-
-import useIsMobile from "@/app/hooks/useIsMobile";
 import { FC, ReactNode } from "react";
 import cx from "classnames";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpIcon } from "@heroicons/react/20/solid";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const AboutUs: FC = () => {
   const data = [
