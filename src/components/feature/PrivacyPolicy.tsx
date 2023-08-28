@@ -294,7 +294,6 @@ const PrivacyPolicy: FC = () => {
           </ul>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };
