@@ -1,6 +1,14 @@
+"use client";
+
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import CookiesConsent from "./components/feature/CookieConsent";
+import AppContextProvider, {
+  useAppContext,
+} from "./providers/AppContextProvider";
+import { AnimatePresence } from "framer-motion";
+import ToastBar from "./components/ui/ToastBar";
 
 const inter = Poppins({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
@@ -14,9 +22,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { toast } = useAppContext();
+  console.log(toast);
+
   return (
     <html lang="en" className="scroll-smooth overflow-x-hidden">
-      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} overflow-x-hidden`}>
+        <AppContextProvider>
+          <AnimatePresence>
+            {toast?.message && (
+              <ToastBar message={toast.message} type={toast.type} />
+            )}
+          </AnimatePresence>
+          <CookiesConsent />
+          {children}
+        </AppContextProvider>
+      </body>
     </html>
   );
 }

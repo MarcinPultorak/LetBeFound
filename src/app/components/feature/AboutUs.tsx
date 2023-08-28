@@ -138,6 +138,7 @@ const AboutUs: FC = () => {
               <img
                 className="mx-auto w-28 md:w-36 opacity-40 -scale-y-100"
                 src="/images/logo-about-us.svg"
+                alt="logo-about-us"
               />
             </div>
             <_AboutUsTile
@@ -203,7 +204,6 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
         </div>
       ) : (
         <motion.div
-          viewport={{ once: true }}
           whileInView={{
             scale: [0, 1],
             opacity: [0, 1],

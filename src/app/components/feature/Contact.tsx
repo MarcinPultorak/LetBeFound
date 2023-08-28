@@ -5,27 +5,35 @@ import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import { ContactFormDto } from "@/app/interfaces/types";
 import Image from "next/image";
+import { useAppContext } from "@/app/providers/AppContextProvider";
 
 const Contact: FC = () => {
+  const { successReceived, errorReceived } = useAppContext();
+
   const handleContactForm = async (payload: ContactFormDto): Promise<void> => {
-    await fetch("/api", {
-      body: JSON.stringify({
-        email: payload.email,
-        fullname: payload.name,
-        subject: payload.topic,
-        message: payload.message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    })
+    const promise = Promise.resolve();
+
+    // await fetch("/api", {
+    //   body: JSON.stringify({
+    //     email: payload.email,
+    //     fullname: payload.name,
+    //     subject: payload.topic,
+    //     message: payload.message,
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    // })
+    promise
       .then(() => {
-        console.log("SUCCESS");
-        return Promise.resolve;
+        successReceived("Formularz został wysłany!");
+        return Promise.resolve();
       })
       .catch((err) => {
-        console.log("ERROR");
+        errorReceived(
+          "Wystąpił błąd podczas próby wysłania formularza. Spróbuj ponownie!"
+        );
         return Promise.reject();
       });
   };

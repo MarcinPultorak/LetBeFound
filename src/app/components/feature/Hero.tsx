@@ -1,10 +1,14 @@
+"use client";
 import { FC } from "react";
 import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
 import Header from "./Header/Header";
 import Image from "next/image";
+import { useAppContext } from "@/app/providers/AppContextProvider";
 
 const Hero: FC = () => {
+  const { successReceived } = useAppContext();
+
   return (
     <section
       id={"Home"}
@@ -51,6 +55,7 @@ const Hero: FC = () => {
             <Button
               className="uppercase"
               title="Sprawdź"
+              onClick={() => successReceived("Test")}
               style={{ boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)" }}
             >
               Sprawdź

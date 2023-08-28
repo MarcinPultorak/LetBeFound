@@ -1,11 +1,9 @@
-import Image from "next/image";
 import Hero from "./components/feature/Hero";
 import Offer from "./components/feature/Offer";
 import OurProcess from "./components/feature/OurProcess/OurProcess";
 import AboutUs from "./components/feature/AboutUs";
 import Contact from "./components/feature/Contact";
 import Footer from "./components/ui/Footer";
-import PrivacyPolicy from "./components/feature/PrivacyPolicy";
 
 export default function Home() {
   return (

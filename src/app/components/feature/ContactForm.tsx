@@ -28,11 +28,8 @@ const ContactForm: FC<Props> = (props) => {
       .callback(payload)
       .then(() => {
         reset();
-        setIsLoading(false);
       })
-      .catch(() => {
-        setIsLoading(false);
-      });
+      .finally(() => setIsLoading(false));
   };
 
   return (

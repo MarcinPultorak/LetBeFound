@@ -13,6 +13,7 @@ const config: Config = {
       black: colors.black,
       slate: colors.slate,
       gray: colors.gray,
+      white: colors.white,
       zinc: colors.zinc,
       sky: colors.sky,
       orange: colors.orange,
