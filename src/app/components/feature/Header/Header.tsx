@@ -8,6 +8,7 @@ import { Bars3Icon } from "@heroicons/react/24/solid";
 import { useScroll } from "framer-motion";
 import cx from "classnames";
 import { useScrollSpy } from "@/app/hooks/useScrollSpy";
+import Link from "next/link";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -69,7 +70,7 @@ const Header: FC = () => {
                 id == activeId && "underline underline-offset-8 text-orange-600"
               )}
             >
-              <a href={`#${id}`}>{id}</a>
+              <Link href={`#${id}`}>{id}</Link>
             </li>
           ))}
         </ul>

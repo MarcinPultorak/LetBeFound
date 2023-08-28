@@ -99,7 +99,11 @@ const AboutUs: FC = () => {
         </div>
       </div>
       <div className="mt-16">
-        <img className="w-28 md:w-36 mx-auto" src="/images/logo-about-us.svg" />
+        <img
+          className="w-28 md:w-36 mx-auto"
+          src="/images/logo-about-us.svg"
+          alt="logo-about-us"
+        />
       </div>
       <div
         className="pb-10 lg:pb-20"
@@ -114,6 +118,7 @@ const AboutUs: FC = () => {
               <img
                 className="mx-auto w-28 md:w-36 opacity-40 -scale-y-100"
                 src="/images/logo-about-us.svg"
+                alt="logo-about-us"
               />
             </div>
             <_AboutUsTile

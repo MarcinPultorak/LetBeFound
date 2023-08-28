@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LogoTextMobile from "../../ui/LogoTextMobile";
 import { XMarkIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const HeaderMobile: FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
   const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
@@ -22,9 +23,9 @@ const HeaderMobile: FC<{ closeMenu: () => void }> = ({ closeMenu }) => {
               key={id}
               className="cursor-pointer hover:text-orange-600 hover:border-orange-600"
             >
-              <a href={`#${id}`} onClick={() => closeMenu()}>
+              <Link href={`#${id}`} onClick={() => closeMenu()}>
                 {id}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

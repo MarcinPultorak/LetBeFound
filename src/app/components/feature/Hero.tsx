@@ -50,6 +50,7 @@ const Hero: FC = () => {
           <div className="w-full sm:w-48 mt-10">
             <Button
               className="uppercase"
+              title="Sprawdź"
               style={{ boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)" }}
             >
               Sprawdź

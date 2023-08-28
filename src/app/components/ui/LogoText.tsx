@@ -5,7 +5,11 @@ const LogoText: FC = () => {
   return (
     <Link href={"/"}>
       <div className="flex items-center gap-2 uppercase font-medium text-xs h-24 w-24">
-        <img className="h-full w-full" src="/images/logo-about-us.svg" />
+        <img
+          className="h-full w-full"
+          src="/images/logo-about-us.svg"
+          alt="letbefound-logo"
+        />
         <div>
           <p
             style={{

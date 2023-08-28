@@ -6,7 +6,7 @@ const SectionMobile: FC = () => {
     <div className="max-w-screen-2xl mx-auto mt-20">
       <div className="relative mx-auto">
         <div className="absolute w-[150px] -top-20">
-          <img src="/images/number-one.svg"></img>
+          <img src="/images/number-one.svg" alt="number-one-icon" />
         </div>
         <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
           Konsultacje i analiza
@@ -32,7 +32,7 @@ const SectionMobile: FC = () => {
 
       <div className="self-center relative mx-auto -mt-24">
         <div className="absolute w-[150px] right-0 -top-10">
-          <img src="/images/number-two.svg"></img>
+          <img src="/images/number-two.svg" alt="number-two-icon" />
         </div>
         <h3 className="text-sm sm:text-base text-orange-600 tracking-[.15em] underline uppercase">
           Projektowanie i wdrażanie
@@ -48,7 +48,7 @@ const SectionMobile: FC = () => {
 
       <div className="relative mt-14 mx-auto">
         <div className="absolute w-[150px] inset-x-1/2 -translate-x-1/2 top-6">
-          <img src="/images/number-three.svg"></img>
+          <img src="/images/number-three.svg" alt="number-three-icon" />
         </div>
         <h3 className="text-sm sm:text-base text-orange-600 tracking-[.15em] underline uppercase">
           Testowanie i wsparcie

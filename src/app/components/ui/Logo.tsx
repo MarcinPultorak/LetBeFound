@@ -5,7 +5,11 @@ const Logo: FC = () => {
   return (
     <div className="h-28 w-full">
       <Link href={"/"}>
-        <img src="/images/logo.svg" className="h-full w-full" />
+        <img
+          src="/images/logo.svg"
+          className="h-full w-full"
+          alt="letbefound-logo"
+        />
       </Link>
     </div>
   );

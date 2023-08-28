@@ -63,6 +63,7 @@ const Contact: FC = () => {
             <img
               className="mx-auto w-9 sm:w-auto"
               src="/images/icon-email.svg"
+              alt="icon-email"
             />
             <p className="text-center text-sm md:text-base lg:text-lg">
               kontakt@letbefound.pl
@@ -77,6 +78,7 @@ const Contact: FC = () => {
             <img
               className="mx-auto w-9 sm:w-auto"
               src="/images/icon-phone.svg"
+              alt="icon-phone"
             />
             <div className="text-center">
               <p className="text-sm md:text-base lg:text-lg">

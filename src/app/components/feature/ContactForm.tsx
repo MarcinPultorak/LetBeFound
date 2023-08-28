@@ -97,6 +97,7 @@ const ContactForm: FC<Props> = (props) => {
       <div className="mt-10 md:max-w-xs mx-auto">
         <Button
           isSubmitting={isLoading}
+          title="Wyślij wiadomość"
           style={{
             boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)",
           }}
