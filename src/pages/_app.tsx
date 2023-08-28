@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>DavCode</title>
+        <title>LetBeFound</title>
         <link rel="icon" href="/favicon-logo.ico" />
       </Head>
 
