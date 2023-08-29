@@ -16,13 +16,8 @@ const FooterMobile: FC = () => {
           <LogoTextMobile />
         </div>
         <div className="text-end">
-          <p className="text-xs sm:text-sm md:text-base">
-            Copyright © 2023 LetBeFound
-          </p>
-          <Link
-            className="text-xs sm:text-sm md:text-base"
-            href={"polityka-prywatnosci"}
-          >
+          <p className="text-xs sm:text-sm">Copyright © 2023 LetBeFound</p>
+          <Link className="text-xs sm:text-sm" href={"polityka-prywatnosci"}>
             Polityka prywatności
           </Link>
         </div>
