@@ -91,7 +91,10 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
       whileHover={{ scale: 1.05 }}
       whileInView={
         isMobile
-          ? {}
+          ? {
+              x: 0,
+              opacity: 1,
+            }
           : {
               x: even(),
               opacity: [0, 1],

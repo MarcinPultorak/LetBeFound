@@ -12,7 +12,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
     <>
-      <div className="flex min-h-screen w-full flex-1 flex-col bg-cover text-slate-300">
+      <div className="flex min-h-screen w-full flex-1 flex-col bg-cover text-slate-300 overflow-x-hidden">
         <main className="flex flex-1 flex-col">{children}</main>
         {isMobile ? <FooterMobile /> : <Footer />}
       </div>

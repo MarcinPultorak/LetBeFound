@@ -53,8 +53,10 @@ const Contact: FC = () => {
       </h2>
       <motion.div
         viewport={{ once: true }}
-        whileInView={isMobile ? {} : { x: [-300, 0], opacity: [0, 1] }}
-        transition={isMobile ? {} : { duration: 1 }}
+        whileInView={
+          isMobile ? { x: 0, opacity: 1 } : { x: [-300, 0], opacity: [0, 1] }
+        }
+        transition={isMobile ? { duration: 0 } : { duration: 1 }}
         className="max-w-4xl mx-auto"
       >
         <ContactForm callback={handleContactForm} />

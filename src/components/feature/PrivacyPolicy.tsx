@@ -1,7 +1,7 @@
 import { FC } from "react";
-import Header from "./Header/Header";
-import Footer from "../ui/Footer";
+
 import Link from "next/link";
+import HeaderSimple from "./Header/HeaderSimple";
 
 const PrivacyPolicy: FC = () => {
   const h2Classes =
@@ -12,11 +12,9 @@ const PrivacyPolicy: FC = () => {
 
   return (
     <section className="bg-grayBlue">
-      <div className="px-5">
-        <Header />
-      </div>
+      <HeaderSimple />
       <div className="px-5 md:px-10">
-        <div className="max-w-screen-2xl mx-auto md:pt-40 pb-10 md:pb-20">
+        <div className="max-w-screen-2xl mx-auto pb-10">
           <h2 className={h2Classes}>
             Polityka prywatności opisuje zasady przetwarzania przez nas
             informacji na Twój temat, w tym danych osobowych oraz ciasteczek,
