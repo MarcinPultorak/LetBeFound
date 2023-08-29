@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 import cx from "classnames";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const Offer: FC = () => {
   const data = [
@@ -75,6 +76,8 @@ type _OfferTileProps = {
 };
 
 const _OfferTile: FC<_OfferTileProps> = (props) => {
+  const isMobile = useIsMobile(768);
+
   const even = () => {
     if (props.index % 2 == 1) {
       return [-300, 0];
@@ -86,11 +89,15 @@ const _OfferTile: FC<_OfferTileProps> = (props) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      whileInView={{
-        x: even(),
-        opacity: [0, 1],
-        transition: { type: "spring", delay: 0.3 },
-      }}
+      whileInView={
+        isMobile
+          ? {}
+          : {
+              x: even(),
+              opacity: [0, 1],
+              transition: { type: "spring", delay: 0.3 },
+            }
+      }
       transition={{ duration: 0.2 }}
       viewport={{ once: true }}
       className={cx(

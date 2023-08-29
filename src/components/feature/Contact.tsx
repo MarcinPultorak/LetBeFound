@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ContactFormDto } from "@/interfaces/types";
 import { useAppContext } from "@/providers/AppContextProvider";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const Contact: FC = () => {
   const { successReceived, errorReceived } = useAppContext();
+
+  const isMobile = useIsMobile(768);
 
   const handleContactForm = async (payload: ContactFormDto): Promise<void> => {
     await fetch("/api", {
@@ -50,14 +53,14 @@ const Contact: FC = () => {
       </h2>
       <motion.div
         viewport={{ once: true }}
-        whileInView={{ x: [-300, 0], opacity: [0, 1] }}
-        transition={{ duration: 1 }}
+        whileInView={isMobile ? {} : { x: [-300, 0], opacity: [0, 1] }}
+        transition={isMobile ? {} : { duration: 1 }}
         className="max-w-4xl mx-auto"
       >
         <ContactForm callback={handleContactForm} />
 
         <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 mt-6">
-          <motion.div
+          <div
             className="rounded-xl space-y-6 md:space-y-10 p-6 md:p-10 border border-zinc-600"
             style={{
               backgroundColor: "rgba(7, 11, 22, 0.80)",
@@ -71,8 +74,8 @@ const Contact: FC = () => {
             <p className="text-center text-sm md:text-base lg:text-lg">
               kontakt@letbefound.pl
             </p>
-          </motion.div>
-          <motion.div
+          </div>
+          <div
             className="rounded-xl space-y-6 md:space-y-10 p-6 md:p-10 border border-zinc-600"
             style={{
               backgroundColor: "rgba(7, 11, 22, 0.80)",
@@ -91,7 +94,7 @@ const Contact: FC = () => {
                 Dawid: +48 000 000 000
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>
