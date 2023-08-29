@@ -9,6 +9,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Poppins", "Poppins"]
+    },
+
     colors: {
       black: colors.black,
       slate: colors.slate,

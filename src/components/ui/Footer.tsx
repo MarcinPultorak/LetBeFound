@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LogoText from "./LogoText";
 import LogoTextMobile from "./LogoTextMobile";
+import Link from "next/link";
 
 const Footer: FC = () => {
   return (
@@ -10,16 +11,15 @@ const Footer: FC = () => {
         backgroundColor: "#070B16",
       }}
     >
-      <div className="max-w-screen-2xl mx-auto flex">
-        <div className="hidden md:block">
+      <div className="max-w-screen-2xl w-full mx-auto flex justify-between items-center">
+        <div>
           <LogoText />
         </div>
-        <div className="block md:hidden">
-          <LogoTextMobile />
-        </div>
-        <p className="self-center ml-auto sm:mx-auto text-xs sm:text-sm md:text-base">
-          Copyright © 2023 LetBeFound
-        </p>
+
+        <p className="text-base">Copyright © 2023 LetBeFound</p>
+        <Link className="text-base" href={"polityka-prywatnosci"}>
+          Polityka prywatności
+        </Link>
       </div>
     </footer>
   );

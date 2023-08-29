@@ -4,9 +4,9 @@ import { FC } from "react";
 const LogoText: FC = () => {
   return (
     <Link href={"/"}>
-      <div className="flex items-center gap-2 uppercase font-medium text-xs h-24 w-24">
+      <div className="flex items-center gap-2 uppercase font-medium text-xs shrink-0">
         <img
-          className="h-full w-full"
+          className="h-24 w-24"
           src="/images/logo-about-us.svg"
           alt="letbefound-logo"
         />
