@@ -4,6 +4,8 @@ import SwitchButton from "../ui/SwitchIcon";
 import Header from "./Header/Header";
 import Image from "next/image";
 import { useAppContext } from "@/providers/AppContextProvider";
+import HexagonTile from "../ui/HexagonTile";
+import { WhyNeedWebsiteData } from "@/data/textData";
 
 const Hero: FC = () => {
   const { successReceived } = useAppContext();
@@ -60,6 +62,7 @@ const Hero: FC = () => {
               Sprawdź
             </Button>
           </div>
+
           <div className="absolute bottom-10">
             <SwitchButton />
           </div>

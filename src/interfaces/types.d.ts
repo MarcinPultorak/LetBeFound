@@ -4,3 +4,8 @@ export interface ContactFormDto {
     topic: string;
     message: string;
 }
+
+export interface HexagonTileDto {
+    label: string;
+    image: string
+}
