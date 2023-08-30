@@ -29,7 +29,7 @@ const HexagonTile: FC<Props> = (props) => {
             <div className="flex flex-col items-center justify-center px-20">
               <div className="h-0.5 w-full bg-slate-300 z-10" />
               <h2
-                className="uppercase font-bold z-10 text-lg lg:text-xl  tracking-[0.15em] text-center mt-2"
+                className="uppercase font-bold z-10 text-lg lg:text-xl tracking-[0.15em] text-center mt-2"
                 style={{ WebkitTextStroke: "1px black" }}
               >
                 {props.data.label}
@@ -44,9 +44,9 @@ const HexagonTile: FC<Props> = (props) => {
               "polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%)",
           }}
         >
-          <div className="flex flex-col items-center justify-center h-full w-full  px-8 xl:px-12 space-y-4">
+          <div className="flex flex-col items-center justify-center h-full w-full px-8 xl:px-12 space-y-2">
             <div className="h-0.5 w-full bg-slate-300 z-10" />
-            <p className="text-justify text-xs lg:text-sm leading-relaxed">
+            <p className="text-justify text-xs xl:text-sm leading-relaxed">
               {props.data.description}
             </p>
           </div>

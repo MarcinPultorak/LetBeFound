@@ -6,17 +6,19 @@ import { FC } from "react";
 const WhyYouNeedWebsiteDesktop: FC = () => {
   return (
     <div className="max-w-screen-2xl mx-auto ">
-      <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em] relative z-10">
-        Dlaczego Warto Posiadać Własną Stronę Internetową dla Twojego Biznesu?
+      <h2 className="max-w-2xl uppercase lg:text-2xl text-center font-bold tracking-[.15em] relative z-10 mx-auto">
+        Dlaczego Warto Posiadać Stronę Internetową dla Twojego Biznesu?
       </h2>
-      <p className="max-w-2xl p-5 text-justify absolute top-72 w-full inset-x-1/2 -translate-x-1/2 z-10">
+      <p className="max-w-2xl text-justify absolute top-[15%] w-full inset-x-1/2 -translate-x-1/2 z-10 leading-relaxed">
         W dzisiejszych czasach, kiedy większość działań przenosi się do
         przestrzeni online, posiadanie profesjonalnej strony internetowej stało
         się nieodzownością dla każdego przedsiębiorstwa. Jeśli chcesz skutecznie
         konkurować na rynku i dotrzeć do szerokiego grona potencjalnych
         klientów, to inwestycja w własną stronę internetową jest absolutnie
         niezbędna. A dlaczego akurat LetBeFound jest idealnym partnerem do
-        stworzenia Twojej strony internetowej? Oto kilka powodów:
+        stworzenia{" "}
+        <span className="text-orange-600">Twojej strony internetowej?</span> Oto
+        kilka powodów:
       </p>
       <div className="w-[calc(100%*1.90)] grid grid-cols-6 gap-x-3 -ml-[60.4%] -mt-[10%]">
         <HexagonTileEmpty />
@@ -49,13 +51,14 @@ const WhyYouNeedWebsiteDesktop: FC = () => {
         <HexagonTileEmpty />
         <HexagonTileEmpty />
       </div>
-      <p className="max-w-2xl text-justify p-5 absolute w-full inset-x-1/2 -translate-x-1/2 bottom-28 z-10">
-        W LetBeFound wiemy, jak ważna jest obecność online dla sukcesu Twojego
-        biznesu. Nasza firma specjalizuje się w tworzeniu atrakcyjnych,
-        zoptymalizowanych pod kątem SEO stron internetowych, które przyciągają
-        uwagę, budują zaufanie i generują zyski. Daj swojemu biznesowi szansę na
-        dynamiczny rozwój i skontaktuj się z nami już dziś, aby dowiedzieć się
-        więcej o naszych usługach!
+      <p className="max-w-2xl text-justify absolute w-full inset-x-1/2 -translate-x-1/2 bottom-28 z-10 leading-relaxed">
+        W LetBeFound wiemy, jak ważna jest obecność online{" "}
+        <span className="text-orange-600">dla sukcesu Twojego biznesu</span>.
+        Nasza firma specjalizuje się w tworzeniu atrakcyjnych, zoptymalizowanych
+        pod kątem SEO stron internetowych, które przyciągają uwagę, budują
+        zaufanie i generują zyski. Daj swojemu biznesowi szansę na dynamiczny
+        rozwój i skontaktuj się z nami już dziś, aby dowiedzieć się więcej o
+        naszych usługach!
       </p>
     </div>
   );

@@ -4,17 +4,17 @@ export const WhyNeedWebsiteData = {
     Tile1: {
         label: "Profesjonalny wizerunek biznesu",
         image: 'hexagon-1',
-        description: 'Twoja strona internetowa jest wizytówką Twojego biznesu w świecie online. Dzięki starannie zaprojektowanemu i zgodnemu z najnowszymi trendami wyglądowi, zyskasz zaufanie potencjalnych klientów. Nasz zespół w LetBeFound zadba o to, aby Twoja strona prezentowała się nowocześnie i profesjonalnie, odzwierciedlając wysoką jakość Twoich produktów lub usług.'
+        description: 'Strona internetowa jest wizytówką Twojego biznesu w świecie online. Dzięki profesjonalnemu wyglądowi, zyskasz zaufanie potencjalnych klientów. W LetBeFound zadbamy, aby Twoja strona przyciągnęła jak największą ilość klientów.'
     },
     Tile2: {
         label: "Zwiększenie wiarygodności",
         image: 'hexagon-2',
-        description: 'Klienci często korzystają z Internetu, aby dowiedzieć się więcej o firmach przed dokonaniem zakupu. Posiadając własną stronę, masz kontrolę nad informacjami, które prezentujesz o swoim biznesie. To znacząco zwiększa Twoją wiarygodność w oczach klientów, sprawiając, że czują się pewniej, podejmując decyzję o współpracy z Tobą.'
+        description: 'Klienci często korzystają z Internetu, aby dowiedzieć się więcej o firmach. Posiadając własną stronę, masz kontrolę nad informacjami, które prezentujesz o swoim biznesie. To sprawia, że klienci czują się pewniej, podejmując decyzję o współpracy z Tobą.'
     },
     Tile3: {
         label: "Dotarcie do szerokiego audytorium",
         image: 'hexagon-3',
-        description: 'Internet to ogromne źródło potencjalnych klientów. Posiadając stronę internetową, otwierasz drzwi do globalnego rynku, gdzie Twoje produkty lub usługi mogą być dostępne dla osób z różnych zakątków świata. Dzięki odpowiednio zoptymalizowanym treściom i technikom SEO, Twoja strona będzie łatwo znajdowana przez osoby szukające właśnie tego, co Ty oferujesz.'
+        description: 'Internet to ogromne źródło potencjalnych klientów. Posiadając stronę internetową, otwierasz drzwi do globalnego rynku, gdzie Twoje produkty lub usługi mogą być dostępne dla wszystkich. Dzięki odpowiednio dobranym treściom, Twoja strona będzie łatwa do znalezienia w internecie.'
     },
     Tile4: {
         label: "Skuteczny marketing online",
