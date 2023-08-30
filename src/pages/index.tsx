@@ -3,8 +3,8 @@ import Contact from "@/components/feature/Contact";
 import Hero from "@/components/feature/Hero";
 import Offer from "@/components/feature/Offer";
 import OurProcess from "@/components/feature/OurProcess/OurProcess";
-import WhyYouNeedWebsite from "@/components/feature/WhyYouNeedWebsite";
-import Footer from "@/components/ui/Footer";
+import WhyYouNeedWebsite from "@/components/feature/WhyYouNeedWebsite/WhyYouNeedWebsite";
+
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
