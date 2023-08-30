@@ -7,5 +7,6 @@ export interface ContactFormDto {
 
 export interface HexagonTileDto {
     label: string;
-    image: string
+    image: string;
+    description: string;
 }
