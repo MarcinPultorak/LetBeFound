@@ -22,7 +22,8 @@ const WhyYouNeedWebsite: FC = () => {
             idealnym partnerem do stworzenia Twojej strony internetowej? Oto
             kilka powodów:
           </p>
-          <div className="w-[calc(100%*1.90)] grid grid-cols-6 gap-x-3 -ml-[28.6%] -mt-[10%]">
+          <div className="w-[calc(100%*1.90)] grid grid-cols-6 gap-x-3 -ml-[60.4%] -mt-[10%]">
+            <HexagonTileEmpty />
             <HexagonTileEmpty />
           </div>
           <div className="w-[calc(100%*1.90)] grid grid-cols-6 gap-x-3 -ml-[44.9%] -mt-[7%]">
@@ -46,8 +47,10 @@ const WhyYouNeedWebsite: FC = () => {
             <HexagonTile data={WhyNeedWebsiteData.Tile6} />
             <HexagonTileEmpty />
             <HexagonTileEmpty />
+            <HexagonTileEmpty />
           </div>
           <div className="w-[calc(100%*1.90)] grid grid-cols-6 gap-x-3 ml-[82.4%] -mt-[7%]">
+            <HexagonTileEmpty />
             <HexagonTileEmpty />
           </div>
           <p className="max-w-2xl text-justify p-5 absolute w-full inset-x-1/2 -translate-x-1/2 bottom-28 z-10">

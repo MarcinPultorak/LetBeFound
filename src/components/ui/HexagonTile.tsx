@@ -28,7 +28,7 @@ const HexagonTile: FC<Props> = (props) => {
             <div className="flex flex-col items-center justify-center px-20">
               <div className="h-0.5 w-full bg-slate-300 z-10" />
               <h2
-                className="uppercase font-bold z-10 text-lg tracking-[0.15em] text-center mt-2"
+                className="uppercase font-bold z-10 text-xl tracking-[0.15em] text-center mt-2"
                 style={{ WebkitTextStroke: "1px black" }}
               >
                 {props.data.label}
