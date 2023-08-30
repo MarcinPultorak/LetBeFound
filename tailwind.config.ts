@@ -29,6 +29,9 @@ const config: Config = {
       },
       darkPurple: {
         DEFAULT: '#090D19'
+      },
+      blackPurple: {
+        DEFAULT: '#050915'
       }
     },
     extend: {

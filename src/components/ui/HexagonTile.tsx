@@ -21,8 +21,7 @@ const HexagonTile: FC<Props> = (props) => {
           <div className="h-full w-full flex items-center justify-center">
             <Image
               src={`/images/${props.data.image}.png`}
-              height={500}
-              width={500}
+              fill
               alt={`${props.data.image}`}
               className="absolute top-0 right-0 w-full h-full object-cover object-center z-0"
             />
@@ -38,7 +37,7 @@ const HexagonTile: FC<Props> = (props) => {
           </div>
         </div>
         <div
-          className="card-side back bg-grayBlue"
+          className="card-side back bg-blackPurple"
           style={{
             clipPath:
               "polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%)",
@@ -47,12 +46,7 @@ const HexagonTile: FC<Props> = (props) => {
           <div className="flex flex-col items-center justify-center h-full w-full px-14 space-y-4">
             <div className="h-0.5 w-full bg-slate-300 z-10" />
             <p className="text-justify text-sm leading-relaxed">
-              Klienci często korzystają z Internetu, aby dowiedzieć się więcej o
-              firmach przed dokonaniem zakupu. Posiadając własną stronę, masz
-              kontrolę nad informacjami, które prezentujesz o swoim biznesie. To
-              znacząco zwiększa Twoją wiarygodność w oczach klientów,
-              sprawiając, że czują się pewniej, podejmując decyzję o współpracy
-              z Tobą.
+              {props.data.description}
             </p>
           </div>
         </div>
