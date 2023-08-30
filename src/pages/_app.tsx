@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>LetBeFound</title>
-        <link rel="icon" href="/favicon-logo.ico" />
+        <link rel="icon" href="/logo.ico" />
       </Head>
 
       <AppContextProvider>
