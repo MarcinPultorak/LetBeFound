@@ -5,6 +5,7 @@ import Image from "next/image";
 import useIsMobile from "@/hooks/useIsMobile";
 
 const AboutUs: FC = () => {
+  const isMobile = useIsMobile(640);
   const data = [
     {
       icon: (
@@ -57,12 +58,21 @@ const AboutUs: FC = () => {
       id={"O nas"}
       className="pt-10 md:pt-20 z-20 relative bg-darkPurple"
     >
-      <Image
-        src={"/images/about-us.png"}
-        alt="about-us-image"
-        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
-        fill
-      />
+      {isMobile ? (
+        <Image
+          src={"/images/about-us-mobile.png"}
+          alt="about-us-image"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+          fill
+        />
+      ) : (
+        <Image
+          src={"/images/about-us.png"}
+          alt="about-us-image"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+          fill
+        />
+      )}
       <div className="max-w-screen-2xl mx-auto sm:px-0 px-5">
         <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           LetBefound - kilka słów o nas
