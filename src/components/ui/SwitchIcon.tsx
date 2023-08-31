@@ -5,6 +5,7 @@ const SwitchIcon: FC = () => {
   const [moveSwitch, setMoveSwitch] = useState<boolean>(false);
 
   useEffect(() => {
+    console.log("FIRE");
     setMoveSwitch(false);
     let interval = setInterval(() => {
       setMoveSwitch((prev) => !prev);

@@ -5,11 +5,11 @@ import { FC } from "react";
 
 const WhyYouNeedWebsiteDesktop: FC = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto ">
+    <div className="max-w-screen-2xl mx-auto">
       <h2 className="max-w-2xl uppercase lg:text-2xl text-center font-bold tracking-[.15em] relative z-10 mx-auto">
         Dlaczego Warto Posiadać Stronę Internetową dla Twojego Biznesu?
       </h2>
-      <p className="max-w-2xl text-justify absolute top-[15%] w-full inset-x-1/2 -translate-x-1/2 z-10 leading-relaxed">
+      <p className="max-w-2xl text-justify xl:text-lg absolute top-[15%] w-full inset-x-1/2 -translate-x-1/2 z-10 leading-relaxed">
         W dzisiejszych czasach, kiedy większość działań przenosi się do
         przestrzeni online, posiadanie profesjonalnej strony internetowej stało
         się nieodzownością dla każdego przedsiębiorstwa. Jeśli chcesz skutecznie
@@ -51,7 +51,7 @@ const WhyYouNeedWebsiteDesktop: FC = () => {
         <HexagonTileEmpty />
         <HexagonTileEmpty />
       </div>
-      <p className="max-w-2xl text-justify absolute w-full inset-x-1/2 -translate-x-1/2 bottom-28 z-10 leading-relaxed">
+      <p className="max-w-2xl text-justify xl:text-lg absolute w-full inset-x-1/2 -translate-x-1/2 bottom-28 z-10 leading-relaxed">
         W LetBeFound wiemy, jak ważna jest obecność online{" "}
         <span className="text-orange-600">dla sukcesu Twojego biznesu</span>.
         Nasza firma specjalizuje się w tworzeniu atrakcyjnych, zoptymalizowanych

@@ -8,7 +8,7 @@ const WhyYouNeedWebsite: FC = () => {
   const isMobile1024 = useIsMobile(1024);
   const isMobile768 = useIsMobile(768);
 
-  const display = () => {
+  const showCorresponingLayout = () => {
     if (isMobile768) {
       return <WhyYouNeedWebsiteMobile768 />;
     }
@@ -22,7 +22,7 @@ const WhyYouNeedWebsite: FC = () => {
   return (
     <>
       <section className="py-10 px-5 sm:py-20 sm:px-10 bg-grayBlue relative">
-        {display()}
+        {showCorresponingLayout()}
       </section>
     </>
   );
