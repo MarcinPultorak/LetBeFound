@@ -4,11 +4,12 @@ import SwitchButton from "../ui/SwitchIcon";
 import Header from "./Header/Header";
 import Image from "next/image";
 import { useAppContext } from "@/providers/AppContextProvider";
-import HexagonTile from "../ui/HexagonTile";
-import { WhyNeedWebsiteData } from "@/data/textData";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const Hero: FC = () => {
   const { successReceived } = useAppContext();
+
+  const isMobile = useIsMobile(640);
 
   return (
     <section
@@ -18,12 +19,21 @@ const Hero: FC = () => {
         boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
       }}
     >
-      <Image
-        src={"/images/hero.png"}
-        alt="hero-image"
-        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
-        fill
-      />
+      {isMobile ? (
+        <Image
+          src={"/images/hero-mobile.png"}
+          alt="hero-image-mobile"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+          fill
+        />
+      ) : (
+        <Image
+          src={"/images/hero.png"}
+          alt="hero-image"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+          fill
+        />
+      )}
       <Header />
       <div className="max-w-screen-2xl mx-auto h-full flex flex-col items-center justify-between max-h-[640px] mb-40 mt-40 sm:mb-60 grow">
         <div className="flex flex-col items-center">
