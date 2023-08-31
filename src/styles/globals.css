@@ -17,6 +17,14 @@ body {
     background: none;
   }
 
+  .card-static {
+    perspective: 150rem;
+    position: relative;
+    height: 250px;
+    width: 250px; 
+    background: none;
+  }
+
   .card-side {
     height: 100%; 
     width: 100%;
