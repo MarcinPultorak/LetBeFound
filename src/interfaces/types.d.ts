@@ -9,4 +9,5 @@ export interface HexagonTileDto {
     label: string;
     image: string;
     description: string;
+    demo: boolean;
 }

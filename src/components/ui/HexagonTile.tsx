@@ -35,6 +35,18 @@ const HexagonTile: FC<Props> = (props) => {
                 {props.data.label}
               </h2>
             </div>
+            {props.data.demo && (
+              <div className="flex items-center space-x-4 absolute z-50 bottom-12 ">
+                <img
+                  src="/images/icon-bulb.svg"
+                  alt="icon-bulb"
+                  className="w-12"
+                />
+                <p className="w-24 text-xs  uppercase font-bold text-orange-600">
+                  Sprawdź co kryje się pod kafelkami!
+                </p>
+              </div>
+            )}
           </div>
         </div>
         <div
