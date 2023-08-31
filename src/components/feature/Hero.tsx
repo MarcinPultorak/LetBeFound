@@ -16,7 +16,7 @@ const Hero: FC = () => {
       id={"Home"}
       className="w-full min-h-[800px] h-screen flex flex-col md:justify-center relative px-4 sm:px-10 z-50"
       style={{
-        boxShadow: "0px 4px 40px 0px rgba(234, 88, 12, 0.20)",
+        boxShadow: "0px 4px 30px 0px #075985",
       }}
     >
       {isMobile ? (
