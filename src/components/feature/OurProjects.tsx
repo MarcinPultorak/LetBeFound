@@ -1,4 +1,6 @@
 import { FC, useState } from "react";
+import Image from "next/image";
+import { animate, motion } from "framer-motion";
 
 const OurProjects: FC = () => {
   const carouselData = [
@@ -7,18 +9,21 @@ const OurProjects: FC = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fermentum neque, a euismod lectus. Quisque orci quam, semper in nunc ut, feugiat finibus diam. Nulla tincidunt sapien vel nunc lao",
       image: "hire-my-desk",
+      link: "#",
     },
     {
       title: "Dav-Code",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fermentum neque, a euismod lectus. Quisque orci quam, semper in nunc ut, feugiat finibus diam. Nulla tincidunt sapien vel nunc lao",
       image: "dav-code",
+      link: "#",
     },
     {
       title: "FHK Technology",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fermentum neque, a euismod lectus. Quisque orci quam, semper in nunc ut, feugiat finibus diam. Nulla tincidunt sapien vel nunc lao",
       image: "fhk-tech",
+      link: "#",
     },
   ];
 
@@ -54,8 +59,8 @@ const OurProjects: FC = () => {
           className="mt-10 lg:mt-0 w-24"
         />
 
-        <div className="flex flex-col-reverse lg:flex-row justify-center items-center md:space-x-16 mt-20">
-          <div className="max-w-screen-md flex flex-col justify-between mt-8 lg:mt-0">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:space-x-12 mt-20">
+          <div className="max-w-screen-md mt-8 lg:mt-0">
             <div className="flex flex-col items-center space-y-6 max-w-xl ">
               <h2 className="text-sm md:text-base lg:text-lg text-orange-600 tracking-[.15em] underline uppercase">
                 {carouselData[changeSlide].title}
@@ -65,7 +70,12 @@ const OurProjects: FC = () => {
               </p>
             </div>
             <div className="flex justify-between items-center mt-10">
-              <a href="#">Zobacz Online</a>
+              <a
+                href={carouselData[changeSlide].link}
+                className="underline text-orange-600"
+              >
+                Zobacz Online
+              </a>
               <div className="space-x-1 ">
                 <button onClick={prevSlide} className="w-8 h-8 bg-slate-300">
                   <img
@@ -84,16 +94,20 @@ const OurProjects: FC = () => {
               </div>
             </div>
           </div>
-          <div className="max-w-2xl">
-            <img
-              className="rounded-xl h-full"
-              src={`/images/${carouselData[changeSlide].image}.png`}
-              alt="asdasdasd"
-            />
+          <div className="max-w-2xl w-full">
+            <motion.div>
+              <Image
+                className="rounded-xl max-h-80 mx-auto"
+                src={`/images/${carouselData[changeSlide].image}.png`}
+                alt="asdasdasd"
+                width={672}
+                height={320}
+              />
+            </motion.div>
           </div>
         </div>
         <img
-          src="/images/decor-top.svg"
+          src="/images/decor-bottom.svg"
           alt=""
           className="ml-auto mt-20 w-24"
         />
