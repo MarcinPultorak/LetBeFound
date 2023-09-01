@@ -5,7 +5,7 @@ import { FC } from "react";
 
 const WhyYouNeedWebsiteMobile1024: FC = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto ">
+    <div className="max-w-screen-2xl mx-auto">
       <h2 className="max-w-2xl mx-auto uppercase sm:text-xl md:text-xl text-center font-bold tracking-[.15em] relative z-10">
         Dlaczego Warto Posiadać Własną Stronę Internetową dla Twojego Biznesu?
       </h2>
