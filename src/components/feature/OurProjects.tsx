@@ -1,6 +1,8 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import cx from "classnames";
+import Link from "next/link";
 
 const OurProjects: FC = () => {
   const variants = {
@@ -47,11 +49,11 @@ const OurProjects: FC = () => {
   const [changeSlide, setChangeSlide] = useState<number>(0);
 
   const carouselHandler = (newState: number) => {
-    let test = changeSlide + newState;
+    let index = changeSlide + newState;
 
-    if (test > carouselData.length - 1) {
+    if (index > carouselData.length - 1) {
       setChangeSlide(0);
-    } else if (test < 0) {
+    } else if (index < 0) {
       setChangeSlide(carouselData.length - 1);
     } else {
       setChangeSlide((prev) => prev + newState);
@@ -64,12 +66,7 @@ const OurProjects: FC = () => {
         <h2 className="uppercase sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           Nasze realizacje
         </h2>
-        <img
-          src="/images/decor-top.svg"
-          alt=""
-          className="mt-10 lg:mt-0 w-24"
-        />
-        <div className="relative h-80 w-full">
+        <div className="relative h-80 w-full mt-16">
           <AnimatePresence initial={false}>
             <motion.div
               key={changeSlide}
@@ -98,40 +95,52 @@ const OurProjects: FC = () => {
                 </div>
               </div>
               <div className="max-w-2xl w-full">
-                <Image
-                  className="rounded-xl max-h-80 mx-auto"
-                  src={`/images/${carouselData[changeSlide].image}.png`}
-                  alt="asdasdasd"
-                  width={672}
-                  height={320}
-                />
+                <Link href={carouselData[changeSlide].link}>
+                  <Image
+                    className="rounded-xl max-h-80 mx-auto"
+                    src={`/images/${carouselData[changeSlide].image}.png`}
+                    alt="project-screen-shot"
+                    width={672}
+                    height={320}
+                  />
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="flex justify-center space-x-1 mt-10">
+        <div className="flex justify-center space-x-2 mt-10">
           <button
             onClick={() => carouselHandler(-1)}
-            className="w-8 h-8 bg-slate-300"
+            className="w-8 h-8  rounded-sm"
           >
-            <img src="/images/icon-arrow-left.svg" alt="" className="mx-auto" />
+            <img
+              src="/images/icon-arrow-left.svg"
+              alt="arrow-left"
+              className="mx-auto"
+            />
           </button>
+          <div className="flex space-x-2 items-center">
+            {carouselData.map((item, i) => (
+              <div
+                key={item.title}
+                className={cx(
+                  "w-2 h-2 rounded-full",
+                  i == changeSlide ? "bg-orange-600" : "bg-slate-300"
+                )}
+              />
+            ))}
+          </div>
           <button
             onClick={() => carouselHandler(1)}
-            className="w-8 h-8 bg-sky-800"
+            className="w-8 h-8  rounded-sm"
           >
             <img
               src="/images/icon-arrow-right.svg"
-              alt=""
+              alt="arrow-right"
               className="mx-auto"
             />
           </button>
         </div>
-        <img
-          src="/images/decor-bottom.svg"
-          alt=""
-          className="ml-auto mt-20 w-24"
-        />
       </div>
     </section>
   );
