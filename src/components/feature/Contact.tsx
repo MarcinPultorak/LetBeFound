@@ -90,10 +90,10 @@ const Contact: FC = () => {
             />
             <div className="text-center">
               <p className="text-sm md:text-base lg:text-lg">
-                Marcin: +48 000 000 000
+                Marcin: +48 570 121 294
               </p>
               <p className="text-sm md:text-base lg:text-lg">
-                Dawid: +48 000 000 000
+                Dawid: +48 609 398 947
               </p>
             </div>
           </div>

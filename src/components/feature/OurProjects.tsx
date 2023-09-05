@@ -28,21 +28,21 @@ const OurProjects: FC = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fermentum neque, a euismod lectus. Quisque orci quam, semper in nunc ut, feugiat finibus diam. Nulla tincidunt sapien vel nunc lao",
       image: "hire-my-desk",
-      link: "#",
+      link: "https://www.hiremydesk.com/",
     },
     {
       title: "Dav-Code",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fermentum neque, a euismod lectus. Quisque orci quam, semper in nunc ut, feugiat finibus diam. Nulla tincidunt sapien vel nunc lao",
       image: "dav-code",
-      link: "#",
+      link: "https://www.dav-code.pl/",
     },
     {
       title: "FHK Technology",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fermentum neque, a euismod lectus. Quisque orci quam, semper in nunc ut, feugiat finibus diam. Nulla tincidunt sapien vel nunc lao",
       image: "fhk-tech",
-      link: "#",
+      link: "https://www.fhktechnology.com/",
     },
   ];
 
@@ -61,12 +61,15 @@ const OurProjects: FC = () => {
   };
 
   return (
-    <section className="bg-grayBlue py-10 md:py-20 px-5 sm:px-10">
-      <div className="max-w-screen-2xl mx-auto relative">
+    <section
+      id={"Nasze realizacje"}
+      className="bg-grayBlue py-10 md:py-20 px-5 sm:px-10"
+    >
+      <div className="max-w-screen-2xl mx-auto ">
         <h2 className="uppercase sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           Nasze realizacje
         </h2>
-        <div className="relative h-80 w-full mt-16">
+        <div className="relative w-full h-[450px] sm:h-[550px] lg:h-96 mt-16">
           <AnimatePresence initial={false}>
             <motion.div
               key={changeSlide}
@@ -74,7 +77,7 @@ const OurProjects: FC = () => {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="absolute top-0 inset-x-1/2 w-full -translate-x-1/2 flex flex-col-reverse lg:flex-row items-center justify-center lg:space-x-12"
+              className="absolute top-0 inset-x-1/2 w-full h-full -translate-x-1/2 flex flex-col-reverse lg:flex-row items-center justify-center lg:space-x-12"
             >
               <div className="max-w-screen-md mt-8 lg:mt-0">
                 <div className="flex flex-col items-center space-y-6 max-w-xl">
@@ -89,15 +92,16 @@ const OurProjects: FC = () => {
                   <a
                     href={carouselData[changeSlide].link}
                     className="underline text-orange-600"
+                    target="blank"
                   >
                     Zobacz online
                   </a>
                 </div>
               </div>
               <div className="max-w-2xl w-full">
-                <Link href={carouselData[changeSlide].link}>
+                <Link href={carouselData[changeSlide].link} target="blank">
                   <Image
-                    className="rounded-xl max-h-80 mx-auto"
+                    className="rounded-xl mx-auto"
                     src={`/images/${carouselData[changeSlide].image}.png`}
                     alt="project-screen-shot"
                     width={672}

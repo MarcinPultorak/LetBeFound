@@ -3,12 +3,10 @@ import Button from "../ui/Button";
 import SwitchButton from "../ui/SwitchIcon";
 import Header from "./Header/Header";
 import Image from "next/image";
-import { useAppContext } from "@/providers/AppContextProvider";
 import useIsMobile from "@/hooks/useIsMobile";
+import Link from "next/link";
 
 const Hero: FC = () => {
-  const { successReceived } = useAppContext();
-
   const isMobile = useIsMobile(640);
 
   return (
@@ -63,14 +61,15 @@ const Hero: FC = () => {
             <span className="text-orange-600">Twoją ofertę</span>.
           </h2>
           <div className="w-full sm:w-48 mt-10">
-            <Button
-              className="uppercase"
-              title="Sprawdź"
-              onClick={() => successReceived("Test")}
-              style={{ boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)" }}
-            >
-              Sprawdź
-            </Button>
+            <Link href={"#Oferta"}>
+              <Button
+                className="uppercase"
+                title="Sprawdź"
+                style={{ boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.30)" }}
+              >
+                Sprawdź
+              </Button>
+            </Link>
           </div>
 
           <div className="absolute bottom-10">

@@ -13,7 +13,14 @@ const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isFollowing, setIsFollowing] = useState<boolean>(false);
 
-  const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
+  const ids: string[] = [
+    "Home",
+    "Oferta",
+    "Nasz proces",
+    "O nas",
+    "Nasze realizacje",
+    "Kontakt",
+  ];
 
   const { scrollY } = useScroll();
   const activeId = useScrollSpy(ids, 0);
