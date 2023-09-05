@@ -14,24 +14,24 @@ const Home: NextPage = () => {
     <>
       <Hero />
 
-      <SectionWrapper id={"Oferta"}>
+      <SectionWrapper className="relative z-40" id={"Oferta"}>
         <WhyYouNeedWebsite />
         <Offer />
       </SectionWrapper>
 
-      <SectionWrapper id={"Nasz proces"}>
+      <SectionWrapper className="relative z-30" id={"Nasz proces"}>
         <OurProcess />
       </SectionWrapper>
 
-      <SectionWrapper id={"O nas"}>
+      <SectionWrapper className="relative z-20" id={"O nas"}>
         <AboutUs />
       </SectionWrapper>
 
-      <SectionWrapper id={"Nasze realizacje"}>
+      <SectionWrapper className="relative z-10" id={"Nasze realizacje"}>
         <OurProjects />
       </SectionWrapper>
 
-      <SectionWrapper id={"Kontakt"}>
+      <SectionWrapper className="relative z-0" id={"Kontakt"}>
         <Contact />
       </SectionWrapper>
     </>

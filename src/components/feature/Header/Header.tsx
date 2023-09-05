@@ -46,7 +46,12 @@ const Header: FC = () => {
           : "md:absolute md:top-0 h-28"
       )}
     >
-      {isOpened && <HeaderMobile closeMenu={() => setIsOpened(false)} />}
+      {isOpened && (
+        <HeaderMobile
+          closeMenu={() => setIsOpened(false)}
+          isFollowing={isFollowing}
+        />
+      )}
       <div className="flex justify-between items-center h-full md:hidden">
         <LogoTextMobile />
 

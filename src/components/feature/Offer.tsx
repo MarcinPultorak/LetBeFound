@@ -34,7 +34,7 @@ const Offer: FC = () => {
 
   return (
     <section
-      className="px-5 sm:px-10 py-10 md:py-20 z-40 relative"
+      className="px-5 sm:px-10 py-10 md:py-20 relative"
       style={{
         boxShadow: "0px 4px 30px 0px #075985",
       }}
