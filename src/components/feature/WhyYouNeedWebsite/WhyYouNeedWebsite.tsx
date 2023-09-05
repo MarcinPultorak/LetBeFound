@@ -21,10 +21,7 @@ const WhyYouNeedWebsite: FC = () => {
 
   return (
     <>
-      <section
-        id={"Oferta"}
-        className="py-10 px-5 sm:py-20 sm:px-10 bg-grayBlue relative"
-      >
+      <section className="py-10 px-5 sm:py-20 sm:px-10 bg-grayBlue relative">
         {showCorresponingLayout()}
       </section>
     </>

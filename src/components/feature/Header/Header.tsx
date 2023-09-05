@@ -23,7 +23,7 @@ const Header: FC = () => {
   ];
 
   const { scrollY } = useScroll();
-  const activeId = useScrollSpy(ids, 0);
+  const activeId = useScrollSpy(ids, 81);
 
   useEffect(() => {
     const updateHeader = () => {
@@ -72,7 +72,7 @@ const Header: FC = () => {
             <li
               key={id}
               className={cx(
-                "cursor-pointer hover:text-orange-600 hover:underline hover:underline-offset-8",
+                "cursor-pointer md:hover:text-orange-600 md:hover:underline md:hover:underline-offset-8",
                 id == activeId && "underline underline-offset-8 text-orange-600"
               )}
             >
