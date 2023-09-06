@@ -5,6 +5,7 @@ import Image from "next/image";
 import useIsMobile from "@/hooks/useIsMobile";
 
 const AboutUs: FC = () => {
+  const isMobile = useIsMobile(768);
   const data = [
     {
       icon: <img className="w-8" src="/images/icon-bulb.svg" alt="Icon-bulb" />,
@@ -51,7 +52,14 @@ const AboutUs: FC = () => {
         <h2 className="uppercase sm:text-xl md:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
           LetBefound - kilka słów o nas
         </h2>
-        <div className="lg:grid lg:grid-cols-2 mt-16">
+        <motion.div
+          viewport={{ once: true }}
+          whileInView={
+            isMobile ? { x: 0, opacity: 1 } : { x: [-300, 0], opacity: [0, 1] }
+          }
+          transition={isMobile ? { duration: 0 } : { duration: 1 }}
+          className="lg:grid lg:grid-cols-2 mt-16"
+        >
           <div>
             <p
               className="text-justify text-xs sm:text-sm md:text-base"
@@ -88,7 +96,7 @@ const AboutUs: FC = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
