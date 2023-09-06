@@ -39,12 +39,12 @@ const Contact: FC = () => {
   return (
     <section
       id={"Kontakt"}
-      className="px-5 py-10 sm:px-10 md:py-20 bg-neutral-950 relative"
+      className="px-5 py-10 sm:px-10 md:py-20 bg-neutral-950 relative z-0"
     >
       <Image
         src={"/images/contact-background.png"}
         alt="contact-background-image"
-        className="absolute top-0 left-0 w-full h-full object-cover -z-50"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         fill
       />
 

@@ -5,7 +5,6 @@ const SwitchIcon: FC = () => {
   const [moveSwitch, setMoveSwitch] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log("FIRE");
     setMoveSwitch(false);
     let interval = setInterval(() => {
       setMoveSwitch((prev) => !prev);
@@ -22,9 +21,10 @@ const SwitchIcon: FC = () => {
         <div
           className={cx(
             "w-4 h-4 sm:w-6 sm:h-6 bg-orange-600 rounded-full mt-1",
-            moveSwitch
-              ? "transition translate-y-[24px] sm:translate-y-[30px] duration-700"
-              : ""
+            {
+              "transition translate-y-[24px] sm:translate-y-[30px] duration-700":
+                moveSwitch,
+            }
           )}
         />
       </div>

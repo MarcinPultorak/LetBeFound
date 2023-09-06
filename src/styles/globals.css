@@ -4,6 +4,7 @@
 
 body {
   color: #cbd5e1;
+  backface-visibility: hidden;
 }
 
 @layer components {
