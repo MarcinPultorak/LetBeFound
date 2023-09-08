@@ -112,7 +112,11 @@ type _AboutUsTileProps = {
 const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
   return (
     <>
-      <div className="flex items-center mt-10 xl:mt-0">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.2 }}
+        className="flex items-center mt-10 xl:mt-0"
+      >
         <div
           className="w-24 h-24 rounded-full flex justify-center items-center shrink-0 bg-grayBlue"
           style={{
@@ -122,7 +126,7 @@ const _AboutUsTile: FC<_AboutUsTileProps> = (props) => {
           {props.icon}
         </div>
         <p className="text-xs sm:text-sm p-5">{props.paragraph}</p>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -15,7 +15,11 @@ const SectionDesktop: FC = () => {
           />
         </div>
         <div className="py-10 sm:py-20">
-          <div className="relative mx-auto sm:-mt-20 md:-mt-0 border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            className="relative mx-auto sm:-mt-20 md:-mt-0 border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4"
+          >
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-16 left-8 -top-20 md:left-28 lg:-top-48 lg:-left-12">
               <motion.img
                 whileInView={{ scale: [0, 1] }}
@@ -35,8 +39,12 @@ const SectionDesktop: FC = () => {
               zrozumienia Twojej wizji i zbudowania solidnego fundamentu dla
               projektu.
             </p>
-          </div>
-          <div className=" md:mt-48 relative mx-auto border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            className=" md:mt-48 relative mx-auto border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4"
+          >
             <div className="absolute lg:w-auto w-[150px] md:w-[200px] left-36 top-20 sm:top-0 sm:left-96 md:top-52 md:left-36 lg:top-20 lg:left-28">
               <motion.img
                 whileInView={{ scale: [0, 1] }}
@@ -73,10 +81,14 @@ const SectionDesktop: FC = () => {
                 rezultaty online, które przynoszą wartość Twojemu biznesowi.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div />
-        <div className="self-center relative border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+          className="self-center relative border border-zinc-600 rounded-2xl bg-grayBlue bg-opacity-70 p-4"
+        >
           <div className="absolute lg:w-auto w-[150px] md:w-[200px] sm:-top-12 sm:left-36 md:-top-20 md:left-16 lg:-top-28 lg:left-36">
             <motion.img
               whileInView={{ scale: [0, 1] }}
@@ -95,7 +107,7 @@ const SectionDesktop: FC = () => {
             otrzymaniu Twojej aprobaty przystępujemy do wdrożenia, dbając o
             każdy detal, aby Twoja strona była gotowa zdobyć serca klientów.
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
