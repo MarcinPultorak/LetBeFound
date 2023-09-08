@@ -4,6 +4,7 @@ function Document() {
   return (
     <Html className="scroll-smooth">
       <Head>
+        {(localStorage.theme = "light")}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
