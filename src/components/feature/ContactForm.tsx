@@ -12,6 +12,7 @@ type Props = {
 
 const ContactForm: FC<Props> = (props) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isFormReset, setIsFormReset] = useState<boolean>(false);
 
   const {
     register,
@@ -21,6 +22,7 @@ const ContactForm: FC<Props> = (props) => {
   } = useForm<ContactFormDto>();
 
   const _submit = (payload: ContactFormDto) => {
+    setIsFormReset(true);
     setIsLoading(true);
     props
       .callback(payload)
@@ -86,6 +88,8 @@ const ContactForm: FC<Props> = (props) => {
             required
             rows={8}
             errorMessage={errors.message?.message}
+            isReset={isFormReset}
+            setIsReset={setIsFormReset}
           />
         </div>
       </fieldset>

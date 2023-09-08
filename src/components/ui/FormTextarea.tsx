@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   ForwardRefRenderFunction,
   TextareaHTMLAttributes,
+  useEffect,
   useState,
 } from "react";
 
@@ -19,13 +20,25 @@ type TextareaProps = {
     | undefined;
   maxLength?: number;
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  isReset: boolean;
+  setIsReset: (val: boolean) => void;
 };
 
 const Textarea: ForwardRefRenderFunction<
   HTMLTextAreaElement,
   TextareaProps & TextareaHTMLAttributes<HTMLTextAreaElement>
-> = ({ label, errorMessage, maxLength, onChange, ...props }, ref) => {
+> = (
+  { label, errorMessage, maxLength, onChange, isReset, setIsReset, ...props },
+  ref
+) => {
   const [textLength, setTextLength] = useState<number>(0);
+
+  useEffect(() => {
+    if (isReset) {
+      setTextLength(0);
+      setIsReset(false);
+    }
+  }, [isReset]);
 
   return (
     <>
