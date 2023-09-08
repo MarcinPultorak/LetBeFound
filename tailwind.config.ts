@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 const colors = require('tailwindcss/colors');
 
+module.exports ={
+  darkMode: 'class'
+}
 
 const config: Config = {
   content: [
@@ -45,6 +48,7 @@ const config: Config = {
       },
     },
   },
+
   plugins: [],
 };
 export default config;
