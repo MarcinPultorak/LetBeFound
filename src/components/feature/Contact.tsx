@@ -12,7 +12,7 @@ const Contact: FC = () => {
   const isMobile = useIsMobile(768);
 
   const handleContactForm = async (payload: ContactFormDto): Promise<void> => {
-    await fetch("/api", {
+    await fetch("/api/route", {
       body: JSON.stringify({
         email: payload.email,
         fullname: payload.name,
@@ -23,17 +23,17 @@ const Contact: FC = () => {
         "Content-Type": "application/json",
       },
       method: "POST",
-    })
-      .then(() => {
+    }).then((res) => {
+      if (res.status == 200) {
         successReceived("Formularz został wysłany!");
         return Promise.resolve();
-      })
-      .catch((err) => {
+      } else {
         errorReceived(
           "Wystąpił błąd podczas próby wysłania formularza. Spróbuj ponownie!"
         );
         return Promise.reject();
-      });
+      }
+    });
   };
 
   return (

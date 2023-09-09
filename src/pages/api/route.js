@@ -1,35 +1,65 @@
 import sendgrid from '@sendgrid/mail'
-import { NextResponse } from 'next/server';
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
-export async function POST(req) {
-    let response = {};
-
-    const body = await req.json() 
-
-    await sendgrid.send({
-        to: 'karbowniczek.daw@gmail.com', // Your email where you'll receive emails
-        from: 'karbowniczek.daw@gmail.com', // your website email address here
-        subject: `${body.subject}`,
-        text: 'test',
-        html: `<h3>You\'ve got a new mail from ${body.fullname}, their email is: ✉️${body.email}</h3>
-                <div style="font-size: 16px;">
-                    <p>Message:</p>
-                    <p>${body.message}</p>
-                    <br>
-                </div>`
-        }).then(() => {
-            response = {
-                status: 'success',
-                message: 'Message was sent successfully!'
-            }
-        }).catch(() => {
-            response = {
-                status: 'error',
-                message: 'Something went wrong. Please try again!'
-            }
+async function sendEmail(req, res) {
+    try {
+        await sendgrid.send({
+            to: 'karbowniczek.daw@gmail.com', // Your email where you'll receive emails
+            from: 'karbowniczek.daw@gmail.com', // your website email address here
+            subject: `${req.body.subject}`,
+            text: 'test',
+            html: `<h3>You\'ve got a new mail from ${req.body.fullname}, their email is: ✉️${req.body.email}</h3>
+                   <div style="font-size: 16px;">
+                      <p>Message:</p>
+                      <p>${req.body.message}</p>
+                      <br>
+                   </div>`
         })
+    } catch (error) {
+        return res
+            .status(error.statusCode || 500)
+            .json({ error: error.message })
+    }
 
-    return NextResponse.json(response);
+    return res.status(200).json({ error: '' })
 }
+
+export default sendEmail
+
+
+// import sendgrid from '@sendgrid/mail'
+// import { NextResponse } from 'next/server';
+
+// sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
+
+// export async function POST(req) {
+//     let response = {};    
+
+//     const body = await req.json() 
+
+//     await sendgrid.send({
+//         to: 'karbowniczek.daw@gmail.com', // Your email where you'll receive emails
+//         from: 'karbowniczek.daw@gmail.com', // your website email address here
+//         subject: `${body.subject}`,
+//         text: 'test',
+//         html: `<h3>You\'ve got a new mail from ${body.fullname}, their email is: ✉️${body.email}</h3>
+//                 <div style="font-size: 16px;">
+//                     <p>Message:</p>
+//                     <p>${body.message}</p>
+//                     <br>
+//                 </div>`
+//         }).then(() => {
+//             response = {
+//                 status: 'success',
+//                 message: 'Message was sent successfully!'
+//             }
+//         }).catch(() => {
+//             response = {
+//                 status: 'error',
+//                 message: 'Something went wrong. Please try again!'
+//             }
+//         })
+
+//     return NextResponse.json(response);
+// }
