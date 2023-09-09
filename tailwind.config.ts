@@ -8,7 +8,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   future: {
-    hoverOnlyWhenSupported: true
+    hoverOnlyWhenSupported: true,
   },
   theme: {
     fontFamily: {
