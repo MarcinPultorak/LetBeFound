@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Plik weryfikujący własność domeny pakietu Microsoft 365— umieść go w katalogu głównym witryny internetowej",
+  "Domain": "letbefound.pl",
+  "Id": "7dbbaef7-85d7-4ca7-b837-73d62f1bf290"
+}
