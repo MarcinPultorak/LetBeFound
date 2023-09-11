@@ -20,10 +20,11 @@ const OurProcess: FC = () => {
       <h2 className="uppercase text-base sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
         Etapy współpracy
       </h2>
-      <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto sm:mt-20 mt-10 text-justify">
+
+      <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto text-justify sm:mt-20 mt-10">
         <div />
         <div
-          className="space-y-12 pl-8 sm:pl-16 py-10 flex flex-col justify-center"
+          className="space-y-12 pl-8 sm:pl-16 py-10 flex flex-col justify-center bg-darkPurple/50 md:bg-darkPurple/0"
           style={{
             borderImage:
               "linear-gradient(0deg, rgba(203, 213, 225, 0) 0%, rgba(203, 213, 225, 0.8) 50%, rgba(203, 213, 225, 0) 100%)",
@@ -36,7 +37,7 @@ const OurProcess: FC = () => {
           }}
         >
           <div className="relative">
-            <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4" />
+            <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4 top-1" />
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
@@ -62,7 +63,7 @@ const OurProcess: FC = () => {
           </div>
 
           <div className="relative">
-            <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4" />
+            <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4 top-1" />
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
@@ -87,7 +88,7 @@ const OurProcess: FC = () => {
           </div>
 
           <div className="relative">
-            <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4" />
+            <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4 top-1" />
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
