@@ -22,7 +22,7 @@ const OurProcess: FC = () => {
       </h2>
       <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto sm:mt-20 mt-10 text-justify">
         <div />
-        <div className="space-y-12 border-l-2 border-zinc-600 pl-8 sm:pl-16 h-[700px] lg:h-[1000px] xl:h-[900px] flex flex-col justify-center">
+        <div className="space-y-12 border-l-2 border-zinc-600 pl-8 sm:pl-16 py-20 flex flex-col justify-center">
           <div className="relative">
             <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-[33px] sm:-left-[65px] -translate-x-1/2 translate-y-1/4" />
             <motion.div
