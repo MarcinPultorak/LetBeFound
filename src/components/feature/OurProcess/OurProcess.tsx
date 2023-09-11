@@ -23,8 +23,17 @@ const OurProcess: FC = () => {
       <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto sm:mt-20 mt-10 text-justify">
         <div />
         <div
-          className="space-y-12 border-l pl-8 sm:pl-16 py-20 flex flex-col justify-center"
-          style={{ borderImage: "" }}
+          className="space-y-12 pl-8 sm:pl-16 py-10 flex flex-col justify-center"
+          style={{
+            borderImage:
+              "linear-gradient(0deg, rgba(203, 213, 225, 0) 0%, rgba(203, 213, 225, 0.8) 50%, rgba(203, 213, 225, 0) 100%)",
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderImageSlice: "100",
+            borderTop: "none",
+            borderBottom: "none",
+            borderRight: "none",
+          }}
         >
           <div className="relative">
             <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4" />
