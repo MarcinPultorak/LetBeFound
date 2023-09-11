@@ -41,6 +41,9 @@ const AboutUs: FC = () => {
     <section
       id={"O nas"}
       className="px-5 sm:px-10 py-10 md:py-20 z-20 relative bg-darkPurple"
+      style={{
+        boxShadow: "0px 4px 30px 0px #075985",
+      }}
     >
       <Image
         src={"/images/about-us.png"}
@@ -68,10 +71,13 @@ const AboutUs: FC = () => {
               }}
             >
               W LetBeFound łączymy pasję z wiedzą i doświadczeniem, aby
-              zrewolucjonizować Twój biznes w świecie cyfrowym. Nasza firma
-              powstała z miłości do tworzenia, projektowania i strategii online.
-              Jesteśmy dedykowanym zespołem, który dąży do tego, by Twoja firma
-              osiągnęła najwyższe cele w przestrzeni internetowej.
+              zrewolucjonizować{" "}
+              <span className="text-orange-600">Twój biznes</span> w świecie
+              cyfrowym. Nasza firma powstała z miłości do tworzenia,
+              projektowania i strategii online. Jesteśmy dedykowanym zespołem,
+              który dąży do tego, by{" "}
+              <span className="text-orange-600">Twoja firma</span> osiągnęła
+              najwyższe cele w przestrzeni internetowej.
             </p>
             <p
               className="text-justify text-xs sm:text-sm md:text-base mt-4"

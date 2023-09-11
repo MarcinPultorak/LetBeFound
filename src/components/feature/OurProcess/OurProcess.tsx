@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const OurProcess: FC = () => {
   return (
@@ -16,10 +17,26 @@ const OurProcess: FC = () => {
         alt="OurProcess background"
         fill
       ></Image>
-      <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto">
+      <h2 className="uppercase text-base sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
+        Etapy współpracy
+      </h2>
+      <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto sm:mt-20 mt-10 text-justify">
         <div />
         <div className="space-y-4">
-          <div className="bg-blackPurple bg-opacity-80 border border-zinc-600 rounded-2xl p-4 sm:p-8 flex flex-col items-center">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            whileInView={{
+              x: [300, 0],
+              opacity: [0, 1],
+              transition: { type: "spring", delay: 0.3 },
+            }}
+            viewport={{ once: true }}
+            className="bg-blackPurple bg-opacity-80 border border-zinc-600 rounded-2xl p-4 sm:p-8 flex flex-col items-center"
+            style={{
+              boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
+            }}
+          >
             <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
               Konsultacje i analiza
             </h3>
@@ -31,8 +48,21 @@ const OurProcess: FC = () => {
               zrozumienia Twojej wizji i zbudowania solidnego fundamentu dla
               projektu.
             </p>
-          </div>
-          <div className="bg-blackPurple bg-opacity-80 border border-zinc-600 rounded-2xl p-4 sm:p-8 flex flex-col items-center">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            whileInView={{
+              x: [300, 0],
+              opacity: [0, 1],
+              transition: { type: "spring", delay: 0.6 },
+            }}
+            viewport={{ once: true }}
+            className="bg-blackPurple bg-opacity-80 border border-zinc-600 rounded-2xl p-4 sm:p-8 flex flex-col items-center"
+            style={{
+              boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
+            }}
+          >
             <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
               Projektowanie i wdrażanie
             </h3>
@@ -43,8 +73,21 @@ const OurProcess: FC = () => {
               otrzymaniu Twojej aprobaty przystępujemy do wdrożenia, dbając o
               każdy detal, aby Twoja strona była gotowa zdobyć serca klientów.
             </p>
-          </div>
-          <div className="bg-blackPurple bg-opacity-80 border border-zinc-600 rounded-2xl p-4 sm:p-8 flex flex-col items-center">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            whileInView={{
+              x: [300, 0],
+              opacity: [0, 1],
+              transition: { type: "spring", delay: 0.9 },
+            }}
+            viewport={{ once: true }}
+            className="bg-blackPurple bg-opacity-80 border border-zinc-600 rounded-2xl p-4 sm:p-8 flex flex-col items-center"
+            style={{
+              boxShadow: "0px 4px 20px 0px rgba(82, 82, 91, 0.25)",
+            }}
+          >
             <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
               Testowanie i wsparcie
             </h3>
@@ -68,12 +111,8 @@ const OurProcess: FC = () => {
                   rozwiązania.
                 </li>
               </ul>
-              <p>
-                Daj nam szansę, abyśmy mogli przekształcić Twoje wizje w
-                rezultaty online, które przynoszą wartość Twojemu biznesowi.
-              </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

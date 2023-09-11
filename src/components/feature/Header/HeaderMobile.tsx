@@ -10,7 +10,14 @@ type Props = {
 };
 
 const HeaderMobile: FC<Props> = ({ closeMenu, isFollowing }) => {
-  const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Kontakt"];
+  const ids: string[] = [
+    "Home",
+    "Oferta",
+    "Nasz proces",
+    "O nas",
+    "Nasze realizacje",
+    "Kontakt",
+  ];
 
   return (
     <div className="fixed top-0 left-0 h-screen w-full px-10 py-20 z-50 bg-grayBlue">

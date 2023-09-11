@@ -13,7 +13,7 @@ const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
 }) => {
   const variants: Record<string, string> = {
     blank: "",
-    primary: "bg-sky-800 text-zinc-100 hover:bg-teal-600 px-5",
+    primary: "bg-sky-600 text-zinc-100 hover:bg-sky-800 px-5",
     secondary:
       "bg-white boder-black text-black border border-slate-400 hover:bg-slate-100",
   };

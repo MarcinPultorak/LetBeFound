@@ -31,6 +31,9 @@ const OurProjects: FC = () => {
     <section
       id={"Nasze realizacje"}
       className="bg-grayBlue py-10 md:py-20 px-5 sm:px-10"
+      style={{
+        boxShadow: "0px 4px 40px 0px #090D19",
+      }}
     >
       <div className="max-w-screen-2xl mx-auto">
         <h2 className="uppercase sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
