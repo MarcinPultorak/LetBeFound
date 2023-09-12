@@ -26,7 +26,7 @@ const OurProcess: FC = () => {
       <div className="lg:grid lg:grid-flow-col lg:grid-cols-2 max-w-screen-2xl mx-auto text-justify sm:mt-20 mt-10">
         <div />
         <div
-          className="space-y-12 pl-8 sm:pl-16 py-10 flex flex-col justify-center bg-darkPurple/50 md:bg-darkPurple/0"
+          className="space-y-12 pl-8 sm:pl-16 py-10 flex flex-col justify-center bg-darkPurple/50 lg:bg-darkPurple/0"
           style={{
             borderImage:
               "linear-gradient(0deg, rgba(203, 213, 225, 0) 0%, rgba(203, 213, 225, 0.8) 50%, rgba(203, 213, 225, 0) 100%)",
