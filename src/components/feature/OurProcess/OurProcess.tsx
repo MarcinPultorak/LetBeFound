@@ -1,8 +1,10 @@
 import { FC } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const OurProcess: FC = () => {
+  const isMobile = useIsMobile(768);
   return (
     <section
       id={"Nasz proces"}
@@ -39,13 +41,18 @@ const OurProcess: FC = () => {
           <div className="relative">
             <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4 top-1" />
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              whileInView={{
-                x: [300, 0],
-                opacity: [0, 1],
-                transition: { type: "spring", delay: 0.3 },
-              }}
+              whileInView={
+                isMobile
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {
+                      x: [300, 0],
+                      opacity: [0, 1],
+                      transition: { type: "spring", delay: 0.3 },
+                    }
+              }
               viewport={{ once: true }}
             >
               <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
@@ -65,13 +72,18 @@ const OurProcess: FC = () => {
           <div className="relative">
             <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4 top-1" />
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              whileInView={{
-                x: [300, 0],
-                opacity: [0, 1],
-                transition: { type: "spring", delay: 0.6 },
-              }}
+              whileInView={
+                isMobile
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {
+                      x: [300, 0],
+                      opacity: [0, 1],
+                      transition: { type: "spring", delay: 0.6 },
+                    }
+              }
               viewport={{ once: true }}
             >
               <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">
@@ -90,13 +102,18 @@ const OurProcess: FC = () => {
           <div className="relative">
             <div className="w-[15px] h-[15px] bg-orange-600 rounded-full absolute -left-8 sm:-left-16 -translate-x-1/2 translate-y-1/4 top-1" />
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              whileInView={{
-                x: [300, 0],
-                opacity: [0, 1],
-                transition: { type: "spring", delay: 0.9 },
-              }}
+              whileInView={
+                isMobile
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {
+                      x: [300, 0],
+                      opacity: [0, 1],
+                      transition: { type: "spring", delay: 0.9 },
+                    }
+              }
               viewport={{ once: true }}
             >
               <h3 className="text-sm sm:text-base md:text-lg text-orange-600 tracking-[.15em] underline uppercase">

@@ -41,7 +41,7 @@ const Header: FC = () => {
   return (
     <header
       className={cx(
-        "md:inset-x-0 w-full flex-shrink-0 fixed top-0 left-0 px-5 md:px-10 z-50",
+        "lg:inset-x-0 w-full flex-shrink-0 fixed top-0 left-0 px-5 md:px-10 z-50",
         isFollowing
           ? "bg-grayBlue h-20 shadow-black shadow-md"
           : "md:absolute md:top-0 h-28"
@@ -53,7 +53,7 @@ const Header: FC = () => {
           isFollowing={isFollowing}
         />
       )}
-      <div className="flex justify-between items-center h-full md:hidden">
+      <div className="flex justify-between items-center h-full lg:hidden">
         <LogoHorizontalMobile />
 
         <button onClick={() => setIsOpened(!isOpened)}>
@@ -62,8 +62,8 @@ const Header: FC = () => {
       </div>
       <div
         className={cx(
-          "relative hidden md:flex md:max-w-screen-2xl md:w-full md:h-full  md:mx-auto",
-          isFollowing ? "md:justify-between items-center" : "md:justify-end"
+          "relative hidden lg:flex lg:max-w-screen-2xl lg:w-full lg:h-full  lg:mx-auto",
+          isFollowing ? "lg:justify-between items-center" : "lg:justify-end"
         )}
       >
         <div
@@ -78,7 +78,7 @@ const Header: FC = () => {
             <li
               key={id}
               className={cx(
-                "cursor-pointer md:hover:text-orange-600 md:hover:underline md:hover:underline-offset-8",
+                "cursor-pointer lg:hover:text-orange-600 lg:hover:underline lg:hover:underline-offset-8",
                 id == activeId && "underline underline-offset-8 text-orange-600"
               )}
             >
