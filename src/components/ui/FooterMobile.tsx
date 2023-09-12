@@ -12,7 +12,7 @@ const FooterMobile: FC = () => {
       }}
     >
       <div className="max-w-screen-2xl w-full mx-auto flex justify-between items-center">
-        <div>
+        <div className="w-32">
           <LogoHorizontalMobile />
         </div>
         <div className="text-end">

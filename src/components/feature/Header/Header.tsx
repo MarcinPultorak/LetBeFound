@@ -68,7 +68,7 @@ const Header: FC = () => {
       >
         <div
           className={cx("", {
-            "absolute top-8 left-0": !isFollowing,
+            "absolute top-7 left-0": !isFollowing,
           })}
         >
           {isFollowing ? <LogoHorizontalMobile /> : <LogoHorizontal />}

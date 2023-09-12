@@ -12,7 +12,7 @@ const Footer: FC = () => {
       }}
     >
       <div className="max-w-screen-2xl w-full mx-auto flex justify-between items-center">
-        <div>
+        <div className="w-36">
           <LogoHorizontal />
         </div>
 
