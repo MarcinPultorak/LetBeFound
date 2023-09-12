@@ -5,8 +5,6 @@ import { useScroll } from "framer-motion";
 import cx from "classnames";
 import Link from "next/link";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
-import LogoVerticalMobile from "../../ui/LogoVerticalMobile";
-import LogoVertical from "../../ui/LogoVertical";
 import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
 import LogoHorizontal from "@/components/ui/LogoHorizontal";
 
