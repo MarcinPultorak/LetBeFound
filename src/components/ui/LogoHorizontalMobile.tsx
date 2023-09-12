@@ -5,7 +5,7 @@ const LogoHorizontalMobile: FC = () => {
   return (
     <Link href={"/"}>
       <img
-        className="h-16 w-16"
+        className="w-48"
         src="/images/logo_horizontal_white.svg"
         alt="letbefound-logo"
       />

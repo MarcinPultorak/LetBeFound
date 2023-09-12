@@ -3,6 +3,7 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import cx from "classnames";
 import LogoVerticalMobile from "../../ui/LogoVerticalMobile";
+import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
 
 type Props = {
   closeMenu: () => void;
@@ -28,7 +29,7 @@ const HeaderMobile: FC<Props> = ({ closeMenu, isFollowing }) => {
       </div>
       <div className="mx-auto">
         <div className="flex justify-center">
-          <LogoVerticalMobile />
+          <LogoHorizontalMobile />
         </div>
         <ul className="flex flex-col space-y-10 items-center mt-12">
           {ids.map((id) => (

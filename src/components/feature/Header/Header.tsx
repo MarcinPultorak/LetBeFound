@@ -7,6 +7,8 @@ import Link from "next/link";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import LogoVerticalMobile from "../../ui/LogoVerticalMobile";
 import LogoVertical from "../../ui/LogoVertical";
+import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
+import LogoHorizontal from "@/components/ui/LogoHorizontal";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -52,7 +54,7 @@ const Header: FC = () => {
         />
       )}
       <div className="flex justify-between items-center h-full md:hidden">
-        <LogoVerticalMobile />
+        <LogoHorizontalMobile />
 
         <button onClick={() => setIsOpened(!isOpened)}>
           <Bars3Icon className="w-8 h-8" />
@@ -69,7 +71,7 @@ const Header: FC = () => {
             "absolute top-8 left-0": !isFollowing,
           })}
         >
-          {isFollowing ? <LogoVerticalMobile /> : <LogoVertical />}
+          {isFollowing ? <LogoHorizontalMobile /> : <LogoHorizontal />}
         </div>
         <ul className="flex space-x-10 items-center">
           {ids.map((id) => (

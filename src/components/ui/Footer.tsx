@@ -13,7 +13,7 @@ const Footer: FC = () => {
     >
       <div className="max-w-screen-2xl w-full mx-auto flex justify-between items-center">
         <div>
-          <LogoVertical />
+          <LogoHorizontal />
         </div>
 
         <p className="text-base">Copyright © 2023 LetBeFound</p>
