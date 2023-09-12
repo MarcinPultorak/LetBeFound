@@ -1,7 +1,7 @@
 import { FC } from "react";
-import LogoText from "./LogoText";
-import LogoTextMobile from "./LogoTextMobile";
 import Link from "next/link";
+import LogoHorizontal from "./LogoHorizontal";
+import LogoVertical from "./LogoVertical";
 
 const Footer: FC = () => {
   return (
@@ -13,7 +13,7 @@ const Footer: FC = () => {
     >
       <div className="max-w-screen-2xl w-full mx-auto flex justify-between items-center">
         <div>
-          <LogoText />
+          <LogoVertical />
         </div>
 
         <p className="text-base">Copyright © 2023 LetBeFound</p>

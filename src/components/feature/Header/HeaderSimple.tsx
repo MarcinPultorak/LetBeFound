@@ -1,15 +1,15 @@
-import LogoText from "@/components/ui/LogoText";
-import LogoTextMobile from "@/components/ui/LogoTextMobile";
 import useIsMobile from "@/hooks/useIsMobile";
 import { FC } from "react";
 import Link from "next/link";
+import LogoVertical from "@/components/ui/LogoVertical";
+import LogoVerticalMobile from "@/components/ui/LogoVerticalMobile";
 
 const HeaderSimple: FC = () => {
   const isMobile = useIsMobile(768);
 
   return (
     <header className="px-5 md:px-10 h-20 md:h-28 flex items-center justify-between">
-      {isMobile ? <LogoTextMobile /> : <LogoText />}
+      {isMobile ? <LogoVerticalMobile /> : <LogoVertical />}
       <Link
         href={"/"}
         className="text-xs sm:text-sm md:text-base uppercase hover:text-orange-600 underline underline-offset-4"

@@ -1,13 +1,12 @@
 import { FC, useState, useEffect } from "react";
-import LogoText from "../../ui/LogoText";
 import HeaderMobile from "./HeaderMobile";
-import LogoTextMobile from "../../ui/LogoTextMobile";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { useScroll } from "framer-motion";
 import cx from "classnames";
-
 import Link from "next/link";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import LogoVerticalMobile from "../../ui/LogoVerticalMobile";
+import LogoVertical from "../../ui/LogoVertical";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -53,7 +52,7 @@ const Header: FC = () => {
         />
       )}
       <div className="flex justify-between items-center h-full md:hidden">
-        <LogoTextMobile />
+        <LogoVerticalMobile />
 
         <button onClick={() => setIsOpened(!isOpened)}>
           <Bars3Icon className="w-8 h-8" />
@@ -70,7 +69,7 @@ const Header: FC = () => {
             "absolute top-8 left-0": !isFollowing,
           })}
         >
-          {isFollowing ? <LogoTextMobile /> : <LogoText />}
+          {isFollowing ? <LogoVerticalMobile /> : <LogoVertical />}
         </div>
         <ul className="flex space-x-10 items-center">
           {ids.map((id) => (
