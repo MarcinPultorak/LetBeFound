@@ -54,7 +54,7 @@ const Header: FC = () => {
       <div className="flex justify-between items-center h-full lg:hidden">
         <LogoHorizontalMobile />
 
-        <button onClick={() => setIsOpened(!isOpened)}>
+        <button onClick={() => setIsOpened(!isOpened)} title="hamburger-menu">
           <Bars3Icon className="w-8 h-8" />
         </button>
       </div>

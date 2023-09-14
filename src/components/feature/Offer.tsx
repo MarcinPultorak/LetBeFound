@@ -10,25 +10,49 @@ const Offer: FC = () => {
       title: "Wyróżnij się online",
       description:
         "Pomożemy Ci wyróżnić Twoją firmę online poprzez stworzenie profesjonalnej strony internetowej, która przyciągnie uwagę klientów.",
-      icon: <img src="/images/icon-globe.svg" />,
+      icon: (
+        <img
+          alt="icon-globe"
+          src="/images/icon-globe.svg"
+          className="h-full w-full"
+        />
+      ),
     },
     {
       title: "Responsywność",
       description:
         "Nasze strony są w pełni responsywne, dzięki czemu wyglądają doskonale na wszystkich urządzeniach, co jest kluczowe dla sukcesu w erze mobilności.",
-      icon: <img src="/images/icon-arrows.svg" />,
+      icon: (
+        <img
+          alt="icon-arrows"
+          src="/images/icon-arrows.svg"
+          className="h-full w-full"
+        />
+      ),
     },
     {
       title: "Indywidualne podejście",
       description:
         "W LetBeFound rozumiemy, że każdy projekt jest unikalny, tak jak każdy klient. Nasze podejście skupia się na budowaniu partnerskich relacji i dokładnym zrozumieniu Twoich potrzeb.",
-      icon: <img src="/images/icon-chart.svg" />,
+      icon: (
+        <img
+          alt="icon-chart"
+          src="/images/icon-chart.svg"
+          className="h-full w-full"
+        />
+      ),
     },
     {
       title: "Optymalizacja SEO",
       description:
         "Tworzenie strony to tylko pierwszy krok. Nasze zaawansowane techniki optymalizacji SEO sprawią, że Twoja strona będzie widoczna dla osób, które poszukują Twoich usług. To klucz do zdobywania organicznego ruchu i pozyskiwania nowych klientów.",
-      icon: <img src="/images/icon-cog.svg" />,
+      icon: (
+        <img
+          alt="icon-cog"
+          src="/images/icon-cog.svg"
+          className="h-full w-full"
+        />
+      ),
     },
   ];
 

@@ -49,7 +49,12 @@ const OurProjects: FC = () => {
           className="mt-10 max-w-3xl mx-auto"
         >
           {carouselData.map((item) => (
-            <Link href={item.link} key={item.image} target="_blank">
+            <Link
+              href={item.link}
+              key={item.image}
+              target="_blank"
+              aria-label="Sprawdź Online"
+            >
               <div>
                 <Image
                   src={`/images/${item.image}.png`}
@@ -64,6 +69,7 @@ const OurProjects: FC = () => {
         <div className="flex space-x-3 w-full justify-center mt-5">
           {carouselData.map((_, index) => (
             <button
+              title={`slide-${index}`}
               key={index}
               className={cx(
                 "h-3 w-3 rounded-full",

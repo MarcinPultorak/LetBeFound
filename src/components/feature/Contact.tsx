@@ -69,7 +69,7 @@ const Contact: FC = () => {
             }}
           >
             <img
-              className="mx-auto w-9 sm:w-auto"
+              className="mx-auto w-9 h-10 sm:w-auto"
               src="/images/icon-email.svg"
               alt="icon-email"
             />
@@ -84,7 +84,7 @@ const Contact: FC = () => {
             }}
           >
             <img
-              className="mx-auto w-9 sm:w-auto"
+              className="mx-auto w-9 h-10 sm:w-auto"
               src="/images/icon-phone.svg"
               alt="icon-phone"
             />

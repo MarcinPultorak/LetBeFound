@@ -23,7 +23,7 @@ const HeaderMobile: FC<Props> = ({ closeMenu, isFollowing }) => {
   return (
     <div className="fixed top-0 left-0 h-screen w-full px-10 py-20 z-50 bg-grayBlue">
       <div className={cx("absolute right-5", isFollowing ? "top-6" : "top-10")}>
-        <button onClick={() => closeMenu()}>
+        <button onClick={() => closeMenu()} title="close-mobile-menu">
           <XMarkIcon className="w-8 h-8" />
         </button>
       </div>

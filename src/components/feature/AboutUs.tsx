@@ -8,18 +8,34 @@ const AboutUs: FC = () => {
   const isMobile = useIsMobile(768);
   const data = [
     {
-      icon: <img className="w-8" src="/images/icon-bulb.svg" alt="Icon-bulb" />,
+      icon: (
+        <img
+          className="w-8 h-full"
+          src="/images/icon-bulb.svg"
+          alt="Icon-bulb"
+        />
+      ),
       paragraph:
         "Wierzymy w twórczość i nowatorskie podejście. Nasze projekty są pełne świeżości i kreatywności, aby wyróżnić Cię na tle konkurencji.",
     },
     {
-      icon: <img className="w-8" src="/images/icon-bolt.svg" alt="icon-bolt" />,
+      icon: (
+        <img
+          className="w-8 h-full"
+          src="/images/icon-bolt.svg"
+          alt="icon-bolt"
+        />
+      ),
       paragraph:
         "Każdy członek zespołu LetBeFound ma w sobie ogromną pasję do tego, co robi. Ta energia jest wkomponowana w każdy projekt, który tworzymy.",
     },
     {
       icon: (
-        <img className="w-8 " src="/images/icon-users.svg" alt="icon-users" />
+        <img
+          className="w-8 h-full"
+          src="/images/icon-users.svg"
+          alt="icon-users"
+        />
       ),
       paragraph:
         "Tworzymy relacje oparte na zaufaniu i partnerstwie. Twoje cele stają się naszymi celami, a wspólnie pracujemy nad osiągnięciem sukcesu.",
@@ -27,7 +43,7 @@ const AboutUs: FC = () => {
     {
       icon: (
         <img
-          className="w-8"
+          className="w-8 h-full"
           src="/images/icon-arrows-au.svg"
           alt="icon-arrows"
         />
