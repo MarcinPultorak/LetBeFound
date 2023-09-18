@@ -16,8 +16,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>LetBeFound</title>
-        <link rel="icon" href="/logo.ico" />
+        <title>Let Be Found - Daj się odnaleźć w internecie!</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <AppContextProvider>
