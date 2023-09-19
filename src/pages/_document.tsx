@@ -15,6 +15,7 @@ function Document() {
         <meta name="author" content="Let Be Found" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:site_name" content="Let Be Found" />
         <meta
           property="og:title"
           content="Tworzenie Profesjonalnych Stron Internetowych dla Biznesu"
