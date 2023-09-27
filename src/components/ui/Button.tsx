@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 
 type Props = {
   isSubmitting?: boolean;
-  variant?: "primary" | "secondary" | "blank";
+  variant?: "primary" | "secondary" | "orange" | "sky" | "blank";
 };
 const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
   isSubmitting,
@@ -16,6 +16,8 @@ const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
     primary: "bg-sky-500 text-zinc-100 hover:bg-sky-800 px-5",
     secondary:
       "bg-white boder-black text-black border border-slate-400 hover:bg-slate-100",
+    orange: "bg-orange-600 hover:bg-orange-500 text-zinc-100",
+    sky: "bg-sky-800 hover:bg-sky-600 text-zinc-100",
   };
 
   return (
