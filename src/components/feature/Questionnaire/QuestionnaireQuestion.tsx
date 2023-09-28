@@ -19,8 +19,6 @@ const QuestionnaireQuestion: FC<Props> = ({ data, setUserAnswers, userAnswer }) 
     }
   };
 
-  console.log("UserAnswers:", userAnswer);
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>, answerId: string) => {
     if (e.currentTarget.checked) {
       setUserAnswers({
@@ -52,10 +50,13 @@ const QuestionnaireQuestion: FC<Props> = ({ data, setUserAnswers, userAnswer }) 
           {item.label ? (
             <div className=" space-y-5">
               <span>{item.label}</span>
-              <textarea placeholder="Wpisz swoją odpowiedź" className="bg-sky-800 w-full focus:ring-0 focus:outline-none focus:ring-offset-0" />
+              <textarea
+                placeholder="Wpisz swoją odpowiedź"
+                className="bg-sky-800 w-full focus:ring-0 focus:outline-none focus:ring-offset-0 placeholder-white/50"
+              />
             </div>
           ) : (
-            <Checkbox label={item.answer} onChange={(e) => handleChange(e, item.id)} defaultChecked={false} />
+            <Checkbox label={item.answer} defaultChecked={userAnswer?.selectedAnswers?.includes(item.id)} onChange={(e) => handleChange(e, item.id)} />
           )}
         </div>
       ))}

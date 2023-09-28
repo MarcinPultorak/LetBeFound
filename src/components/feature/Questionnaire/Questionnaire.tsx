@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import Button from "../../ui/Button";
 import ProgressBar from "../../ui/ProgressBar";
-import { QuestionnaireDto, UserAnswerDto } from "@/interfaces/types";
+import { UserAnswerDto } from "@/interfaces/types";
 import { questionnaireData } from "@/data/questionnaire";
 import QuestionnaireQuestion from "./QuestionnaireQuestion";
 

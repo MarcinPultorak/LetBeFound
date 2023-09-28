@@ -9,11 +9,11 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "1a",
           answer: "Wizytówka, bez dodatkowych podstron tzw. Landing Page",
         },
         {
-          id: "b",
+          id: "1b",
           answer: "Rozbudowana strona z odnośnikami do poszczególnych podstron",
         },
       ],
@@ -25,19 +25,19 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "2a",
           answer: "1-5",
         },
         {
-          id: "b",
+          id: "2b",
           answer: "6-10",
         },
         {
-          id: "c",
+          id: "2c",
           answer: "11-15",
         },
         {
-          id: "d",
+          id: "2d",
           answer: "16+",
         },
       ],
@@ -49,27 +49,27 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "3a",
           answer: "Formularz kontaktowy",
         },
         {
-          id: "b",
+          id: "3b",
           answer: "Mapa z lokalizacją firmy",
         },
         {
-          id: "c",
+          id: "3c",
           answer: "Wdrożenie Google Analytics",
         },
         {
-          id: "d",
+          id: "3d",
           answer: "Przewijany slider ze zdjęciami",
         },
         {
-          id: "e",
+          id: "3e",
           answer: "Galeria zdjęć",
         },
         {
-          id: "d",
+          id: "3f",
           answer: "",
           label: "Inne:",
         },
@@ -82,11 +82,11 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "4a",
           answer: "Tak",
         },
         {
-          id: "b",
+          id: "4b",
           answer: "Nie",
         },
       ],
@@ -98,11 +98,11 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "5a",
           answer: "Tak",
         },
         {
-          id: "b",
+          id: "5b",
           answer: "Nie",
         },
       ],
@@ -115,7 +115,7 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "6a",
           answer: "",
         },
       ],
@@ -128,17 +128,17 @@ export const questionnaireData: QuestionnaireDto = {
       isAnswered: false,
       answers: [
         {
-          id: "a",
+          id: "7a",
           answer: "",
           label: "Imię",
         },
         {
-          id: "b",
+          id: "7b",
           answer: "",
           label: "Telefon kontaktowy",
         },
         {
-          id: "c",
+          id: "7c",
           answer: "",
           label: "Adres email",
         },
