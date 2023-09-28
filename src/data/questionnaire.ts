@@ -84,7 +84,7 @@ export const QuestionnaireData: QuestionnaireDto = {
         {
           id: "d",
           answer: "",
-          label: "inne",
+          label: "Inne:",
         },
       ],
     },
@@ -141,6 +141,7 @@ export const QuestionnaireData: QuestionnaireDto = {
     {
       id: "7",
       question: "Dane kontaktowe",
+      contactForm: true,
       isMultiSelect: false,
       isAnswered: false,
       answers: [

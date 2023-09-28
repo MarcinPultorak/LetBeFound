@@ -22,6 +22,7 @@ export interface QuestionDto {
   question: string;
   isMultiSelect: boolean;
   isAnswered: boolean;
+  contactForm?: boolean;
   answers: AnswerDto[];
 }
 

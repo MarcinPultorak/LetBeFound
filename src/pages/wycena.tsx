@@ -1,5 +1,5 @@
 import Header from "@/components/feature/Header/Header";
-import Questionnaire from "@/components/feature/Questionnaire";
+import Questionnaire from "@/components/feature/Questionnaire/Questionnaire";
 import { FC } from "react";
 
 const WycenaPage: FC = () => {
