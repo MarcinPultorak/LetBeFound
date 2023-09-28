@@ -1,7 +1,6 @@
 import { QuestionnaireDto } from "@/interfaces/types";
 
-export const QuestionnaireData: QuestionnaireDto = {
-  currentState: "inProgress",
+export const questionnaireData: QuestionnaireDto = {
   questionsArray: [
     {
       id: "1",
@@ -12,41 +11,34 @@ export const QuestionnaireData: QuestionnaireDto = {
         {
           id: "a",
           answer: "Wizytówka, bez dodatkowych podstron tzw. Landing Page",
-          isSelected: false,
         },
         {
           id: "b",
           answer: "Rozbudowana strona z odnośnikami do poszczególnych podstron",
-          isSelected: false,
         },
       ],
     },
     {
       id: "2",
-      question:
-        "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
+      question: "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
         {
           id: "a",
           answer: "1-5",
-          isSelected: false,
         },
         {
           id: "b",
           answer: "6-10",
-          isSelected: false,
         },
         {
           id: "c",
           answer: "11-15",
-          isSelected: false,
         },
         {
           id: "d",
           answer: "16+",
-          isSelected: false,
         },
       ],
     },
@@ -59,27 +51,22 @@ export const QuestionnaireData: QuestionnaireDto = {
         {
           id: "a",
           answer: "Formularz kontaktowy",
-          isSelected: false,
         },
         {
           id: "b",
           answer: "Mapa z lokalizacją firmy",
-          isSelected: false,
         },
         {
           id: "c",
           answer: "Wdrożenie Google Analytics",
-          isSelected: false,
         },
         {
           id: "d",
           answer: "Przewijany slider ze zdjęciami",
-          isSelected: false,
         },
         {
           id: "e",
           answer: "Galeria zdjęć",
-          isSelected: false,
         },
         {
           id: "d",
@@ -97,31 +84,26 @@ export const QuestionnaireData: QuestionnaireDto = {
         {
           id: "a",
           answer: "Tak",
-          isSelected: false,
         },
         {
           id: "b",
           answer: "Nie",
-          isSelected: false,
         },
       ],
     },
     {
       id: "5",
-      question:
-        "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
+      question: "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
         {
           id: "a",
           answer: "Tak",
-          isSelected: false,
         },
         {
           id: "b",
           answer: "Nie",
-          isSelected: false,
         },
       ],
     },

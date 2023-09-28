@@ -13,7 +13,6 @@ export interface HexagonTileDto {
 }
 
 export interface QuestionnaireDto {
-  currentState: "inProgress" | "completed";
   questionsArray: QuestionDto[];
 }
 
@@ -30,5 +29,10 @@ export interface AnswerDto {
   id: string;
   answer: string;
   label?: string;
-  isSelected?: boolean;
+}
+
+export interface UserAnswerDto {
+  questionId: string;
+  selectedAnswers?: string[];
+  textAnswer?: string;
 }
