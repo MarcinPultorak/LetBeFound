@@ -20,7 +20,8 @@ export const questionnaireData: QuestionnaireDto = {
     },
     {
       id: "2",
-      question: "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
+      question:
+        "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
@@ -93,7 +94,8 @@ export const questionnaireData: QuestionnaireDto = {
     },
     {
       id: "5",
-      question: "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
+      question:
+        "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
@@ -117,6 +119,7 @@ export const questionnaireData: QuestionnaireDto = {
         {
           id: "6a",
           answer: "",
+          label: "Twoje uwagi",
         },
       ],
     },
