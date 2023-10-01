@@ -27,6 +27,7 @@ export interface QuestionDto {
 
 export interface AnswerDto {
   id: string;
+  type: "checkbox" | "input" | "textarea";
   answer: string;
   label?: string;
 }

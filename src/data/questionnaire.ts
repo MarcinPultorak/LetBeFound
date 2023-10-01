@@ -10,35 +10,40 @@ export const questionnaireData: QuestionnaireDto = {
       answers: [
         {
           id: "1a",
+          type: "checkbox",
           answer: "Wizytówka, bez dodatkowych podstron tzw. Landing Page",
         },
         {
           id: "1b",
+          type: "checkbox",
           answer: "Rozbudowana strona z odnośnikami do poszczególnych podstron",
         },
       ],
     },
     {
       id: "2",
-      question:
-        "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
+      question: "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
         {
           id: "2a",
+          type: "checkbox",
           answer: "1-5",
         },
         {
           id: "2b",
+          type: "checkbox",
           answer: "6-10",
         },
         {
           id: "2c",
+          type: "checkbox",
           answer: "11-15",
         },
         {
           id: "2d",
+          type: "checkbox",
           answer: "16+",
         },
       ],
@@ -51,26 +56,32 @@ export const questionnaireData: QuestionnaireDto = {
       answers: [
         {
           id: "3a",
+          type: "checkbox",
           answer: "Formularz kontaktowy",
         },
         {
           id: "3b",
+          type: "checkbox",
           answer: "Mapa z lokalizacją firmy",
         },
         {
           id: "3c",
+          type: "checkbox",
           answer: "Wdrożenie Google Analytics",
         },
         {
           id: "3d",
+          type: "checkbox",
           answer: "Przewijany slider ze zdjęciami",
         },
         {
           id: "3e",
+          type: "checkbox",
           answer: "Galeria zdjęć",
         },
         {
           id: "3f",
+          type: "textarea",
           answer: "",
           label: "Inne:",
         },
@@ -84,27 +95,30 @@ export const questionnaireData: QuestionnaireDto = {
       answers: [
         {
           id: "4a",
+          type: "checkbox",
           answer: "Tak",
         },
         {
           id: "4b",
+          type: "checkbox",
           answer: "Nie",
         },
       ],
     },
     {
       id: "5",
-      question:
-        "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
+      question: "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
         {
           id: "5a",
+          type: "checkbox",
           answer: "Tak",
         },
         {
           id: "5b",
+          type: "checkbox",
           answer: "Nie",
         },
       ],
@@ -118,11 +132,13 @@ export const questionnaireData: QuestionnaireDto = {
       answers: [
         {
           id: "6a",
+          type: "textarea",
           answer: "",
           label: "Twoje uwagi",
         },
       ],
     },
+    //To pytanie do usunięcia. Zamiast tego zrobić formularz przy użyciu ReactHookForms.
     {
       id: "7",
       question: "Dane kontaktowe",
@@ -132,16 +148,19 @@ export const questionnaireData: QuestionnaireDto = {
       answers: [
         {
           id: "7a",
+          type: "input",
           answer: "",
           label: "Imię",
         },
         {
           id: "7b",
+          type: "input",
           answer: "",
           label: "Telefon kontaktowy",
         },
         {
           id: "7c",
+          type: "input",
           answer: "",
           label: "Adres email",
         },
