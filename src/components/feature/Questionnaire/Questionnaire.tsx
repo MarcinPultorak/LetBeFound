@@ -3,17 +3,24 @@ import ProgressBar from "../../ui/ProgressBar";
 import { UserAnswerDto } from "@/interfaces/types";
 import { questionnaireData } from "@/data/questionnaire";
 import QuestionnaireQuestion from "./QuestionnaireQuestion";
+import UserMessage from "./UserMessage";
 
 const Questionnaire: FC = () => {
-  const [questionnaireState, setQuestionnaireState] = useState<"inProgress" | "completed">("inProgress");
+  const [questionnaireState, setQuestionnaireState] = useState<
+    "inProgress" | "completed"
+  >("inProgress");
 
   const [userAnswers, setUserAnswers] = useState<UserAnswerDto[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<number>(1);
 
   const handleAnswer = (answer: UserAnswerDto) => {
-    const checkAnswers = userAnswers.find((item) => item.questionId == answer.questionId);
+    const checkAnswers = userAnswers.find(
+      (item) => item.questionId == answer.questionId
+    );
     if (checkAnswers) {
-      const updatedAnswers = userAnswers.map((item) => (item.questionId != answer.questionId ? item : answer));
+      const updatedAnswers = userAnswers.map((item) =>
+        item.questionId != answer.questionId ? item : answer
+      );
       setUserAnswers(updatedAnswers);
     } else {
       setUserAnswers([...userAnswers, answer]);
@@ -29,10 +36,14 @@ const Questionnaire: FC = () => {
             boxShadow: "10px 10px 20px 0px rgba(0, 0, 0, 0.25)",
           }}
         >
-          <ProgressBar questionsAmount={questionnaireData.questionsArray.length} currentQuestion={currentQuestion} />
+          <ProgressBar
+            questionsAmount={questionnaireData.questionsArray.length}
+            currentQuestion={currentQuestion}
+          />
 
           <span className="text-xs ">
-            Pytanie {currentQuestion} z {questionnaireData.questionsArray.length}
+            Pytanie {currentQuestion} z{" "}
+            {questionnaireData.questionsArray.length}
           </span>
 
           <QuestionnaireQuestion
@@ -40,13 +51,15 @@ const Questionnaire: FC = () => {
             questionsAmount={questionnaireData.questionsArray.length}
             currentQuestion={currentQuestion}
             setCurrentQuestion={(v) => setCurrentQuestion(v)}
-            userAnswer={userAnswers.find((item) => item.questionId == currentQuestion.toString())}
+            userAnswer={userAnswers.find(
+              (item) => item.questionId == currentQuestion.toString()
+            )}
             setUserAnswers={handleAnswer}
           />
         </div>
       ) : null}
 
-      {questionnaireState == "completed" ? <></> : null}
+      {questionnaireState == "completed" ? <UserMessage /> : null}
     </>
   );
 };
