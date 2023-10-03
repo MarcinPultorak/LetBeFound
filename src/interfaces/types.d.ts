@@ -5,6 +5,12 @@ export interface ContactFormDto {
   message: string;
 }
 
+export interface QuesionnaireFormDto {
+  name: string;
+  email: string;
+  phone?: string;
+}
+
 export interface HexagonTileDto {
   label: string;
   image: string;

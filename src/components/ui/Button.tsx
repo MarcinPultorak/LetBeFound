@@ -28,7 +28,6 @@ const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & Props> = ({
         props.className,
         variants[props.variant ?? "primary"]
       )}
-      type={props.type}
       disabled={props.disabled || isSubmitting}
     >
       <>

@@ -9,6 +9,7 @@ import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 
 export type InputProps = {
   label?: string;
+  variant?: "primary" | "secondary";
   errorMessage?:
     | string
     | FieldError
@@ -20,6 +21,11 @@ const FormInput: ForwardRefRenderFunction<
   HTMLInputElement,
   InputProps & InputHTMLAttributes<HTMLInputElement>
 > = ({ label, errorMessage, ...props }, ref) => {
+  const variants: Record<string, string> = {
+    primary: "bg-black ",
+    secondary: "bg-sky-800",
+  };
+
   return (
     <div>
       <label className="block">
@@ -30,7 +36,8 @@ const FormInput: ForwardRefRenderFunction<
             ref={ref}
             disabled={props.disabled}
             className={cx(
-              "h-12 w-full appearance-none rounded-md border bg-black px-3 text-sm text-zinc-300 focus:outline-none focus:ring-2 disabled:border-gray-200 disabled:bg-gray-50",
+              "h-12 w-full appearance-none rounded-md border px-3 text-sm text-zinc-300 focus:outline-none focus:ring-2 disabled:border-gray-200 disabled:bg-gray-50",
+              variants[props.variant ?? "primary"],
               errorMessage
                 ? "border-red-500 text-red-500 focus:border-red-500 focus:ring-red-500"
                 : "border-zinc-600 focus:ring-sky-800",

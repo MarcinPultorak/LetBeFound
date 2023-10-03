@@ -12,7 +12,14 @@ export type Props = {
   setUserAnswers: (answer: UserAnswerDto) => void;
 };
 
-const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuestion, setCurrentQuestion, userAnswer, setUserAnswers }) => {
+const QuestionnaireQuestion: FC<Props> = ({
+  data,
+  questionsAmount,
+  currentQuestion,
+  setCurrentQuestion,
+  userAnswer,
+  setUserAnswers,
+}) => {
   const [answers, setAnswers] = useState<UserAnswerDto | undefined>(undefined);
 
   useEffect(() => {
@@ -39,7 +46,11 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
             <input
               value={answers?.textAnswer || ""}
               onChange={(e) =>
-                setAnswers({ questionId: answers?.questionId || data.id, selectedAnswers: answers?.selectedAnswers, textAnswer: e.target.value })
+                setAnswers({
+                  questionId: answers?.questionId || data.id,
+                  selectedAnswers: answers?.selectedAnswers,
+                  textAnswer: e.target.value,
+                })
               }
               placeholder="Wpisz swoją odpowiedź"
               className="bg-sky-800 w-full focus:ring-0 focus:outline-none focus:ring-offset-0 placeholder-white/50"
@@ -56,7 +67,10 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
               onChange={(e) =>
                 setAnswers({
                   questionId: answers?.questionId || data.id,
-                  selectedAnswers: answers?.selectedAnswers?.length == 0 ? [] : answers?.selectedAnswers,
+                  selectedAnswers:
+                    answers?.selectedAnswers?.length == 0
+                      ? []
+                      : answers?.selectedAnswers,
                   textAnswer: e.target.value,
                 })
               }
@@ -67,7 +81,13 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
         );
       }
       case "checkbox": {
-        return <Checkbox label={item.answer} checked={answers?.selectedAnswers?.includes(item.id) || false} onChange={(e) => handleChange(e, item.id)} />;
+        return (
+          <Checkbox
+            label={item.answer}
+            checked={answers?.selectedAnswers?.includes(item.id) || false}
+            onChange={(e) => handleChange(e, item.id)}
+          />
+        );
       }
       default:
         return null;
@@ -75,7 +95,12 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
   };
 
   const checkIsDisabled = (): boolean => {
-    return (answers && answers.selectedAnswers && answers.selectedAnswers?.length > 0) || (answers?.textAnswer && answers.textAnswer.length > 0) ? false : true;
+    return (answers &&
+      answers.selectedAnswers &&
+      answers.selectedAnswers?.length > 0) ||
+      (answers?.textAnswer && answers.textAnswer.length > 0)
+      ? false
+      : true;
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>, answerId: string) => {
@@ -83,11 +108,17 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
       if (e.currentTarget.checked) {
         setAnswers({
           questionId: data.id,
-          selectedAnswers: answers && answers.selectedAnswers ? [...answers.selectedAnswers, answerId] : [answerId],
+          selectedAnswers:
+            answers && answers.selectedAnswers
+              ? [...answers.selectedAnswers, answerId]
+              : [answerId],
           textAnswer: answers?.textAnswer,
         });
       } else {
-        const filterAnswers = answers && answers.selectedAnswers && answers.selectedAnswers.filter((item) => item != answerId);
+        const filterAnswers =
+          answers &&
+          answers.selectedAnswers &&
+          answers.selectedAnswers.filter((item) => item != answerId);
         setAnswers({ questionId: data.id, selectedAnswers: filterAnswers });
       }
     } else {
@@ -98,7 +129,11 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
           textAnswer: answers?.textAnswer,
         });
       } else {
-        setAnswers({ questionId: data.id, selectedAnswers: [], textAnswer: answers?.textAnswer });
+        setAnswers({
+          questionId: data.id,
+          selectedAnswers: [],
+          textAnswer: answers?.textAnswer,
+        });
       }
     }
   };
@@ -116,11 +151,16 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
     <>
       <h2 className="mt-2 text-sm sm:text-base md:text-lg ">{data.question}</h2>
       <div className="bg-sky-800 p-3 sm:p-5 mt-8 rounded-md text-center sm:text-left">
-        <span className="text-xs sm:text-sm md:text-base">{questionTitle()}</span>
+        <span className="text-xs sm:text-sm md:text-base">
+          {questionTitle()}
+        </span>
       </div>
 
       {data.answers.map((item) => (
-        <div className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base" key={item.id}>
+        <div
+          className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base"
+          key={item.id}
+        >
           {inputType(item)}
         </div>
       ))}
@@ -152,7 +192,9 @@ const QuestionnaireQuestion: FC<Props> = ({ data, questionsAmount, currentQuesti
             boxShadow: "10px 10px 20px 0px rgba(0, 0, 0, 0.30)",
           }}
         >
-          {currentQuestion == questionsAmount ? "Wyślij formularz" : "Następne pytanie"}
+          {currentQuestion == questionsAmount
+            ? "Wyślij formularz"
+            : "Następne pytanie"}
         </Button>
       </div>
     </>

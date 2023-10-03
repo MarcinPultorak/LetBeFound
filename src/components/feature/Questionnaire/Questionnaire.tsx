@@ -4,6 +4,8 @@ import { UserAnswerDto } from "@/interfaces/types";
 import { questionnaireData } from "@/data/questionnaire";
 import QuestionnaireQuestion from "./QuestionnaireQuestion";
 import UserMessage from "./UserMessage";
+import { QueueListIcon } from "@heroicons/react/20/solid";
+import QuestionnaireForm from "./QuestionnaireForm";
 
 const Questionnaire: FC = () => {
   const [questionnaireState, setQuestionnaireState] = useState<
@@ -45,6 +47,15 @@ const Questionnaire: FC = () => {
             Pytanie {currentQuestion} z{" "}
             {questionnaireData.questionsArray.length}
           </span>
+          {/* 
+          <QuestionnaireForm
+            currentQuestion={currentQuestion}
+            setCurrentQuestion={(v) => setCurrentQuestion(v)}
+            callback={(e) => {
+              console.log(e);
+              return Promise.resolve();
+            }}
+          /> */}
 
           <QuestionnaireQuestion
             data={questionnaireData.questionsArray[currentQuestion - 1]}
