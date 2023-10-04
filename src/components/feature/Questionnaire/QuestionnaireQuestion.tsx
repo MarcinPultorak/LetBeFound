@@ -38,26 +38,6 @@ const QuestionnaireQuestion: FC<Props> = ({
 
   const inputType = (item: AnswerDto) => {
     switch (item.type) {
-      //case "input do wywalenia gdy zrobimy ostatnie pytanie na ReactHookForms"
-      case "input": {
-        return (
-          <label>
-            <span>{item.label}</span>
-            <input
-              value={answers?.textAnswer || ""}
-              onChange={(e) =>
-                setAnswers({
-                  questionId: answers?.questionId || data.id,
-                  selectedAnswers: answers?.selectedAnswers,
-                  textAnswer: e.target.value,
-                })
-              }
-              placeholder="Wpisz swoją odpowiedź"
-              className="bg-sky-800 w-full focus:ring-0 focus:outline-none focus:ring-offset-0 placeholder-white/50"
-            />
-          </label>
-        );
-      }
       case "textarea": {
         return (
           <label>
@@ -141,9 +121,7 @@ const QuestionnaireQuestion: FC<Props> = ({
   const handleNextQuestion = () => {
     if (answers) {
       setUserAnswers(answers);
-      if (currentQuestion < questionsAmount) {
-        setCurrentQuestion(currentQuestion + 1);
-      }
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
 
@@ -192,9 +170,7 @@ const QuestionnaireQuestion: FC<Props> = ({
             boxShadow: "10px 10px 20px 0px rgba(0, 0, 0, 0.30)",
           }}
         >
-          {currentQuestion == questionsAmount
-            ? "Wyślij formularz"
-            : "Następne pytanie"}
+          Następne pytanie
         </Button>
       </div>
     </>

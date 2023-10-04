@@ -22,7 +22,8 @@ export const questionnaireData: QuestionnaireDto = {
     },
     {
       id: "2",
-      question: "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
+      question:
+        "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
@@ -107,7 +108,8 @@ export const questionnaireData: QuestionnaireDto = {
     },
     {
       id: "5",
-      question: "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
+      question:
+        "Czy potrzebujesz pomocy w przygotowaniu treści na stronę (nagłówki, teksty)?",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
@@ -135,34 +137,6 @@ export const questionnaireData: QuestionnaireDto = {
           type: "textarea",
           answer: "",
           label: "Twoje uwagi",
-        },
-      ],
-    },
-    //To pytanie do usunięcia. Zamiast tego zrobić formularz przy użyciu ReactHookForms.
-    {
-      id: "7",
-      question: "Dane kontaktowe",
-      contactForm: true,
-      isMultiSelect: false,
-      isAnswered: false,
-      answers: [
-        {
-          id: "7a",
-          type: "input",
-          answer: "",
-          label: "Imię",
-        },
-        {
-          id: "7b",
-          type: "input",
-          answer: "",
-          label: "Telefon kontaktowy",
-        },
-        {
-          id: "7c",
-          type: "input",
-          answer: "",
-          label: "Adres email",
         },
       ],
     },

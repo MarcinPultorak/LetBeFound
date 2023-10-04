@@ -92,6 +92,7 @@ const QuestionnaireForm: FC<Props> = ({
 
         <Button
           type={"submit"}
+          isSubmitting={isLoading}
           variant="orange"
           className="sm:max-w-[190px] font-normal normal-case text-xs sm:text-sm md:text-base"
           style={{
