@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
 import LogoHorizontal from "@/components/ui/LogoHorizontal";
+import Button from "@/components/ui/Button";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -51,7 +52,7 @@ const Header: FC = () => {
           isFollowing={isFollowing}
         />
       )}
-      <div className="flex justify-between items-center h-full lg:hidden">
+      <div className="flex justify-between items-center h-full xl:hidden">
         <LogoHorizontalMobile />
 
         <button onClick={() => setIsOpened(!isOpened)} title="hamburger-menu">
@@ -60,7 +61,7 @@ const Header: FC = () => {
       </div>
       <div
         className={cx(
-          "relative hidden lg:flex lg:max-w-screen-2xl lg:w-full lg:h-full  lg:mx-auto",
+          "relative hidden xl:flex xl:max-w-screen-2xl xl:w-full lg:h-full  xl:mx-auto xl:items-center",
           isFollowing ? "lg:justify-between items-center" : "lg:justify-end"
         )}
       >
@@ -84,6 +85,12 @@ const Header: FC = () => {
             </li>
           ))}
         </ul>
+        <Button
+          variant="orange"
+          className="max-w-[92px] max-h-[32px] ml-10 text-sm"
+        >
+          <Link href={"wycena"}>Wycena</Link>
+        </Button>
       </div>
     </header>
   );

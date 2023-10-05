@@ -1,17 +1,11 @@
 import { FC, useState } from "react";
 import ProgressBar from "../../ui/ProgressBar";
-import {
-  QuesionnaireFormDto,
-  QuestionnaireDto,
-  UserAnswerDto,
-} from "@/interfaces/types";
+import { QuesionnaireFormDto, UserAnswerDto } from "@/interfaces/types";
 import { questionnaireData } from "@/data/questionnaire";
 import QuestionnaireQuestion from "./QuestionnaireQuestion";
 import UserMessage from "./UserMessage";
-import { QueueListIcon } from "@heroicons/react/20/solid";
 import QuestionnaireForm from "./QuestionnaireForm";
 import { useAppContext } from "@/providers/AppContextProvider";
-
 import { renderToStaticMarkup } from "react-dom/server";
 
 const Questionnaire: FC = () => {
@@ -43,14 +37,26 @@ const Questionnaire: FC = () => {
     const traspiledData = userAnswers.map((item) => {
       return (
         <div>
-          <p style={{ fontWeight: "bold" }}>Pytanie nr:{item.questionId}</p>
-          <ul>
-            Odpowiedzi checkbox:
-            {item.selectedAnswers?.map((answer) => {
-              return <li>{answer}</li>;
+          <p>
+            <span style={{ fontWeight: "bold" }}>Pytanie nr: </span>
+            <span>{item.questionId}</span>
+          </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>Odpowiedzi checkbox: </span>
+            {item.selectedAnswers?.map((answer, i) => {
+              return (
+                <span>
+                  {i + 1 == item.selectedAnswers?.length
+                    ? answer
+                    : `${answer}, `}
+                </span>
+              );
             })}
-          </ul>
-          <p className="font-bold">Odpowiedzi textArea:{item.textAnswer}</p>
+          </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>Odpowiedzi textArea: </span>
+            <span>{item.textAnswer}</span>
+          </p>
         </div>
       );
     });
@@ -82,63 +88,66 @@ const Questionnaire: FC = () => {
       }
     });
   };
-  console.log(currentQuestion);
   return (
     <>
-      <div
-        className="bg-sky-800 bg-opacity-20 px-5 sm:px-10 pt-5 pb-16 mt-10 sm:mt-16 rounded-md relative overflow-hidden "
-        style={{
-          boxShadow: "10px 10px 20px 0px rgba(0, 0, 0, 0.25)",
-        }}
-      >
-        {questionnaireState == "inProgress" ? (
-          <>
-            <ProgressBar
-              questionsAmount={questionnaireData.questionsArray.length}
-              currentQuestion={currentQuestion}
-            />
+      {questionnaireState == "inProgress" ||
+      questionnaireState == "finishing" ? (
+        <div
+          className="bg-sky-800 bg-opacity-20 px-5 sm:px-10 pt-5 pb-16 mt-10 sm:mt-16 rounded-md relative overflow-hidden "
+          style={{
+            boxShadow: "10px 10px 20px 0px rgba(0, 0, 0, 0.25)",
+          }}
+        >
+          {questionnaireState == "inProgress" ? (
+            <>
+              <ProgressBar
+                questionsAmount={questionnaireData.questionsArray.length}
+                currentQuestion={currentQuestion}
+              />
 
-            <span className="text-xs ">
-              Pytanie {currentQuestion} z{" "}
-              {questionnaireData.questionsArray.length}
-            </span>
+              <span className="text-xs ">
+                Pytanie {currentQuestion} z{" "}
+                {questionnaireData.questionsArray.length}
+              </span>
 
-            <QuestionnaireQuestion
-              data={questionnaireData.questionsArray[currentQuestion - 1]}
-              questionsAmount={questionnaireData.questionsArray.length}
-              currentQuestion={currentQuestion}
-              setCurrentQuestion={(v) => {
-                if (v > questionnaireData.questionsArray.length) {
-                  setQuestionnaireState("finishing");
-                }
-                setCurrentQuestion(v);
-              }}
-              userAnswer={userAnswers.find(
-                (item) => item.questionId == currentQuestion.toString()
-              )}
-              setUserAnswers={handleAnswer}
-            />
-          </>
-        ) : null}
+              <QuestionnaireQuestion
+                data={questionnaireData.questionsArray[currentQuestion - 1]}
+                questionsAmount={questionnaireData.questionsArray.length}
+                currentQuestion={currentQuestion}
+                setCurrentQuestion={(v) => {
+                  if (v > questionnaireData.questionsArray.length) {
+                    setQuestionnaireState("finishing");
+                  }
+                  setCurrentQuestion(v);
+                }}
+                userAnswer={userAnswers.find(
+                  (item) => item.questionId == currentQuestion.toString()
+                )}
+                setUserAnswers={handleAnswer}
+              />
+            </>
+          ) : null}
 
-        {questionnaireState == "finishing" ? (
-          <>
-            <span className="text-xs sm:text-sm md:text-base">
-              Wpisz dane kontaktowe:
-            </span>
-            <QuestionnaireForm
-              currentQuestion={currentQuestion}
-              setCurrentQuestion={(v) => {
-                if (v == questionnaireData.questionsArray.length) {
-                  setQuestionnaireState("inProgress");
-                }
-                setCurrentQuestion(v);
-              }}
-              callback={handleContactForm}
-            />
-          </>
-        ) : null}
-      </div>
+          {questionnaireState == "finishing" ? (
+            <>
+              <span className="text-xs sm:text-sm md:text-base">
+                Wpisz dane kontaktowe:
+              </span>
+              <QuestionnaireForm
+                currentQuestion={currentQuestion}
+                setCurrentQuestion={(v) => {
+                  if (v == questionnaireData.questionsArray.length) {
+                    setQuestionnaireState("inProgress");
+                  }
+                  setCurrentQuestion(v);
+                }}
+                callback={handleContactForm}
+              />
+            </>
+          ) : null}
+        </div>
+      ) : null}
+
       {questionnaireState == "completed" ? <UserMessage /> : null}
     </>
   );

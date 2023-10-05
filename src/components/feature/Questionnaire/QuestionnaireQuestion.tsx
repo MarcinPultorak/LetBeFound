@@ -122,9 +122,12 @@ const QuestionnaireQuestion: FC<Props> = ({
     if (answers) {
       setUserAnswers(answers);
       setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setAnswers({ questionId: data.id, selectedAnswers: [], textAnswer: "" });
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
-
+  console.log(currentQuestion);
   return (
     <>
       <h2 className="mt-2 text-sm sm:text-base md:text-lg ">{data.question}</h2>
@@ -163,7 +166,11 @@ const QuestionnaireQuestion: FC<Props> = ({
 
         <Button
           onClick={handleNextQuestion}
-          disabled={checkIsDisabled()}
+          disabled={
+            currentQuestion == 6 || currentQuestion == 3
+              ? false
+              : checkIsDisabled()
+          }
           variant="orange"
           className="sm:max-w-[190px] font-normal normal-case text-xs sm:text-sm md:text-base"
           style={{

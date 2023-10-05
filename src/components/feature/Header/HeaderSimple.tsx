@@ -7,11 +7,11 @@ import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
 import LogoHorizontal from "@/components/ui/LogoHorizontal";
 
 const HeaderSimple: FC = () => {
-  const isMobile = useIsMobile(768);
+  const isMobile = useIsMobile(640);
 
   return (
     <header className="px-5 md:px-10 h-20 md:h-28 flex items-center justify-between">
-      {isMobile ? <LogoHorizontalMobile /> : <LogoHorizontal />}
+      {isMobile ? <LogoVerticalMobile /> : <LogoHorizontal />}
       <Link
         href={"/"}
         className="text-xs sm:text-sm md:text-base uppercase hover:text-orange-600 underline underline-offset-4"

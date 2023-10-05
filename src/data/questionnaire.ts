@@ -4,7 +4,7 @@ export const questionnaireData: QuestionnaireDto = {
   questionsArray: [
     {
       id: "1",
-      question: "Jakiego typu stronę oczekujesz?",
+      question: "Jaki typ strony Cię interesuje?",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
@@ -23,7 +23,7 @@ export const questionnaireData: QuestionnaireDto = {
     {
       id: "2",
       question:
-        "Ilość sekcji/podstron na stronie? (np. Strona główna, O nas, Oferta, Realizacje, Kontakt itp.)",
+        "Ilość sekcji (Landing page)/podstron na stronie? (np. Home, O nas, Oferta, Realizacje, Kontakt itp.)",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
@@ -51,7 +51,8 @@ export const questionnaireData: QuestionnaireDto = {
     },
     {
       id: "3",
-      question: "Funkcjonalność na stronie",
+      question:
+        "Jakie dodatkowe funkcjonalności chciałbyś dodać do swojej strony?",
       isMultiSelect: true,
       isAnswered: false,
       answers: [
@@ -128,7 +129,7 @@ export const questionnaireData: QuestionnaireDto = {
     {
       id: "6",
       question:
-        "Dodatkowe uwagi (Możesz tutaj wpisać np. Swoje preferencję co do wyglądu strony, podać linki do stron, które Ci się podobają lub opisać bardziej szczegółowo czego oczekujesz na swojej stronie internetowej)",
+        "Dodatkowe uwagi (możesz tutaj wpisać np. swoje preferencje co do wyglądu strony, podać linki do stron, które Ci się podobają lub opisać bardziej szczegółowo czego oczekujesz na swojej stronie internetowej)",
       isMultiSelect: false,
       isAnswered: false,
       answers: [
