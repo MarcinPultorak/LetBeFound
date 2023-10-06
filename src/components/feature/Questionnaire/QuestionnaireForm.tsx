@@ -3,11 +3,7 @@ import FormInput from "@/components/ui/FormInput";
 import { QuesionnaireFormDto } from "@/interfaces/types";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
-import {
-  validateEmail,
-  validateRequired,
-  validatePhone,
-} from "@/utils/validators";
+import { validateEmail, validateRequired, validatePhone } from "@/utils/validators";
 
 export type Props = {
   currentQuestion: number;
@@ -15,11 +11,7 @@ export type Props = {
   callback: (payload: QuesionnaireFormDto) => Promise<void>;
 };
 
-const QuestionnaireForm: FC<Props> = ({
-  currentQuestion,
-  setCurrentQuestion,
-  callback,
-}) => {
+const QuestionnaireForm: FC<Props> = ({ currentQuestion, setCurrentQuestion, callback }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const {
@@ -30,7 +22,7 @@ const QuestionnaireForm: FC<Props> = ({
 
   const _submit = (payload: QuesionnaireFormDto) => {
     setIsLoading(true);
-    callback(payload);
+    callback(payload).catch(() => setIsLoading(false));
   };
 
   return (

@@ -18,10 +18,6 @@ export interface HexagonTileDto {
   demo: boolean;
 }
 
-export interface QuestionnaireDto {
-  questionsArray: QuestionDto[];
-}
-
 export interface QuestionDto {
   id: string;
   question: string;

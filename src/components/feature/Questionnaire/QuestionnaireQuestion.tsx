@@ -7,21 +7,13 @@ import Image from "next/image";
 
 export type Props = {
   data: QuestionDto;
-  questionsAmount: number;
   currentQuestion: number;
   setCurrentQuestion: (question: number) => void;
   userAnswer: UserAnswerDto | undefined;
   setUserAnswers: (answer: UserAnswerDto) => void;
 };
 
-const QuestionnaireQuestion: FC<Props> = ({
-  data,
-  questionsAmount,
-  currentQuestion,
-  setCurrentQuestion,
-  userAnswer,
-  setUserAnswers,
-}) => {
+const QuestionnaireQuestion: FC<Props> = ({ data, currentQuestion, setCurrentQuestion, userAnswer, setUserAnswers }) => {
   const [answers, setAnswers] = useState<UserAnswerDto | undefined>(undefined);
 
   useEffect(() => {
@@ -33,6 +25,8 @@ const QuestionnaireQuestion: FC<Props> = ({
       return "Wybierz odpowiedzi:";
     } else if (data.contactForm) {
       return "Wpisz swoje dane kontaktowe:";
+    } else if (!data.answers.some((item) => item.type == "checkbox")) {
+      return "Wpisz swoją odpowiedź:";
     } else {
       return "Wybierz jedną odpowiedź:";
     }
@@ -49,10 +43,7 @@ const QuestionnaireQuestion: FC<Props> = ({
               onChange={(e) =>
                 setAnswers({
                   questionId: answers?.questionId || data.id,
-                  selectedAnswers:
-                    answers?.selectedAnswers?.length == 0
-                      ? []
-                      : answers?.selectedAnswers,
+                  selectedAnswers: answers?.selectedAnswers?.length == 0 ? [] : answers?.selectedAnswers,
                   textAnswer: e.target.value,
                 })
               }
@@ -63,13 +54,7 @@ const QuestionnaireQuestion: FC<Props> = ({
         );
       }
       case "checkbox": {
-        return (
-          <Checkbox
-            label={item.answer}
-            checked={answers?.selectedAnswers?.includes(item.id) || false}
-            onChange={(e) => handleChange(e, item.id)}
-          />
-        );
+        return <Checkbox label={item.answer} checked={answers?.selectedAnswers?.includes(item.id) || false} onChange={(e) => handleChange(e, item.id)} />;
       }
       default:
         return null;
@@ -77,12 +62,7 @@ const QuestionnaireQuestion: FC<Props> = ({
   };
 
   const checkIsDisabled = (): boolean => {
-    return (answers &&
-      answers.selectedAnswers &&
-      answers.selectedAnswers?.length > 0) ||
-      (answers?.textAnswer && answers.textAnswer.length > 0)
-      ? false
-      : true;
+    return (answers?.selectedAnswers && answers.selectedAnswers?.length > 0) || (answers?.textAnswer && answers.textAnswer.length > 0) ? false : true;
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>, answerId: string) => {
@@ -90,74 +70,47 @@ const QuestionnaireQuestion: FC<Props> = ({
       if (e.currentTarget.checked) {
         setAnswers({
           questionId: data.id,
-          selectedAnswers:
-            answers && answers.selectedAnswers
-              ? [...answers.selectedAnswers, answerId]
-              : [answerId],
+          selectedAnswers: answers && answers.selectedAnswers ? [...answers.selectedAnswers, answerId] : [answerId],
           textAnswer: answers?.textAnswer,
         });
       } else {
-        const filterAnswers =
-          answers &&
-          answers.selectedAnswers &&
-          answers.selectedAnswers.filter((item) => item != answerId);
+        const filterAnswers = answers && answers.selectedAnswers && answers.selectedAnswers.filter((item) => item != answerId);
         setAnswers({ questionId: data.id, selectedAnswers: filterAnswers });
       }
     } else {
-      if (e.currentTarget.checked) {
-        setAnswers({
-          questionId: data.id,
-          selectedAnswers: [answerId],
-          textAnswer: answers?.textAnswer,
-        });
-      } else {
-        setAnswers({
-          questionId: data.id,
-          selectedAnswers: [],
-          textAnswer: answers?.textAnswer,
-        });
-      }
+      e.currentTarget.checked
+        ? setAnswers({
+            questionId: data.id,
+            selectedAnswers: [answerId],
+            textAnswer: answers?.textAnswer,
+          })
+        : setAnswers({
+            questionId: data.id,
+            selectedAnswers: [],
+            textAnswer: answers?.textAnswer,
+          });
     }
   };
 
   const handleNextQuestion = () => {
-    if (answers) {
-      setUserAnswers(answers);
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setAnswers({ questionId: data.id, selectedAnswers: [], textAnswer: "" });
-      setCurrentQuestion(currentQuestion + 1);
-    }
+    answers ? setUserAnswers(answers) : setAnswers({ questionId: data.id, selectedAnswers: [], textAnswer: "" });
+    setCurrentQuestion(currentQuestion + 1);
   };
-  console.log(currentQuestion);
+
   return (
     <>
       <h2 className="mt-2 text-sm sm:text-base md:text-lg ">{data.question}</h2>
       <div className="bg-sky-800 p-3 sm:p-5 mt-8 rounded-md text-center sm:text-left">
-        <span className="text-xs sm:text-sm md:text-base">
-          {questionTitle()}
-        </span>
+        <span className="text-xs sm:text-sm md:text-base">{questionTitle()}</span>
       </div>
 
       {data.answers.map((item) => (
-        <div
-          className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base flex items-center"
-          key={item.id}
-        >
+        <div className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base flex items-center" key={item.id}>
           {inputType(item)}
           {item.tooltip ? (
-            <div
-              className="ml-4"
-              data-tooltip-id={item.id}
-              data-tooltip-content={item.tooltip}
-            >
-              <Image
-                src={"/images/tooltip-icon.svg"}
-                alt="tooltip icon"
-                width={18}
-                height={18}
-              />
-              <Tooltip id={item.id} clickable />
+            <div className="ml-4" data-tooltip-id={item.id} data-tooltip-content={item.tooltip}>
+              <Image src={"/images/tooltip-icon.svg"} alt="tooltip icon" width={18} height={18} />
+              <Tooltip id={item.id} clickable style={{ maxWidth: "300px" }} />
             </div>
           ) : null}
         </div>
@@ -183,11 +136,7 @@ const QuestionnaireQuestion: FC<Props> = ({
 
         <Button
           onClick={handleNextQuestion}
-          disabled={
-            currentQuestion == 6 || currentQuestion == 3
-              ? false
-              : checkIsDisabled()
-          }
+          disabled={currentQuestion == 6 || currentQuestion == 3 ? false : checkIsDisabled()}
           variant="orange"
           className="sm:max-w-[190px] font-normal normal-case text-xs sm:text-sm md:text-base"
           style={{
