@@ -8,7 +8,7 @@ export type InputProps = {
 const Checkbox: ForwardRefRenderFunction<HTMLInputElement, InputProps & InputHTMLAttributes<HTMLInputElement>> = ({ label, ...props }, ref) => {
   return (
     <>
-      <label className="flex space-x-4 sm:space-x-6">
+      <label className="w-full flex flex-shrink-0 space-x-4 sm:space-x-6">
         <input
           {...props}
           ref={ref}
