@@ -105,7 +105,7 @@ const QuestionnaireQuestion: FC<Props> = ({ data, currentQuestion, setCurrentQue
       </div>
 
       {data.answers.map((item) => (
-        <div className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base flex items-center" key={item.id}>
+        <div className="py-6 sm:py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base flex items-center" key={item.id}>
           {inputType(item)}
           {item.tooltip ? (
             <div className="ml-4" data-tooltip-id={item.id} data-tooltip-content={item.tooltip}>
@@ -116,7 +116,7 @@ const QuestionnaireQuestion: FC<Props> = ({ data, currentQuestion, setCurrentQue
         </div>
       ))}
 
-      <div className="sm:flex sm:space-x-6 space-y-4 sm:space-y-0 mt-16 justify-center">
+      <div className="sm:flex sm:space-x-6 space-y-4 sm:space-y-0 mt-12 sm:mt-16 justify-center">
         {currentQuestion == 1 ? null : (
           <Button
             onClick={() => {

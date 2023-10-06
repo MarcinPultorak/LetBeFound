@@ -1,22 +1,14 @@
 import { ForwardRefComponent } from "framer-motion";
-import {
-  FC,
-  ForwardRefRenderFunction,
-  InputHTMLAttributes,
-  forwardRef,
-} from "react";
+import { FC, ForwardRefRenderFunction, InputHTMLAttributes, forwardRef } from "react";
 
 export type InputProps = {
   label: string;
 };
 
-const Checkbox: ForwardRefRenderFunction<
-  HTMLInputElement,
-  InputProps & InputHTMLAttributes<HTMLInputElement>
-> = ({ label, ...props }, ref) => {
+const Checkbox: ForwardRefRenderFunction<HTMLInputElement, InputProps & InputHTMLAttributes<HTMLInputElement>> = ({ label, ...props }, ref) => {
   return (
     <>
-      <label className="flex space-x-6">
+      <label className="flex space-x-4 sm:space-x-6">
         <input
           {...props}
           ref={ref}
