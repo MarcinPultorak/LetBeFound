@@ -12,7 +12,8 @@ export const questionnaireData: QuestionnaireDto = {
           id: "1a",
           type: "checkbox",
           answer: "Wizytówka, bez dodatkowych podstron tzw. Landing Page",
-          tooltip: "Przykładem jest nasza strona internetowa",
+          tooltip:
+            "Cała treść znajduje się na jednej stronie, kliknięcie w link nie nawiguje do innych podstron w Twojej domenie. Przykładem może być nasza strona główna.",
         },
         {
           id: "1b",
@@ -69,7 +70,7 @@ export const questionnaireData: QuestionnaireDto = {
           type: "checkbox",
           answer: "Mapa z lokalizacją firmy",
           tooltip:
-            "Bardzo przydatna funkcjonalość jeśli zależy Ci aby klienci mogli odnaleźć Cię w łatwy sposób",
+            "Bardzo przydatna funkcjonalość jeśli zależy Ci aby klienci mogli odnaleźć Twoją siedzibę lub sklep w łatwy sposób",
         },
         {
           id: "3c",

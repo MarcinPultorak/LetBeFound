@@ -157,7 +157,7 @@ const QuestionnaireQuestion: FC<Props> = ({
                 width={18}
                 height={18}
               />
-              <Tooltip id={item.id} />
+              <Tooltip id={item.id} clickable />
             </div>
           ) : null}
         </div>
