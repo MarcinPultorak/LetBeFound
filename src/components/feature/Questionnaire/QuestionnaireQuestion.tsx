@@ -143,7 +143,7 @@ const QuestionnaireQuestion: FC<Props> = ({ data, currentQuestion, setCurrentQue
             boxShadow: "10px 10px 20px 0px rgba(0, 0, 0, 0.30)",
           }}
         >
-          Następne pytanie
+          {currentQuestion == 6 ? "Przejdź dalej" : "Następne pytanie"}
         </Button>
       </div>
     </>

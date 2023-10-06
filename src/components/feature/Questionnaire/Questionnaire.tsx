@@ -72,6 +72,7 @@ const Questionnaire: FC = () => {
       }
     });
   };
+
   return (
     <>
       {questionnaireState == "inProgress" || questionnaireState == "finishing" ? (
