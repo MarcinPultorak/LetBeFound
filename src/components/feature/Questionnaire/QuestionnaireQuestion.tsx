@@ -2,6 +2,8 @@ import Checkbox from "@/components/ui/Checkbox";
 import { AnswerDto, QuestionDto, UserAnswerDto } from "@/interfaces/types";
 import { ChangeEvent, FC, useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
+import { Tooltip } from "react-tooltip";
+import Image from "next/image";
 
 export type Props = {
   data: QuestionDto;
@@ -40,7 +42,7 @@ const QuestionnaireQuestion: FC<Props> = ({
     switch (item.type) {
       case "textarea": {
         return (
-          <label>
+          <label className="w-full">
             <span>{item.label}</span>
             <textarea
               value={answers?.textAnswer || ""}
@@ -139,10 +141,25 @@ const QuestionnaireQuestion: FC<Props> = ({
 
       {data.answers.map((item) => (
         <div
-          className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base"
+          className="py-8 border-b border-sky-800 text-xs sm:text-sm md:text-base flex items-center"
           key={item.id}
         >
           {inputType(item)}
+          {item.tooltip ? (
+            <div
+              className="ml-4"
+              data-tooltip-id={item.id}
+              data-tooltip-content={item.tooltip}
+            >
+              <Image
+                src={"/images/tooltip-icon.svg"}
+                alt="tooltip icon"
+                width={18}
+                height={18}
+              />
+              <Tooltip id={item.id} />
+            </div>
+          ) : null}
         </div>
       ))}
 

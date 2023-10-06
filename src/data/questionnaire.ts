@@ -12,6 +12,7 @@ export const questionnaireData: QuestionnaireDto = {
           id: "1a",
           type: "checkbox",
           answer: "Wizytówka, bez dodatkowych podstron tzw. Landing Page",
+          tooltip: "Przykładem jest nasza strona internetowa",
         },
         {
           id: "1b",
@@ -60,21 +61,29 @@ export const questionnaireData: QuestionnaireDto = {
           id: "3a",
           type: "checkbox",
           answer: "Formularz kontaktowy",
+          tooltip:
+            "Dzięki niemu klienci w łatwy sposób będą mogli się z Tobą skontakować bezpośrednio z Twojej strony intenetowej.",
         },
         {
           id: "3b",
           type: "checkbox",
           answer: "Mapa z lokalizacją firmy",
+          tooltip:
+            "Bardzo przydatna funkcjonalość jeśli zależy Ci aby klienci mogli odnaleźć Cię w łatwy sposób",
         },
         {
           id: "3c",
           type: "checkbox",
           answer: "Wdrożenie Google Analytics",
+          tooltip:
+            "Google Analytics jest bezpłatnym narzędziem internetowym do analizy ruchu na stronach internetowych. Dzięki temu dowiesz się skąd pochodzi ruch i jak wielu klientów odwiedza Twoją stronę.",
         },
         {
           id: "3d",
           type: "checkbox",
           answer: "Przewijany slider ze zdjęciami",
+          tooltip:
+            "Zwany również karuzelą,  to interaktywny sposób prezentacji wielu obrazów lub treści w jednym miejscu na stronie internetowej.",
         },
         {
           id: "3e",

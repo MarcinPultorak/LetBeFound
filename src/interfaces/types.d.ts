@@ -36,6 +36,7 @@ export interface AnswerDto {
   type: "checkbox" | "input" | "textarea";
   answer: string;
   label?: string;
+  tooltip?: string;
 }
 
 export interface UserAnswerDto {
