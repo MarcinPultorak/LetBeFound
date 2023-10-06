@@ -36,7 +36,7 @@ const Questionnaire: FC = () => {
   ): Promise<void> => {
     const traspiledData = userAnswers.map((item) => {
       return (
-        <div>
+        <div key={item.questionId}>
           <p>
             <span style={{ fontWeight: "bold" }}>Pytanie nr: </span>
             <span>{item.questionId}</span>
@@ -45,7 +45,7 @@ const Questionnaire: FC = () => {
             <span style={{ fontWeight: "bold" }}>Odpowiedzi checkbox: </span>
             {item.selectedAnswers?.map((answer, i) => {
               return (
-                <span>
+                <span key={i}>
                   {i + 1 == item.selectedAnswers?.length
                     ? answer
                     : `${answer}, `}
