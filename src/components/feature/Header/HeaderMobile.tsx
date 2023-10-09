@@ -4,6 +4,7 @@ import Link from "next/link";
 import cx from "classnames";
 import LogoVerticalMobile from "../../ui/LogoVerticalMobile";
 import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
+import Button from "@/components/ui/Button";
 
 type Props = {
   closeMenu: () => void;
@@ -42,6 +43,12 @@ const HeaderMobile: FC<Props> = ({ closeMenu, isFollowing }) => {
               </Link>
             </li>
           ))}
+          <Button
+            variant="orange"
+            className="max-w-[92px] max-h-[32px] text-sm"
+          >
+            <Link href={"wycena"}>Wycena</Link>
+          </Button>
         </ul>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
   content: [
@@ -34,7 +35,7 @@ const config: Config = {
       },
       blackPurple: {
         DEFAULT: '#050915'
-      }
+      },
     },
     extend: {
       backgroundImage: {
@@ -44,7 +45,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [], 
+  plugins: [require('@tailwindcss/forms')], 
 };
 
 export default config;
