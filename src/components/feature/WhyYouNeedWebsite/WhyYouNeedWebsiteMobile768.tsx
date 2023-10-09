@@ -1,6 +1,8 @@
+import Button from "@/components/ui/Button";
 import HexagonTileStatic from "@/components/ui/HexagonTileStatic";
 import { WhyNeedWebsiteData } from "@/data/textData";
 import { FC } from "react";
+import Link from "next/link";
 
 const WhyYouNeedWebsiteMobile768: FC = () => {
   return (
@@ -83,6 +85,9 @@ const WhyYouNeedWebsiteMobile768: FC = () => {
         skontaktuj się z nami już dziś, aby dowiedzieć się więcej o naszych
         usługach!
       </p>
+      <Button variant="orange" className="mt-10 sm:mt-12 max-w-[360px] mx-auto">
+        <Link href={"wycena"}>Darmowa wycena</Link>
+      </Button>
     </div>
   );
 };

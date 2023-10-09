@@ -5,7 +5,7 @@ import WhyYouNeedWebsiteMobile1024 from "./WhyYouNeedWebsiteMobile1024";
 import WhyYouNeedWebsiteMobile768 from "./WhyYouNeedWebsiteMobile768";
 
 const WhyYouNeedWebsite: FC = () => {
-  const isMobile1024 = useIsMobile(1024);
+  const isMobile1024 = useIsMobile(1280);
   const isMobile768 = useIsMobile(768);
 
   const showCorresponingLayout = () => {

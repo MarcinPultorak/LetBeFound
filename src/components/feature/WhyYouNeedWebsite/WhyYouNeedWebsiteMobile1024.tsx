@@ -1,7 +1,9 @@
+import Button from "@/components/ui/Button";
 import HexagonTile from "@/components/ui/HexagonTile";
 import HexagonTileEmpty from "@/components/ui/HexagonTileEmpty";
 import { WhyNeedWebsiteData } from "@/data/textData";
 import { FC } from "react";
+import Link from "next/link";
 
 const WhyYouNeedWebsiteMobile1024: FC = () => {
   return (
@@ -16,7 +18,9 @@ const WhyYouNeedWebsiteMobile1024: FC = () => {
         konkurować na rynku i dotrzeć do szerokiego grona potencjalnych
         klientów, to inwestycja w własną stronę internetową jest absolutnie
         niezbędna. A dlaczego akurat LetBeFound jest idealnym partnerem do
-        stworzenia Twojej strony internetowej? Oto kilka powodów:
+        stworzenia{" "}
+        <span className="text-orange-600">Twojej strony internetowej?</span> Oto
+        kilka powodów:
       </p>
 
       <div className="w-[calc(100%*1.90)] grid grid-cols-4 gap-x-2 -ml-[22%] -mt-[10.8%]">
@@ -45,13 +49,17 @@ const WhyYouNeedWebsiteMobile1024: FC = () => {
         <HexagonTileEmpty />
       </div> */}
       <p className="max-w-2xl text-sm p-5 text-justify mx-auto mt-10 z-10">
-        W LetBeFound wiemy, jak ważna jest obecność online dla sukcesu Twojego
-        biznesu. Nasza firma specjalizuje się w tworzeniu atrakcyjnych,
-        zoptymalizowanych pod kątem SEO stron internetowych, które przyciągają
-        uwagę, budują zaufanie i generują zyski. Daj swojemu biznesowi szansę na
-        dynamiczny rozwój i skontaktuj się z nami już dziś, aby dowiedzieć się
-        więcej o naszych usługach!
+        W LetBeFound wiemy, jak ważna jest obecność online{" "}
+        <span className="text-orange-600">dla sukcesu Twojego biznesu</span>.
+        Nasza firma specjalizuje się w tworzeniu atrakcyjnych, zoptymalizowanych
+        pod kątem SEO stron internetowych, które przyciągają uwagę, budują
+        zaufanie i generują zyski. Daj swojemu biznesowi szansę na dynamiczny
+        rozwój i skontaktuj się z nami już dziś, aby dowiedzieć się więcej o
+        naszych usługach!
       </p>
+      <Button variant="orange" className="mt-8 max-w-[360px] mx-auto">
+        <Link href={"wycena"}>Darmowa wycena</Link>
+      </Button>
     </div>
   );
 };
