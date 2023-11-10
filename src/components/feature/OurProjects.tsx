@@ -10,6 +10,10 @@ const OurProjects: FC = () => {
 
   const carouselData = [
     {
+      image: "bialy-bukiet",
+      link: "https://www.bialybukiet.pl/",
+    },
+    {
       image: "hire-my-desk",
       link: "https://www.hiremydesk.com/",
     },
