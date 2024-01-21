@@ -5,14 +5,16 @@ import Head from "next/head";
 import Layout from "@/components/layout/Layout";
 import TagManager from "react-gtm-module";
 import { useEffect } from "react";
+import { AppPage } from "@/types/appPage";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps & { Component: AppPage }) => {
   const tagManagerArgs = {
     gtmId: "GTM-NW8R72RH",
   };
   useEffect(() => {
     TagManager.initialize(tagManagerArgs);
   });
+
   return (
     <>
       <Head>
@@ -21,7 +23,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       <AppContextProvider>
-        <Layout>
+        <Layout layoutType={Component.layoutType}>
           <Component {...pageProps} />
         </Layout>
       </AppContextProvider>

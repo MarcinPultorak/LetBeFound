@@ -1,8 +1,10 @@
 import PrivacyPolicy from "@/components/feature/PrivacyPolicy";
-import { FC } from "react";
+import { AppPage } from "@/types/appPage";
 
-const PolitykaPrywatnosciPage: FC = () => {
+const PolitykaPrywatnosciPage: AppPage = () => {
   return <PrivacyPolicy />;
 };
+
+PolitykaPrywatnosciPage.layoutType = "default";
 
 export default PolitykaPrywatnosciPage;

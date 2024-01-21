@@ -1,28 +1,38 @@
-import { FC, ReactNode } from "react";
-import Footer from "../ui/Footer";
+import { FC, PropsWithChildren } from "react";
+
 import { AnimatePresence } from "framer-motion";
 import { useAppContext } from "../../providers/AppContextProvider";
 import ToastBar from "../ui/ToastBar";
-import FooterMobile from "../ui/FooterMobile";
-import useIsMobile from "@/hooks/useIsMobile";
 
-const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+import LayoutDefault from "./LayoutDefault";
+import LayoutAdminPanel from "./LayoutAdminPanel";
+
+type LayoutProps = {
+  layoutType?: LayoutType;
+};
+
+const Layout: FC<PropsWithChildren<LayoutProps>> = ({ layoutType, children }) => {
   const { toast } = useAppContext();
-  const isMobile = useIsMobile(768);
+
+  const layout = () => {
+    switch (layoutType) {
+      case "default":
+        return <LayoutDefault>{children}</LayoutDefault>;
+      case "admin":
+        return <LayoutAdminPanel>{children}</LayoutAdminPanel>;
+      default:
+        return <>{children}</>;
+    }
+  };
 
   return (
     <>
-      <div className="flex min-h-screen w-full flex-1 flex-col bg-cover text-slate-300 overflow-x-hidden">
-        <main className="flex flex-1 flex-col">{children}</main>
-        {isMobile ? <FooterMobile /> : <Footer />}
-      </div>
-      <AnimatePresence>
-        {toast?.message && (
-          <ToastBar message={toast.message} type={toast.type} />
-        )}
-      </AnimatePresence>
+      {layout()}
+      <AnimatePresence>{toast?.message && <ToastBar message={toast.message} type={toast.type} />}</AnimatePresence>
     </>
   );
 };
 
 export default Layout;
+
+export type LayoutType = "default" | "admin";

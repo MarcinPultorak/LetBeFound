@@ -6,10 +6,9 @@ import OurProcess from "@/components/feature/OurProcess/OurProcess";
 import OurProjects from "@/components/feature/OurProjects";
 import WhyYouNeedWebsite from "@/components/feature/WhyYouNeedWebsite/WhyYouNeedWebsite";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import { AppPage } from "@/types/appPage";
 
-import type { NextPage } from "next";
-
-const Home: NextPage = () => {
+const Home: AppPage = () => {
   return (
     <>
       <Hero />
@@ -37,5 +36,7 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+Home.layoutType = "default";
 
 export default Home;

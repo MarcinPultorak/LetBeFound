@@ -8,19 +8,13 @@ import { useScrollSpy } from "@/hooks/useScrollSpy";
 import LogoHorizontalMobile from "@/components/ui/LogoHorizontalMobile";
 import LogoHorizontal from "@/components/ui/LogoHorizontal";
 import Button from "@/components/ui/Button";
+import { mainRoutes } from "@/utils/routes";
 
 const Header: FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isFollowing, setIsFollowing] = useState<boolean>(false);
 
-  const ids: string[] = [
-    "Home",
-    "Oferta",
-    "Nasz proces",
-    "O nas",
-    "Nasze realizacje",
-    "Kontakt",
-  ];
+  const ids: string[] = ["Home", "Oferta", "Nasz proces", "O nas", "Nasze realizacje", "Kontakt"];
 
   const { scrollY } = useScroll();
   const activeId = useScrollSpy(ids, 81);
@@ -41,17 +35,10 @@ const Header: FC = () => {
     <header
       className={cx(
         "lg:inset-x-0 w-full flex-shrink-0 fixed top-0 left-0 px-5 md:px-10 z-50",
-        isFollowing
-          ? "bg-grayBlue h-20 shadow-black shadow-md"
-          : "md:absolute md:top-0 h-28"
+        isFollowing ? "bg-grayBlue h-20 shadow-black shadow-md" : "md:absolute md:top-0 h-28"
       )}
     >
-      {isOpened && (
-        <HeaderMobile
-          closeMenu={() => setIsOpened(false)}
-          isFollowing={isFollowing}
-        />
-      )}
+      {isOpened && <HeaderMobile closeMenu={() => setIsOpened(false)} isFollowing={isFollowing} />}
       <div className="flex justify-between items-center h-full xl:hidden">
         <LogoHorizontalMobile />
 
@@ -85,11 +72,8 @@ const Header: FC = () => {
             </li>
           ))}
         </ul>
-        <Button
-          variant="orange"
-          className="max-w-[92px] max-h-[32px] ml-10 text-sm"
-        >
-          <Link href={"wycena"}>Wycena</Link>
+        <Button variant="orange" className="max-w-[92px] max-h-[32px] ml-10 text-sm">
+          <Link href={mainRoutes.wycena.path}>{mainRoutes.wycena.title}</Link>
         </Button>
       </div>
     </header>
