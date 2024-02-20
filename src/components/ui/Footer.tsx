@@ -4,6 +4,7 @@ import LogoHorizontal from "./LogoHorizontal";
 import LogoVertical from "./LogoVertical";
 
 const Footer: FC = () => {
+  const currentDate = new Date().getFullYear();
   return (
     <footer
       className="border-t border-zinc-600 px-5 py-5 sm:px-10"
@@ -16,7 +17,7 @@ const Footer: FC = () => {
           <LogoHorizontal />
         </div>
 
-        <p className="text-base">Copyright © 2023 LetBeFound</p>
+        <p className="text-base">Copyright © {currentDate} LetBeFound</p>
         <Link className="text-base" href={"polityka-prywatnosci"}>
           Polityka prywatności
         </Link>
