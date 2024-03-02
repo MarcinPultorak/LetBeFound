@@ -10,6 +10,10 @@ const OurProjects: FC = () => {
 
   const carouselData = [
     {
+      image: "agaricus",
+      link: "https://www.agaricus.pl/",
+    },
+    {
       image: "fhu-plus",
       link: "https://www.fhuplus.pl/",
     },
