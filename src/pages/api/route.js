@@ -4,7 +4,7 @@ import Mailgun from 'mailgun.js'
 const mailgun = new Mailgun(formData)
 const mg = mailgun.client({
     username: 'api',
-    key: process.env.MAILGUN_API_KEY
+    key: process.env.MAILGUN_API_KEY,
 })
 
 export default async function sendEmail(req, res) {
@@ -13,7 +13,7 @@ export default async function sendEmail(req, res) {
 
         try {
             const result = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
-                from: 'kontakt@letbefound.pl', // Email, z którego wysyłasz wiadomość
+                from: '<kontakt@letbefound.pl>', // Email, z którego wysyłasz wiadomość
                 to: 'kontakt@letbefound.pl', // Email, na który ma przyjść wiadomość
                 subject: subject,
                 text: `You've got a new mail from ${fullname}, their email is: ${email}. Message: ${message}`,
