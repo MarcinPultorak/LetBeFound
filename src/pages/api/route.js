@@ -1,39 +1,34 @@
-import formData from 'form-data'
-import Mailgun from 'mailgun.js'
+import { Resend } from 'resend';
 
-const mailgun = new Mailgun(formData)
-const mg = mailgun.client({
-    username: 'api',
-    key: process.env.MAILGUN_API_KEY,
-    url:"https://api.eu.mailgun.net/"
-})
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function sendEmail(req, res) {
     if (req.method === 'POST') {
-        const { fullname, email, subject, message } = req.body
+        const { fullname, email, subject, message } = req.body;
 
         try {
-            const result = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
-                from: '<kontakt@letbefound.pl>', // Email, z którego wysyłasz wiadomość
-                to: 'kontakt@letbefound.pl', // Email, na który ma przyjść wiadomość
+            const data = {
+                from: 'kontakt@letbefound.pl', // Email, z którego wysyłasz wiadomość
+                to: 'kontakt@letbefound.pl',   // Email, na który ma przyjść wiadomość
                 subject: subject,
-                text: `You've got a new mail from ${fullname}, their email is: ${email}. Message: ${message}`,
                 html: `<h3>You've got a new mail from ${fullname}, their email is: ✉️${email}</h3>
-                        <div style="font-size: 16px;">
-                            <p>Message:</p>
-                            <p>${message}</p>
-                            <br>
-                        </div>`
-            })
+                      <div style="font-size: 16px;">
+                          <p>Message:</p>
+                          <p>${message}</p>
+                          <br>
+                      </div>`
+            };
 
-            return res.status(200).json({ message: 'Email sent successfully!', id: result.id })
+            const result = await resend.emails.send(data);
+
+            return res.status(200).json({ message: 'Email sent successfully!', result });
         } catch (error) {
-            console.error('Error sending email:', error)
-            return res.status(error.status || 500).json({ error: error.message || 'Error sending email' })
+            console.error('Error sending email:', error);
+            return res.status(error.status || 500).json({ error: error.message || 'Error sending email' });
         }
     } else {
-        res.setHeader('Allow', ['POST'])
-        return res.status(405).json({ message: `Method ${req.method} not allowed` })
+        res.setHeader('Allow', ['POST']);
+        return res.status(405).json({ message: `Method ${req.method} not allowed` });
     }
 }
 
