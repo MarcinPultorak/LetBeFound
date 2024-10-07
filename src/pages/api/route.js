@@ -3,6 +3,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function sendEmail(req, res) {
+    console.log(req.method)
     if (req.method === 'POST') {
         const { fullname, email, subject, message } = req.body;
 
