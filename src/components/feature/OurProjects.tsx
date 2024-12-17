@@ -19,7 +19,7 @@ const OurProjects: FC = () => {
     },
     {
       image: "bialy-bukiet",
-      link: "https://www.bialybukiet.pl/",
+      link: "https://bialy-bukiet.vercel.app/",
     },
     {
       image: "hire-my-desk",
