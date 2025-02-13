@@ -14,7 +14,7 @@
 //     const fetchPortfolio = async () => {
 //       try {
 //         const res = await axios.get(
-//           "http://localhost:1338/api/portfolios?populate=*"
+//           "http://localhost:1337/api/portfolios?populate=*"
 //         );
 //         setCarouselData(res.data.data);
 //       } catch (error) {
