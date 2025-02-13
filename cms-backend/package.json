@@ -4,11 +4,11 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "strapi build",
-    "deploy": "strapi deploy",
-    "develop": "ts-node src/index.ts",
-    "start": "ts-node src/index.ts",
-    "strapi": "strapi"
+    "build": "tsc",
+    "develop": "strapi develop",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist",
+    "prestart": "npm run build"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.10.2",
@@ -22,6 +22,7 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
+    "@strapi/typescript-utils": "^5.10.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
