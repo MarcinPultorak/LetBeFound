@@ -5,8 +5,8 @@
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
-    "deploy": "NODE_ENV=development strapi deploy",
-    "develop": "NODE_ENV=development strapi develop",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi"
