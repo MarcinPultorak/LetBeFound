@@ -29,5 +29,9 @@
   },
   "strapi": {
     "uuid": "a1ee62ae-595a-49bc-8b41-f4126911a8eb"
+  },
+  "devDependencies": {
+    "@strapi/typescript-utils": "^5.10.2",
+    "typescript": "^5.7.3"
   }
 }
