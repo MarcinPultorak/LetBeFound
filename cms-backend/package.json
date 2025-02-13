@@ -6,8 +6,8 @@
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
-    "develop": "strapi develop",
-    "start": "strapi start",
+    "develop": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   },
   "engines": {
