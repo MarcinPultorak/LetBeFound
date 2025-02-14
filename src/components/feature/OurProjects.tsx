@@ -55,7 +55,6 @@ const OurProjects: FC = () => {
         <Carousel
           selectedItem={currentSlide}
           onChange={updateSlide}
-          infiniteLoop
           showIndicators={false}
           showThumbs={false}
           className="mt-10 max-w-3xl mx-auto"
