@@ -7,6 +7,7 @@ import cx from "classnames";
 
 const OurProjects: FC = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  console.log("test");
 
   const carouselData = [
     {
