@@ -43,6 +43,12 @@ const HeaderMobile: FC<Props> = ({ closeMenu, isFollowing }) => {
               </Link>
             </li>
           ))}
+          <Link
+            className="cursor-pointer hover:text-orange-600 hover:border-orange-600"
+            href={"blog"}
+          >
+            Blog
+          </Link>
           <Button
             variant="orange"
             className="max-w-[92px] max-h-[32px] text-sm"

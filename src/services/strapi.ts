@@ -23,3 +23,25 @@ export const fetchPortfolioItems = async () => {
     return [];
   }
 };
+
+export const fetchArticles = async () => {
+  try {
+    const response = await axios.get(
+      `${STRAPI_API_URL}/api/blogs?populate=*&sort=id:desc`
+    );
+    return response.data.data.map((item: any) => ({
+      id: item.id,
+      title: item.title,
+      slug: item.slug,
+      shortDesc: item.shortDesc,
+      article: item.article,
+      image: {
+        url: `${STRAPI_API_URL}${item.image.formats.large.url}`,
+        formats: item.image.formats,
+      },
+    }));
+  } catch (error) {
+    console.error("Error fetching blog articles from Strapi:", error);
+    return [];
+  }
+};

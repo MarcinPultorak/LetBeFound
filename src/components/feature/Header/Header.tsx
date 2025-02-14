@@ -84,6 +84,13 @@ const Header: FC = () => {
               <Link href={`#${id}`}>{id}</Link>
             </li>
           ))}
+          <li
+            className={cx(
+              "cursor-pointer lg:hover:text-orange-600 lg:hover:underline lg:hover:underline-offset-8"
+            )}
+          >
+            <Link href={"blog"}>Blog</Link>
+          </li>
         </ul>
         <Button
           variant="orange"
