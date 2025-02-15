@@ -14,7 +14,7 @@ export const fetchPortfolioItems = async () => {
       slug: item.slug,
       link: item.link,
       image: {
-        url: `${STRAPI_API_URL}${item.image.formats.large.url}`,
+        url: item.image.formats.large.url,
         formats: item.image.formats,
       },
     }));
@@ -36,12 +36,33 @@ export const fetchArticles = async () => {
       shortDesc: item.shortDesc,
       article: item.article,
       image: {
-        url: `${STRAPI_API_URL}${item.image.formats.large.url}`,
+        url: item.image.formats.large.url,
         formats: item.image.formats,
       },
     }));
   } catch (error) {
     console.error("Error fetching blog articles from Strapi:", error);
+    return [];
+  }
+};
+
+export const fetchPortfolioShopItems = async () => {
+  try {
+    const response = await axios.get(
+      `${STRAPI_API_URL}/api/portfolio-shops?populate=*&sort=id:desc`
+    );
+    return response.data.data.map((item: any) => ({
+      id: item.id,
+      title: item.title,
+      slug: item.slug,
+      link: item.link,
+      image: {
+        url: item.image.formats.large.url,
+        formats: item.image.formats,
+      },
+    }));
+  } catch (error) {
+    console.error("Error fetching portfolio items from Strapi:", error);
     return [];
   }
 };

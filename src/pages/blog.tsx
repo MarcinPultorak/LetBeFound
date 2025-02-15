@@ -26,27 +26,28 @@ const BlogPage: FC = () => {
           {articles.length > 0 ? (
             articles.map((article) => (
               <div
-                className="flex flex-col md:flex-row border-b pb-10 pt-10"
+                className="flex flex-col md:flex-row border-b border-orange-600 pb-10 pt-10"
                 key={article.id}
               >
-                <div className="flex flex-shrink-0 self-center md:mr-5">
+                <div className="flex flex-shrink-0 self-center md:mr-10">
                   <Image
                     src={article.image.url}
                     alt={article.title}
                     width={300}
                     height={200}
+                    className="shadow-2xl"
                   />
                 </div>
                 <div className="max-w-3xl text-justify">
-                  <h2 className="uppercase text-lg font-bold tracking-[.15em] mt-5 md:mt-0 text-center">
+                  <h2 className="uppercase text-lg font-bold tracking-[.15em] mt-5 md:mt-0 text-center md:text-left text-orange-600">
                     {article.title}
                   </h2>
-                  <p className="max-w-5xl text-xs sm:text-sm md:text-base mt-5">
+                  <p className="max-w-5xl text-xs sm:text-sm md:text-base my-5 ">
                     {article.shortDesc}
                   </p>
                   <Link
                     href={`/blog/${article.slug}`}
-                    className="block mt-5 text-sm uppercase hover:text-orange-600 underline underline-offset-4"
+                    className="text-sm uppercase hover:text-orange-600 underline underline-offset-4"
                   >
                     Sprawdź więcej...
                   </Link>

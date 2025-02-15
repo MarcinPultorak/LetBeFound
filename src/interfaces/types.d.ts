@@ -40,3 +40,19 @@ export interface UserAnswerDto {
   selectedAnswers?: string[];
   textAnswer?: string;
 }
+
+export interface PortfolioItem {
+  id: number;
+  title: string;
+  slug: string;
+  link: string;
+  image: {
+    url: string;
+    formats: {
+      large: { url: string };
+      medium: { url: string };
+      small: { url: string };
+      thumbnail: { url: string };
+    };
+  };
+}

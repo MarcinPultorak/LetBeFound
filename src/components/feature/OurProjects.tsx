@@ -4,23 +4,11 @@ import Link from "next/link";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import cx from "classnames";
-import { fetchPortfolioItems } from "../../services/strapi";
-
-interface PortfolioItem {
-  id: number;
-  title: string;
-  slug: string;
-  link: string;
-  image: {
-    url: string;
-    formats: {
-      large: { url: string };
-      medium: { url: string };
-      small: { url: string };
-      thumbnail: { url: string };
-    };
-  };
-}
+import {
+  fetchPortfolioItems,
+  fetchPortfolioShopItems,
+} from "../../services/strapi";
+import { PortfolioItem } from "@/interfaces/types";
 
 const OurProjects: FC = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -39,6 +27,24 @@ const OurProjects: FC = () => {
     setCurrentSlide(index);
   };
 
+  const [currentShopSlide, setCurrentShopSlide] = useState<number>(0);
+  const [portfolioShopItems, setPortfolioShopItems] = useState<PortfolioItem[]>(
+    []
+  );
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await fetchPortfolioShopItems();
+      setPortfolioShopItems(data);
+    };
+
+    loadData();
+  }, []);
+
+  const updateShopSlide = (index: number) => {
+    setCurrentShopSlide(index);
+  };
+
   return (
     <section
       id={"Nasze realizacje"}
@@ -47,48 +53,92 @@ const OurProjects: FC = () => {
         boxShadow: "0px 4px 40px 0px #090D19",
       }}
     >
-      <div className="max-w-screen-2xl mx-auto">
-        <h2 className="uppercase sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
-          Nasze realizacje
-        </h2>
-
-        <Carousel
-          selectedItem={currentSlide}
-          onChange={updateSlide}
-          showIndicators={false}
-          showThumbs={false}
-          className="mt-10 max-w-3xl mx-auto"
-        >
-          {portfolioItems.map((item) => (
-            <Link
-              href={item.link}
-              key={item.id}
-              target="_blank"
-              aria-label="Sprawdź Online"
-            >
-              <div>
-                <Image
-                  src={item.image.url}
-                  alt={item.title}
-                  width={1366}
-                  height={768}
-                />
-              </div>
-            </Link>
-          ))}
-        </Carousel>
-        <div className="flex space-x-3 w-full justify-center mt-5">
-          {portfolioItems.map((_, index) => (
-            <button
-              title={`slide-${index}`}
-              key={index}
-              className={cx(
-                "h-3 w-3 rounded-full",
-                currentSlide == index ? "bg-orange-600" : "bg-slate-400"
-              )}
-              onClick={() => updateSlide(index)}
-            />
-          ))}
+      <div className="max-w-screen-2xl mx-auto flex flex-col xl:flex-row gap-10">
+        <div>
+          <h2 className="uppercase sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
+            Nasze realizacje - Strony internetowe
+          </h2>
+          <Carousel
+            selectedItem={currentSlide}
+            onChange={updateSlide}
+            showIndicators={false}
+            showThumbs={false}
+            className="mt-10 max-w-3xl mx-auto"
+          >
+            {portfolioItems.map((item) => (
+              <Link
+                href={item.link}
+                key={item.id}
+                target="_blank"
+                aria-label="Sprawdź Online"
+              >
+                <div>
+                  <Image
+                    src={item.image.url}
+                    alt={item.title}
+                    width={1366}
+                    height={768}
+                  />
+                </div>
+              </Link>
+            ))}
+          </Carousel>
+          <div className="flex space-x-3 w-full justify-center mt-5">
+            {portfolioItems.map((_, index) => (
+              <button
+                title={`slide-${index}`}
+                key={index}
+                className={cx(
+                  "h-3 w-3 rounded-full",
+                  currentSlide == index ? "bg-orange-600" : "bg-slate-400"
+                )}
+                onClick={() => updateSlide(index)}
+              />
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 className="uppercase sm:text-xl lg:text-2xl text-center font-bold tracking-[.15em]">
+            Nasze realizacje - Sklepy internetowe
+          </h2>
+          <Carousel
+            selectedItem={currentShopSlide}
+            onChange={updateShopSlide}
+            showIndicators={false}
+            showThumbs={false}
+            className="mt-10 max-w-3xl mx-auto"
+          >
+            {portfolioShopItems.map((item) => (
+              <Link
+                href={item.link}
+                key={item.id}
+                target="_blank"
+                aria-label="Sprawdź Online"
+              >
+                <div>
+                  <Image
+                    src={item.image.url}
+                    alt={item.title}
+                    width={1366}
+                    height={768}
+                  />
+                </div>
+              </Link>
+            ))}
+          </Carousel>
+          <div className="flex space-x-3 w-full justify-center mt-5">
+            {portfolioShopItems.map((_, index) => (
+              <button
+                title={`slide-${index}`}
+                key={index}
+                className={cx(
+                  "h-3 w-3 rounded-full",
+                  currentShopSlide == index ? "bg-orange-600" : "bg-slate-400"
+                )}
+                onClick={() => updateShopSlide(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
