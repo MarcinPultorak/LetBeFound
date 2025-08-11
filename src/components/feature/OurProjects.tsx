@@ -10,7 +10,7 @@ const OurProjects: FC = () => {
 
   const carouselData = [
     {
-      image: "nucadea",
+      image: "nucadea-screen",
       link: "https://www.nucadea.com/",
     },
     {
